@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/event', function () {
+    return view('event');
+});
+
+Route::get('/search', 'SearchController@index')->name('search');
