@@ -21,7 +21,7 @@
   <body>
     <!-- NavBar Start -->
     <nav class="NavBar">
-      <img src="../img/logo.png" alt="logo"></a>
+      <img src="../image/logo.png" alt="logo"></a>
 
       <div class="navbar-nav">
         <a href="/">Beranda</a>
@@ -30,8 +30,8 @@
       </div>
 
       <div class="navbar-ext">
-        <img src="../img/Jtng.png" alt="jtng" height="200%">
-        <img src="../img/Wonosobo.png" alt="Wsobo">
+        <img src="../image/Jtng.png" alt="jtng" height="200%">
+        <img src="../image/Wonosobo.png" alt="Wsobo">
         <a href="#" id="Hmenu"><i data-feather="menu"></i></a>
       </div>
     </nav>
