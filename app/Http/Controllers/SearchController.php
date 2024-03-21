@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destinasi;
 use Illuminate\Http\Request;
 use App\Models\Tempat; // Sesuaikan dengan model Anda
 
@@ -11,7 +12,7 @@ class SearchController extends Controller
     {
         $query = $request->input('q');
 
-        $results = Tempat::where('nama', 'like', '%' . $query . '%')
+        $results = Destinasi::where('nama', 'like', '%' . $query . '%')
                          ->orWhere('deskripsi', 'like', '%' . $query . '%')
                          ->get();
 

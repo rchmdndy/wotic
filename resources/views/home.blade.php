@@ -21,7 +21,7 @@
   <body>
     <!-- NavBar Start -->
     <nav class="NavBar">
-      <img src="../img/logo.png" alt="logo"></a>
+     <a href={{ route('home') }}><img src="../img/logo.png" alt="logo"></a>
 
       <div class="navbar-nav">
         <a href="/">Beranda</a>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="navbar-ext">
-        <img src="../img/Jtng.png" alt="jtng" height="200%">
+        <img src="../img/jtng.png" alt="jtng" height="200%">
         <img src="../img/Wonosobo.png" alt="Wsobo">
         <a href="#" id="Hmenu"><i data-feather="menu"></i></a>
       </div>
@@ -58,11 +58,11 @@
       </div>
 
       <div class="Informasi">
-        
+
       </div>
     </section>
     <!-- Main Section End -->
-    
+
     <!-- Feather Icons -->
 
     <script>
