@@ -1,0 +1,374 @@
+body{
+    overflow-x: hidden;
+}
+
+.h-100vh{
+    min-height: 70vh;
+}
+
+.bg-my-primary {
+    background-color: #11698E;
+}
+
+.navbar-brand {
+    width: 100px;
+}
+
+
+.logo-right{
+    width: 50px;
+}
+
+.card-event{
+    width: 80%;
+    border-width: 2px;
+    border-color: #11698E;
+}
+
+.logo-footer{
+    width: 100px;
+}
+
+.logo-footer-2{
+    width: 200px;
+}
+
+.logo-footer-3{
+    width: 50px;
+}
+
+footer h6{
+    font-size: 12px;
+}
+
+.logo-detail{
+    width: 30px;
+}
+
+.image-detail{
+    width: 80%;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+.btn-my-primary{
+    background-color: #11698E;
+    color: white;
+}
+
+.btn-my-primary:hover{
+    border-color: #11698E;
+    color: #11698E;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.hero .d-flex{
+    height: 100%;
+}
+
+.video-hero{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-hero{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitle-hero{
+    font-size: 20px;
+    font-weight:normal;
+    text-align: center;
+}
+
+.title-hero, .subtitle-hero {
+    position: relative;
+    z-index: 1;
+}
+
+.title-hero, .subtitle-hero {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.search-wrapper{
+    width: 100%;
+    display: flex;
+    margin-top: -25px;
+    position: relative;
+    z-index: 8;
+}
+
+.search{
+    width: 50%;
+}
+
+.button-search{
+    color: white;
+    font-size: 14px;
+    border: 0;
+    background:transparent;
+}
+
+.input-search{
+    width: 100%;
+    background: transparent;
+    color: white;
+    outline: none;
+    border: 0;
+}
+
+.input-search::placeholder{
+    color: white;
+    font-size: 14px;
+}
+
+.information-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.information{
+    padding-inline: 40px;
+}
+
+.information-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.information-image{
+    width: 50px;
+}
+
+.information-text{
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.wisata-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.wisata {
+    padding-inline: 40px;
+}
+
+.wisata-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.wisata-wrapper-box{
+    display: flex;
+    width: 80%;
+    margin-top: 30px;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.wisata-wrapper-box::-webkit-scrollbar {
+    display: none;
+}
+
+.wisata-wrapper-box {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.wisata-box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.box{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover ;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+.box:hover{
+    transform: scale(1.05);
+}
+.box .box-text{
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    border-radius: 12px;
+    padding-inline: 10px;
+}
+
+.rekomendasi-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.rekomendasi{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 40px;
+}
+
+.rekomendasi-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.destination-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.destination-text{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.logo-list{
+    width: 50px;
+}
+
+.navbar-brand img,
+.logo-right img,
+.logo-footer img,
+.logo-footer-2 img,
+.logo-footer-3 img,
+.logo-detail img,
+.information-image img,
+.destination-logo img,
+.logo-list img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav{
+        margin-top: 20px;
+    }
+
+    .logo-right {
+        width: 40px;
+    }
+
+    .card-event{
+        width: 90%;
+    }
+
+    .logo-footer{
+        width: 50px;
+    }
+    
+    .logo-footer-2{
+        width: 100px;
+    }
+    
+    .logo-footer-3{
+        width: 30px;
+    }
+
+    footer h6{
+        font-size: 10px;
+    }
+
+    .logo-detail{
+        width: 20px;
+    }
+
+    .image-detail{
+        width: 100%;
+    }
+
+    .search{
+        width: 80%;
+    }
+
+    .information-wrapper{
+        margin-top: 50px;
+    }
+
+    .information{
+        padding-inline: 20px;
+    }
+
+    .information-title{
+        font-size: 16px;
+    }
+
+    .information-image{
+        width: 40px;
+    }
+
+    .information-text{
+        font-size: 12px;
+    }
+
+    .box{
+        width: 150px;
+        height: 150px;
+    }
+
+    .wisata-wrapper{
+        margin-top: 50px;
+    }
+
+    .wisata{
+        padding-inline: 20px;
+    }
+
+    .wisata-title{
+        font-size: 16px;
+    }
+
+    .wisata-wrapper-box{
+        width: 100%;
+    }
+
+    .rekomendasi-wrapper{
+        margin-top: 50px;
+    }
+
+    .rekomendasi{
+        padding-inline: 20px;
+    }
+
+    .rekomendasi-title{
+        font-size: 16px;
+    }
+
+    .card-list-wisata h5{
+        font-size: 14px;
+    }
+
+    .card-list-wista i,
+    .card-list-wisata h6{
+        font-size: 12px;
+    }
+
+    .card-list-wisata a{
+        font-size: 12px;
+    }
+}
