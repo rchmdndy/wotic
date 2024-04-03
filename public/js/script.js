@@ -21,4 +21,3 @@ function search() {
   console.log("Pencarian untuk: " + searchInput);
   window.location.href = "/search?q=" + encodeURIComponent(searchInput);
 }
-
