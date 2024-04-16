@@ -7,8 +7,8 @@ use App\Models\Destinasi;
 
 class   DestinasiController extends Controller
 {
-    public function index(){
-        return view('destination.index');
+    public function category(){
+        return view('destination.category');
     }
 
     public function fetch_all()

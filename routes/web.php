@@ -16,19 +16,20 @@ use App\Http\Controllers\DestinasiController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // Event
-Route::prefix('/event')->controller(EventController::class)->group(function (){
-    Route::get('/event/all', 'index')->name('event.index');
-    Route::get('/event/fetch_all', 'fetch_all')->name('event.fetch_all');
-    Route::get('/event/{id}/detail', 'detail')->name('event.detail');
+Route::prefix('/event')->controller(EventController::class)->name('event.')->group(function (){
+    Route::get('/event/all', 'index')->name('index');
+    Route::get('/event/fetch_all', 'fetch_all')->name('fetch_all');
+    Route::get('/event/{id}/detail', 'detail')->name('detail');
 });
 
 // Destination
-Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->group(function (){
-    Route::get('/all','fetch_all')->name('destination.all');
-    Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('destination.fetch');
-    Route::get('/{jenis_wisata}/{id}/detail','fetch_detail_wisata')->name('destination.detail');
+Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name('destination.')->group(function (){
+    Route::get('/all','fetch_all')->name('all');
+    Route::get('/category', 'category')->name('category');
+    Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
+    Route::get('/{jenis_wisata}/{id}/detail','fetch_detail_wisata')->name('detail');
 
 });

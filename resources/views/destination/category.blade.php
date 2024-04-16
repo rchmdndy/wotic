@@ -4,7 +4,7 @@
     <section class="container mt-3">
         <div class="row row-cols-md-4 row-cols-2 g-md-5 g-4 my-3">
             <div class="col">
-                <a href="{{ route('destination.list') }}"
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasialam.png') }}" alt="">

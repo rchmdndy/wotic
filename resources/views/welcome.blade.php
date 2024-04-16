@@ -36,7 +36,7 @@
                 Informasi apa yang anda cari ?
             </h1>
             <div class="d-flex gap-3 mt-3">
-                <a href="{{route('destination.index')}}"
+                <a href="{{route('destination.category')}}"
                     class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/destinasilogo.png') }}" alt="" />
