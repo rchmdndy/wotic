@@ -25,7 +25,7 @@
                         Destinasi Wisata
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item">Wisata Alam</a></li>
+                        <li><a href="{{ route('destination.list') }}" class="dropdown-item">Wisata Alam</a></li>
                         <li><a href="#" class="dropdown-item">Wisata Petualangan</a></li>
                         <li><a href="#" class="dropdown-item">Wisata Perbelanjaan</a></li>
                         <li><a href="#" class="dropdown-item">Wisata Kuliner</a></li>

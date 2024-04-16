@@ -22,7 +22,7 @@ Route::prefix('/v1')->group(function (){
     Route::prefix('destination')->controller(\App\Http\Controllers\Api\DestinationApiController::class)->group(function(){
          Route::get('/getAll', 'getAllDestination')->name('api.destination.all') ;
          Route::get('/ambilsemua', 'ambilSemua')->name('ambil.semua') ;
-         Route::get('/getDetail/{id}', 'getDestinationDetail')->name('api.destination.detail');
+         Route::get('/getDetail/{id}', 'getDetailDestination')->name('api.destination.detail');
     });
 //   Route::get();
 });

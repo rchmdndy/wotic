@@ -34,7 +34,7 @@
                     img.onload = function() {
                         // Image exists
                         cardDiv.innerHTML = `
-                            <div class="card h-100 w-100 card-list-wisata rounded-4">
+                            <div class="card h-100 w-100 card-list-wisata rounded-4"  onclick="window.location.href='/destinasi-wisata/wisata-alam/${destinasi.id}/detail'">
                                 <div class="card-body">
                                     <div class="row row-cols-md-2 row-cols-1 g-3">
                                         <div class="col">
@@ -59,7 +59,7 @@
                     img.onerror = function() {
                         // Image does not exist, use default image
                         cardDiv.innerHTML = `
-                            <div class="card h-100 w-100 card-list-wisata rounded-4">
+                            <div class="card h-100 w-100 card-list-wisata rounded-4" onclick="redirectToDetail(${destinasi.id})">
                                 <div class="card-body">
                                     <div class="row row-cols-md-2 row-cols-1 g-3">
                                         <div class="col">
@@ -86,6 +86,10 @@
                 });
             })
             .catch(error => console.error('Error fetching data:', error));
+
+        // Function to redirect to detail page with destination ID
+        function redirectToDetail(destinationId) {
+            window.location.href = "{{ route('destination.detail', ['id' => ':id']) }}".replace(':id', destinationId);
+        }
     </script>
 @endsection
-
