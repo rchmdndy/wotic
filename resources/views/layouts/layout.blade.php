@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    @if (Route::is('welcome'))
+    @if (Route::is('index'))
         @include('layouts.navbarhome')
     @else
         @include('layouts.navbar')
