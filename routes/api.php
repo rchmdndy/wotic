@@ -19,8 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('/v1')->group(function (){
-    Route::prefix('destination')->group(function(){
-         Route::get('/getAll', [\App\Http\Controllers\Api\DestinationApiController::class, 'getAllDestination'])->name('api.destination.all') ;
+    Route::prefix('destination')->controller(\App\Http\Controllers\Api\DestinationApiController::class)->group(function(){
+         Route::get('/getAll', 'getAllDestination')->name('api.destination.all') ;
+         Route::get('/ambilsemua', 'ambilSemua')->name('ambil.semua') ;
+         Route::get('/getDetail/{id}', 'getDestinationDetail')->name('api.destination.detail');
     });
 //   Route::get();
 });

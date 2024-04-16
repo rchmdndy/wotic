@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="d-flex align-items-center gap-3 mb-2">
                                                 <i class="bi bi-cash fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local}</h6>
+                                                <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="d-flex align-items-center gap-3 mb-2">
                                                 <i class="bi bi-cash fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local}</h6>
+                                                <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
                                             </div>
                                         </div>
                                     </div>

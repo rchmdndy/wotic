@@ -11,10 +11,6 @@
                 <div class="d-flex align-items-center gap-3 mb-2">
                     <i class="bi bi-map"></i>
                     <h6 class="mb-0 text-body-secondary">Ds Dieng</h6>
-                    <button type="button" class="btn btn-primary btn-sm rounded-4" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Lihat Peta
-                    </button>
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-2">
                     <i class="bi bi-cash fs-6"></i>

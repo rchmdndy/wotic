@@ -10,10 +10,14 @@ class   DestinasiController extends Controller
     public function index(){
         return view('destination.index');
     }
+
     public function fetch_destinasi()
     {
-        $destinasis = Destinasi::with('images')->get();
-        return view('destination.list', compact('destinasis'));
+        return view('destination.list');
+    }
+    public function fetch_all()
+    {
+        return view('destination.all');
     }
     public function detail($id)
     {

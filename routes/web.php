@@ -25,5 +25,6 @@ Route::get('/event/fetch_all', [EventController::class, 'fetch_all'])->name('eve
 Route::get('/event/{id}/detail', [EventController::class, 'detail'])->name('event.detail');
 // Destination
 Route::get('/destinasi-wisata',[DestinasiController::class, 'index'])->name('destination.index');
+Route::get('/destinasi-wisata/all',[DestinasiController::class, 'fetch_all'])->name('destination.all');
 Route::get('/destinasi-wisata/wisata-alam',[DestinasiController::class, 'fetch_destinasi'])->name('destination.list');
 Route::get('/destinasi-wisata/wisata-alam/{id}/detail',[DestinasiController::class, 'detail'])->name('destination.detail');
