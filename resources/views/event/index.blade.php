@@ -4,8 +4,8 @@
     <div class="container mt-4">
         <h1 class="text-center fw-medium">Kalender Event 2024</h1>
         <div class="d-flex flex-column align-items-center mt-4 gap-4">
-            @foreach($events as $event)
-            <div class="card mb-3 card-event" onclick="window.location.href='/event/{{ $event->id }}/detail'">
+            @foreach($events as $event)<div class="card mb-3 card-event" onclick="window.location.href='/event/{{ $event->id }}/detail'">
+            
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ asset('storage/' . $event->image) }}" class="img-fluid" alt="{{ $event->nama_event }}">
