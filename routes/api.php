@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 Route::prefix('/v1')->group(function (){
     Route::prefix('destination')->controller(\App\Http\Controllers\Api\DestinationApiController::class)->group(function(){
-         Route::get('/getAll', 'getAllDestination')->name('api.destination.all') ;
+         Route::get('/getAll/{jenis_wisata}', 'getDestinationType')->name('api.destination.type');
+         Route::get('/getDetail/{jenis_wisata}/{id}', 'getDestinationDetail')->name('api.destination.detail');
          Route::get('/ambilsemua', 'ambilSemua')->name('ambil.semua') ;
-         Route::get('/getDetail/{id}', 'getDestinationDetail')->name('api.destination.detail');
     });
 //   Route::get();
 });

@@ -100,7 +100,7 @@ footer h6{
 }
 
 .title-hero, .subtitle-hero {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .search-wrapper{
@@ -186,8 +186,8 @@ footer h6{
 }
 
 .wisata-wrapper-box {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .wisata-box{
@@ -265,6 +265,11 @@ footer h6{
     object-position: center;
 }
 
+.card-content a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+}
+
 @media (max-width: 768px) {
     .navbar-nav{
         margin-top: 20px;
@@ -281,11 +286,11 @@ footer h6{
     .logo-footer{
         width: 50px;
     }
-    
+
     .logo-footer-2{
         width: 100px;
     }
-    
+
     .logo-footer-3{
         width: 30px;
     }
