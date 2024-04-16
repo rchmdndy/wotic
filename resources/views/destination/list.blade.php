@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3">List Wisata Alam</h1>
+        <h1 class="text-center fs-4 mt-3">List Wisata</h1>
 
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
             <!-- Destination items will be appended here -->
