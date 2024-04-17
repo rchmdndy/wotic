@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasipetualangan.png') }}" alt="">
@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'perbelanjaan']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasibelanja.png') }}" alt="">
@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'kuliner']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasikuliner.png') }}" alt="">
@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'industri']) }}" 
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasiindustri.png') }}" alt="">
@@ -49,7 +49,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'budaya']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasibudaya.png') }}" alt="">
@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'pertanian']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasipertanian.png') }}" alt="">
@@ -67,7 +67,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'perdesaan']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" alt="">
@@ -76,7 +76,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'religi']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasireligi.png') }}" alt="">
@@ -85,7 +85,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'industri kecil']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasiindustrikecil.png') }}" alt="">
@@ -94,7 +94,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'edukasi']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasiedukasi.png') }}" alt="">
@@ -103,7 +103,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href=""
+                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}"
                     class="d-flex flex-column justify-content-center align-items-center text-decoration-none text-black">
                     <div class="destination-logo">
                         <img src="{{ asset('images/destinationlogos/logodestinasibuatan.png') }}" alt="">
