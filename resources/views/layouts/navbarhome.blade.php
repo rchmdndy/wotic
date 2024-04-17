@@ -26,17 +26,17 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}" class="dropdown-item">Wisata Alam</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Petualangan</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Perbelanjaan</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Kuliner</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Industri</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Budaya</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Pertanian</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Perdesaan</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Religi</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Industri Kecil</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Edukasi</a></li>
-                        <li><a href="#" class="dropdown-item">Wisata Buatan</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}" class="dropdown-item">Wisata Petualangan</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'perbelanjaan']) }}" class="dropdown-item">Wisata Perbelanjaan</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'kuliner']) }}" class="dropdown-item">Wisata Kuliner</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'industri']) }}" class="dropdown-item">Wisata Industri</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'budaya']) }}" class="dropdown-item">Wisata Budaya</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'pertanian']) }}" class="dropdown-item">Wisata Pertanian</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'perdesaan']) }}" class="dropdown-item">Wisata Perdesaan</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'religi']) }}" class="dropdown-item">Wisata Religi</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'industri kecil']) }}" class="dropdown-item">Wisata Industri Kecil</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'edukasi']) }}" class="dropdown-item">Wisata Edukasi</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}" class="dropdown-item">Wisata Buatan</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
