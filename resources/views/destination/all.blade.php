@@ -10,7 +10,7 @@
     </section>
     <script>
         // Make AJAX request to the API endpoint
-        fetch('{{ route('ambil.semua') }}')
+        fetch('{{ route('api.destination.ambil.semua') }}')
             .then(response => response.json())
             .then(destinasiList => {
                 console.log('Data from API:', destinasiList); // Log the data from the API
@@ -50,6 +50,10 @@
                                                 <i class="bi bi-cash fs-6"></i>
                                                 <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
                                             </div>
+                                            <div class="d-flex align-items-center gap-3 mb-2">
+                                                    <i class="bi bi-geo-alt fs-6"></i>
+                                                    <h6 class="card-subtitle text-body-secondary">${destinasi.jenis_wisata}</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -74,6 +78,10 @@
                                             <div class="d-flex align-items-center gap-3 mb-2">
                                                 <i class="bi bi-cash fs-6"></i>
                                                 <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-3 mb-2">
+                                                    <i class="bi bi-geo-alt fs-6"></i>
+                                                    <h6 class="card-subtitle text-body-secondary">${destinasi.jenis_wisata}</h6>
                                             </div>
                                         </div>
                                     </div>

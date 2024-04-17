@@ -8,12 +8,12 @@ use App\Models\Destinasi;
 class   DestinasiController extends Controller
 {
     public function category(){
-        return view('destination.category');
+        return view('destination.categories');
     }
 
     public function fetch_all()
     {
-        return view('destination.list');
+        return view('destination.all');
     }
 
     public function fetch_jenis_wisata(string $jenis_wisata){

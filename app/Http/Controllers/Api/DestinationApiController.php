@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class DestinationApiController extends Controller
 {
-    public function getDestinationType(string $jenis_wisata)
+    public function getDestinationType(Request $request, string $jenis_wisata)
     {
-        $destinasis = Destinasi::select('id', 'nama_destinasi', 'desa', 'tiket_weekend_local')
+        $destinasis = Destinasi::select('id', 'nama_destinasi', 'desa', 'tiket_weekend_local', 'jenis_wisata')
             ->where('jenis_wisata', 'like', ('%'.$jenis_wisata.'%'))
             ->get();
 
@@ -25,6 +25,10 @@ class DestinationApiController extends Controller
         })->all();
 
         return response()->json($destinasiList);
+    }
+
+    public function getJson(){
+
     }
 
     public function getDestinationDetail(string $jenis_wisata, $id)
@@ -53,7 +57,7 @@ class DestinationApiController extends Controller
 
     public function ambilSemua()
     {
-        $destinasis = Destinasi::select('id', 'nama_destinasi', 'desa', 'tiket_weekend_local')->get();
+        $destinasis = Destinasi::select('id', 'nama_destinasi', 'desa', 'tiket_weekend_local', 'jenis_wisata')->get();
 
         $destinasiList = $destinasis->map(function ($destinasi) {
 

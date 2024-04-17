@@ -70,6 +70,10 @@ footer h6{
     color: white;
 }
 
+.card-bg {
+    background-color: rgba(147, 218, 255, 0.46);
+}
+
 .hero .d-flex{
     height: 100%;
 }

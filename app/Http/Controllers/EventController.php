@@ -7,12 +7,11 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
+    public function fetch_all()
     {
-        $events = Event::all();
-        return view('event.index', compact('events'));
+        return view('event.list');
     }
-    
+
     public function detail($id)
     {
         $event = Event::findOrFail($id);
