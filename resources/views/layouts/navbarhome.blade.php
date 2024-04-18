@@ -1,4 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top bg-black bg-opacity-50" id="navbar">
+<style>
+    /* CSS untuk transparansi navbar */
+    #navbar.navbar-scrolled {
+        background-color: rgba(250, 250, 250, 0.293); /* Transparan hitam saat discroll */
+    }
+
+    #navbar.navbar-transparent {
+        background-color: rgba(0, 0, 0, 0); /* Transparan saat belum discroll */
+    }
+
+    /* CSS untuk warna teks hitam */
+    .navbar-nav .nav-link {
+        color: black !important; /* Mengubah warna teks menjadi hitam */
+    }
+</style>
+
+<script>
+    // JavaScript untuk menangani perubahan transparansi navbar saat discroll
+    window.addEventListener('scroll', function () {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+            navbar.classList.add('navbar-scrolled');
+            navbar.classList.remove('navbar-transparent');
+        } else {
+            navbar.classList.add('navbar-transparent');
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbar">
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
