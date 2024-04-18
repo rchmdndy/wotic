@@ -17,20 +17,17 @@
                         <div class="row row-cols-4 g-4 justify-content-center align-items-center">
                             <div class="col">
                                 <a href="" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logotraveloka.png') }}" alt=""
-                                        class="img-fluid rounded-4">
+                                    <img src="{{ asset('images/logos/logotraveloka.png') }}" alt="" class="img-fluid rounded-4">
                                 </a>
                             </div>
                             <div class="col">
                                 <a href="" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logotiketcom.png') }}" alt=""
-                                        class="img-fluid rounded-4">
+                                    <img src="{{ asset('images/logos/logotiketcom.png') }}" alt="" class="img-fluid rounded-4">
                                 </a>
                             </div>
                             <div class="col">
                                 <a href="" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logoaccesskai.png') }}" alt=""
-                                        class="img-fluid rounded-4">
+                                    <img src="{{ asset('images/logos/logoaccesskai.png') }}" alt="" class="img-fluid rounded-4">
                                 </a>
                             </div>
                         </div>
@@ -39,6 +36,7 @@
             </div>
         </div>
     </section>
+
     <script>
         // Make AJAX request to fetch destination detail
         fetchDestinationDetail();
@@ -74,18 +72,46 @@
                         });
                     }
 
-                    // Check if any image exists
-                    const imageSrcPromise = images.length > 0 ? checkImage(`{{ asset('storage/') }}/${images[0].image_path}`) : Promise.resolve(false);
+                    // Check if the image array has more than one item
+                    if (images.length > 1) {
+                        // If there are multiple images, generate carousel HTML
+                        let carouselItemsHtml = '';
+                        images.forEach((image, index) => {
+                            const imageSrc = `{{ asset('storage/') }}/${image.image_path}`;
+                            carouselItemsHtml += `
+                                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                    <div class="destination-image">
+                                        <img src="${imageSrc}" class="d-block w-100" alt="Image">
+                                    </div>
+                                </div>`;
+                        });
 
-                    // Resolve the promise to determine the image source
-                    imageSrcPromise
-                        .then(imageExists => {
-                            const imageSrc = imageExists ? `{{ asset('storage/') }}/${images[0].image_path}` : defaultImageSrc;
+                        // Generate the carousel HTML
+                        destinationDetailDiv.innerHTML = `
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    ${carouselItemsHtml}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>`;
+                    } else {
+                        // If there's only one image, display it without the carousel
+                        const imageSrc = images.length > 0 ? `{{ asset('storage/') }}/${images[0].image_path}` : defaultImageSrc;
+                        destinationDetailDiv.innerHTML = `
+                            <div class="col destination-image">
+                                <img src="${imageSrc}" alt="Image" class="img-fluid rounded-4">
+                            </div>`;
+                    }
 
-                            destinationDetailDiv.innerHTML = `
-                                <div class="col">
-                            <img src="${imageSrc}" alt="Image" class="img-fluid rounded-4">
-                        </div>
+                    // Display other destination details (name, description, etc.)
+                    destinationDetailDiv.innerHTML += `
                         <div class="col">
                             <h1>${destinasi.nama_destinasi}</h1>
                             <div class="d-flex align-items-center gap-3 mb-2">
@@ -104,10 +130,7 @@
                             <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                 Pesan Sekarang
                             </button>
-                        </div>
-                            `;
-                        })
-                        .catch(error => console.error('Error checking image:', error));
+                        </div>`;
                 })
                 .catch(error => console.error('Error fetching destination detail:', error));
         }
