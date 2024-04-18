@@ -11,6 +11,7 @@
             <div class="logo-right">
                 <img src="{{ asset('images/logos/logodinas.png') }}" alt="logodinas">
             </div>
+            |
             <div class="logo-right">
                 <img src="{{ asset('images/logos/logo2.png') }}" alt="logo2">
             </div>
@@ -18,10 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Beranda</a>
+                    <a href="#" class="nav-link text-white fw-bold">Beranda</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Destinasi Wisata
                     </a>
                     <ul class="dropdown-menu">
@@ -40,7 +41,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/event">Event</a>
+                    <a class="nav-link text-white fw-bold" href="/event">Event</a>
                 </li>
             </ul>
         </div>

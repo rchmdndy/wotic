@@ -27,9 +27,6 @@ class DestinationApiController extends Controller
         return response()->json($destinasiList);
     }
 
-    public function getJson(){
-
-    }
 
     public function getDestinationDetail(string $jenis_wisata, $id)
     {

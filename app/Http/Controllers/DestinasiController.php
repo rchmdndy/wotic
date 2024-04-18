@@ -7,7 +7,7 @@ use App\Models\Destinasi;
 
 class   DestinasiController extends Controller
 {
-    public function category(){
+    public function categories(){
         return view('destination.categories');
     }
 
