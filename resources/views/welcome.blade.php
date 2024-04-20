@@ -194,7 +194,7 @@
                         <div class="carousel-inner h-100">
                             <div class="carousel-item active h-100">
                                 <div class="card h-100 rounded-4">
-                                    <h5 class="card-header text-center bg-primary text-white">January</h5>
+                                    <h5 class="card-header text-center bg-my-primary text-white">January</h5>
                                     <div class="card-body d-flex flex-column gap-3 px-5">
                                         <a href=""
                                             class="d-flex align-items-center text-decoration-none text-black">
@@ -209,7 +209,7 @@
                             </div>
                             <div class="carousel-item  h-100">
                                 <div class="card h-100 rounded-4">
-                                    <h5 class="card-header text-center bg-primary text-white">February</h5>
+                                    <h5 class="card-header text-center bg-my-primary text-white">February</h5>
                                     <div class="card-body d-flex flex-column gap-3 px-5">
                                         <a href=""
                                             class="d-flex align-items-center text-decoration-none text-black">
@@ -224,7 +224,7 @@
                             </div>
                             <div class="carousel-item  h-100">
                                 <div class="card h-100 rounded-4">
-                                    <h5 class="card-header text-center bg-primary text-white">March</h5>
+                                    <h5 class="card-header text-center bg-my-primary text-white">March</h5>
                                     <div class="card-body d-flex flex-column gap-3 px-5">
                                         <a href=""
                                             class="d-flex align-items-center text-decoration-none text-black">
