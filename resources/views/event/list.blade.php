@@ -3,12 +3,123 @@
 @section('content')
     <div class="container mt-4">
         <h1 class="text-center fw-medium">Kalender Event 2024</h1>
-        <div class="d-flex flex-column align-items-center mt-4 gap-4" id="eventList">
-            <!-- Event items will be appended here -->
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 mt-3">
+            <div class="col">
+                <div class="card h-100 rounded-4">
+                    <h5 class="card-header text-center bg-my-primary text-white">January</h5>
+                    <div class="card-body d-flex flex-column gap-3 px-5">
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">5</span>
+                            </i>
+                            Grebeg Sudiro Tahun
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4">
+                    <h5 class="card-header text-center bg-my-primary text-white">February</h5>
+                    <div class="card-body d-flex flex-column gap-3 px-5">
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">10</span>
+                            </i>
+                            Cap Go Meh Singkawang
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4">
+                    <h5 class="card-header text-center bg-my-primary text-white">March</h5>
+                    <div class="card-body d-flex flex-column gap-3 px-5">
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">10</span>
+                            </i>
+                            Sabang Marine Festival
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">17</span>
+                            </i>
+                            Batam WonderFood Festival
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">20</span>
+                            </i>
+                            Festival Arakan Sahur
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">30</span>
+                            </i>
+                            Pesta Adat Dan Budaya Lom Plai
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4">
+                    <h5 class="card-header text-center bg-my-primary text-white">April</h5>
+                    <div class="card-body d-flex flex-column gap-3 px-5">
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">2</span>
+                            </i>
+                            Festival Bale Nagi
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">13</span>
+                            </i>
+                            Festival 5 Danau
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">18</span>
+                            </i>
+                            Seba Baduy
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4">
+                    <h5 class="card-header text-center bg-my-primary text-white">May</h5>
+                    <div class="card-body d-flex flex-column gap-3 px-5">
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">7</span>
+                            </i>
+                            Festival Pesona Aekhula
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         // Make AJAX request to the API endpoint
         fetch('{{ route('api.event.getall') }}')
             .then(response => response.json())
@@ -44,5 +155,5 @@
                 });
             })
             .catch(error => console.error('Error fetching data:', error));
-    </script>
+    </script> --}}
 @endsection
