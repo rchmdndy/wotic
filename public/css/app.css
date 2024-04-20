@@ -63,19 +63,57 @@ footer h6{
     color: #11698E;
 }
 
-.hero {
+.hero .carousel-item{
     height: 100vh;
+}
+
+.hero .carousel-caption{
+    top: 50%;
+}
+
+.hero .carousel-caption h1,
+.hero .carousel-caption p{
+    text-shadow: black 0.1em 0.1em 
+}
+
+.bi-calendar span {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rekomendasi .carousel-control-prev,
+.rekomendasi .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: blue; 
+    border: none; 
+    opacity: 1; 
+    border-radius: 100px;
+    color: white; 
+}
+
+.rekomendasi .carousel-control-prev {
+    left: -3%; 
+}
+
+.rekomendasi .carousel-control-next {
+    right: -3%; 
+}
+
+.carousel-item img{
     width: 100%;
-    position: relative;
-    color: white;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card-bg {
     background-color: rgba(147, 218, 255, 0.46);
-}
-
-.hero .d-flex{
-    height: 100%;
 }
 
 .destination-card {
@@ -141,9 +179,7 @@ footer h6{
 .search-wrapper{
     width: 100%;
     display: flex;
-    margin-top: -25px;
-    position: relative;
-    z-index: 8;
+    margin-top: 80px;
 }
 
 .search{
@@ -410,5 +446,12 @@ footer h6{
 
     .card-list-wisata a{
         font-size: 12px;
+    }
+
+    .rekomendasi .carousel-control-next,
+    .rekomendasi .carousel-control-prev{
+        width: 30px;
+        height: 30px;
+        padding: 5px;
     }
 }
