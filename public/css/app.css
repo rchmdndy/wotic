@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .h-100vh{
@@ -7,7 +9,7 @@ body{
 }
 
 .bg-my-primary {
-    background-color: #11698E;
+    background-color: #78C6EA;
 }
 
 .navbar-brand {
@@ -22,7 +24,7 @@ body{
 .card-event{
     width: 80%;
     border-width: 2px;
-    border-color: #11698E;
+    border-color: #78C6EA;
 }
 
 .logo-footer{
@@ -54,26 +56,28 @@ footer h6{
 }
 
 .btn-my-primary{
-    background-color: #11698E;
+    background-color: #78C6EA;
     color: white;
 }
 
 .btn-my-primary:hover{
-    border-color: #11698E;
-    color: #11698E;
+    border-color: #78C6EA;
+    color: #78C6EA;
 }
 
 .hero .carousel-item{
     height: 100vh;
 }
 
-.hero .carousel-caption{
+.hero .text-wrapper{
+    position: absolute;
     top: 50%;
+    transform: translateY(-50%);
 }
 
-.hero .carousel-caption h1,
-.hero .carousel-caption p{
-    text-shadow: black 0.1em 0.1em 
+.hero .text-wrapper h1,
+.hero .text-wrapper p{
+    text-shadow: black 0.1em 0.1em;
 }
 
 .bi-calendar span {
@@ -90,7 +94,7 @@ footer h6{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #11698E; 
+    background-color: #78C6EA; 
     border: none; 
     opacity: 1; 
     border-radius: 100px;
@@ -146,66 +150,6 @@ footer h6{
  }
 
 
-.video-hero{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.5);
-}
-
-.title-hero{
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.subtitle-hero{
-    font-size: 20px;
-    font-weight:normal;
-    text-align: center;
-}
-
-.title-hero, .subtitle-hero {
-    position: relative;
-    z-index: 1;
-}
-
-.title-hero, .subtitle-hero {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.search-wrapper{
-    width: 100%;
-    display: flex;
-    margin-top: 80px;
-}
-
-.search{
-    width: 50%;
-}
-
-.button-search{
-    color: white;
-    font-size: 14px;
-    border: 0;
-    background:transparent;
-}
-
-.input-search{
-    width: 100%;
-    background: transparent;
-    color: white;
-    outline: none;
-    border: 0;
-}
-
-.input-search::placeholder{
-    color: white;
-    font-size: 14px;
-}
-
 .information-wrapper{
     width: 100%;
     margin-top: 100px;
@@ -230,13 +174,24 @@ footer h6{
     font-weight: normal;
 }
 
-.wisata-wrapper{
+.about-wrapper{
     width: 100%;
     margin-top: 100px;
 }
 
-.wisata {
-    padding-inline: 40px;
+.about-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.about-text{
+    font-size: 14px;
+    text-align: justify ;
+}
+
+.wisata-wrapper{
+    width: 100%;
+    margin-top: 100px;
 }
 
 .wisata-title{
@@ -244,49 +199,45 @@ footer h6{
     font-weight: normal;
 }
 
-.wisata-wrapper-box{
+.wisata-wrapper .card-img-top{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    
+}
+
+.wisata-wrapper a:hover .card-title{
+    color: #78C6EA;
+}
+
+.wisata-wrapper a:hover .card-img-top img{
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+
+.wisata {
+    width: 100%;
     display: flex;
-    width: 80%;
-    margin-top: 30px;
+    flex-wrap: nowrap;
     overflow-x: scroll;
+    white-space: nowrap;
+    gap: 20px;
     padding: 20px;
 }
 
-.wisata-wrapper-box::-webkit-scrollbar {
+.wisata a{
+    min-width: 400px;
+}
+
+.wisata::-webkit-scrollbar{
     display: none;
 }
 
-.wisata-wrapper-box {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.wisata-box{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-.box{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    background-position: center;
-    background-size: cover ;
-    border-radius: 12px;
-    transition: transform 0.3s;
-}
-.box:hover{
-    transform: scale(1.05);
-}
-.box .box-text{
-    color: white;
-    text-align: center;
-    font-weight: normal;
-    border-radius: 12px;
-    padding-inline: 10px;
+.wisata-wrapper .card-img-top img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .rekomendasi-wrapper{
@@ -341,9 +292,18 @@ footer h6{
     color: inherit; /* Use the default text color */
 }
 
+.rekomendasi .carousel{
+    width: 75%;
+}
+
+.rekomendasi .card{
+    width: 100%;
+    min-height: 300px;
+}
+
 @media (max-width: 768px) {
-    .navbar-nav{
-        margin-top: 20px;
+    .hero .text-wrapper h1{
+        width: 80%;
     }
 
     .logo-right {
@@ -378,17 +338,10 @@ footer h6{
         width: 100%;
     }
 
-    .search{
-        width: 80%;
-    }
-
     .information-wrapper{
         margin-top: 50px;
     }
 
-    .information{
-        padding-inline: 20px;
-    }
 
     .information-title{
         font-size: 16px;
@@ -402,33 +355,28 @@ footer h6{
         font-size: 12px;
     }
 
-    .box{
-        width: 150px;
-        height: 150px;
+    .about-wrapper{
+        margin-top: 50px;
     }
 
     .wisata-wrapper{
         margin-top: 50px;
     }
 
-    .wisata{
-        padding-inline: 20px;
-    }
-
     .wisata-title{
         font-size: 16px;
     }
 
-    .wisata-wrapper-box{
-        width: 100%;
+    .about-title{
+        font-size: 16px;
+    }
+
+    .about-text{
+        font-size: 12px;
     }
 
     .rekomendasi-wrapper{
         margin-top: 50px;
-    }
-
-    .rekomendasi{
-        padding-inline: 20px;
     }
 
     .rekomendasi-title{
@@ -446,6 +394,10 @@ footer h6{
 
     .card-list-wisata a{
         font-size: 12px;
+    }
+
+    .rekomendasi .carousel{
+        width: 100%;
     }
 
     .rekomendasi .carousel-control-next,

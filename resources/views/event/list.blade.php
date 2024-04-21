@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mt-3">
         <h1 class="text-center fw-medium">Kalender Event 2024</h1>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 mt-3">
             <div class="col">

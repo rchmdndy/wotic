@@ -28,6 +28,7 @@ use App\Http\Controllers\DestinasiController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about',[HomeController::class, 'about'])->name('about');
 
 // Event
 Route::prefix('/event')

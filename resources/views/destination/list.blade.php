@@ -32,7 +32,8 @@
                     const img = new Image();
                     img.src = imageSrc;
                     img.onload = function() {
-                        const detailUrl = `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
+                        const detailUrl =
+                            `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
                         const urlWithId = detailUrl.replace(':destinasiId', destinasi.id);
                         cardDiv.innerHTML = `
                             <div class="card-content">
@@ -66,7 +67,8 @@
                         `;
                     };
                     img.onerror = function() {
-                        const detailUrl = `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
+                        const detailUrl =
+                            `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
                         const urlWithId = detailUrl.replace(':destinasiId', destinasi.id);
                         cardDiv.innerHTML = `
                             <div class="card-content">

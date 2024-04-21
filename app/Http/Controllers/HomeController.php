@@ -12,4 +12,9 @@ class HomeController extends Controller
         $events = Event::all();
         return view('welcome', compact('events'));
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }
