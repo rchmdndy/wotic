@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container mt-4">
-        <a href="{{ route('event.index') }}" class="btn btn-primary btn-sm rounded-pill">Back</a>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4">
             <div class="col">
                 <img src="{{ asset('storage/' . $event->image) }}" alt="image" class="rounded-4 image-detail">

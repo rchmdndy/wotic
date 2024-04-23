@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HotelController;
@@ -41,5 +42,10 @@ Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name
     Route::get('/category', 'category')->name('category');
     Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
     Route::get('/{jenis_wisata}/{id}/detail','fetch_detail_wisata')->name('detail');
+});
 
+// Promo
+Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->group(function (){
+    Route::get('/', 'fetch_all')->name('fetch_all');
+    Route::get('/{id}/detail', 'detail')->name('detail');
 });
