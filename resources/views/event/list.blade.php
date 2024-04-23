@@ -142,7 +142,7 @@
 
     {{-- <script>
         // Make AJAX request to the API endpoint
-        fetch('{{ route('api.event.getall') }}')
+        fetch('http://wootic.test/api/v2/wonosobo/getAllEvent')
             .then(response => response.json())
             .then(events => {
                 const eventListDiv = document.getElementById('eventList');
@@ -158,7 +158,7 @@
                     eventCardDiv.innerHTML = `
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="/storage/${event.image}" class="img-fluid" alt="${event.nama_event}">
+                                <img src="${event.image}" class="img-fluid" alt="${event.nama_event}">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -168,7 +168,7 @@
                                     </div>
                                     <p class="card-text">${event.deskripsi}</p>
                                 </div>
-                            </div>
+                            </div>x     x
                         </div>
                     `;
 
