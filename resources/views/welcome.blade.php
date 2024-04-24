@@ -14,13 +14,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="...">
+                    <img src="{{ asset('images/wisata/bukitcinta.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/wisata/kulinerwonogiri.jpeg') }}" alt="...">
+                    <img src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/events/event1.jpeg') }}" alt="...">
+                    <img src="{{ asset('images/events/dieng.jpg') }}" alt="...">
                 </div>
             </div>
         </div>
