@@ -1,11 +1,11 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container mt-3">
+    <div class="container mt-3 event">
         <h1 class="text-center fw-medium">Kalender Event 2024</h1>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 mt-3">
             <div class="col">
-                <div class="card h-100 rounded-4">
+                <div class="card rounded-4">
                     <h5 class="card-header text-center bg-my-primary text-white">January</h5>
                     <div class="card-body d-flex flex-column gap-3 px-5">
                         <a href="" class="d-flex align-items-center text-decoration-none text-black">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 rounded-4">
+                <div class="card rounded-4">
                     <h5 class="card-header text-center bg-my-primary text-white">February</h5>
                     <div class="card-body d-flex flex-column gap-3 px-5">
                         <a href="" class="d-flex align-items-center text-decoration-none text-black">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 rounded-4">
+                <div class="card rounded-4">
                     <h5 class="card-header text-center bg-my-primary text-white">March</h5>
                     <div class="card-body d-flex flex-column gap-3 px-5">
                         <a href="" class="d-flex align-items-center text-decoration-none text-black">
@@ -64,11 +64,32 @@
                             </i>
                             Pesta Adat Dan Budaya Lom Plai
                         </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">30</span>
+                            </i>
+                            Pesta Adat Dan Budaya Lom Plai
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">30</span>
+                            </i>
+                            Pesta Adat Dan Budaya Lom Plai
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">30</span>
+                            </i>
+                            Pesta Adat Dan Budaya Lom Plai
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 rounded-4">
+                <div class="card rounded-4">
                     <h5 class="card-header text-center bg-my-primary text-white">April</h5>
                     <div class="card-body d-flex flex-column gap-3 px-5">
                         <a href="" class="d-flex align-items-center text-decoration-none text-black">
@@ -103,7 +124,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100 rounded-4">
+                <div class="card rounded-4">
                     <h5 class="card-header text-center bg-my-primary text-white">May</h5>
                     <div class="card-body d-flex flex-column gap-3 px-5">
                         <a href="" class="d-flex align-items-center text-decoration-none text-black">
