@@ -10,7 +10,7 @@
     </section>
     <script>
         // Make AJAX request to the API endpoint
-        fetch('{{ route('api.destination.ambil.semua') }}')
+        fetch('{{ \Illuminate\Support\Facades\Http::get('http://serverapi.test/api/v1/destination/getAll') }}')
             .then(response => response.json())
             .then(destinasiList => {
                 console.log('Data from API:', destinasiList); // Log the data from the API

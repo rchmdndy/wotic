@@ -120,6 +120,49 @@
                             </i>
                             Festival Rimpu Mantika
                         </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+                        <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                            <i
+                                class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">25</span>
+                            </i>
+                            Festival Rimpu Mantika
+                        </a>
+
                     </div>
                 </div>
             </div>
