@@ -35,7 +35,6 @@
                                         <p class="card-text"><small class="text-body-secondary">Kelas: ${hotel.kelas}</small></p>
                                     </div>
                                     <p class="card-text">Alamat: ${hotel.alamat}</p>
-                                    <p class="card-text">Koordinat: ${hotel.koordinat}, ${hotel.koordinat_y}</p>
                                     <p class="card-text">Deskripsi: ${hotel.deskripsi}</p>
                                 </div>
                             </div>

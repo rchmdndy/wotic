@@ -10,7 +10,7 @@
 
     <script>
         // Make AJAX request to the API endpoint
-        fetch('https://wotic.id/api/v2/wonosobo/getAllPromo')
+            fetch('https://wotic.id/api/v2/wonosobo/getAllPromo')
             .then(response => response.json())
             .then(promos => {
                 const promoListDiv = document.getElementById('promoList');
@@ -32,9 +32,10 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-title">${promo.nama_promo}</h5>
-                                        <p class="card-text"><small class="text-body-secondary">Start Date: ${promo.tanggal_mulai}</small></p>
+
                                     </div>
-                                    <p class="card-text">${promo.deskripsi}</p>
+                                     <p class="card-text"><small class="text-body-secondary">Start Date: ${promo.tanggal_mulai}</small></p>
+                                        <p class="card-text"><small class="text-body-secondary">End Date: ${promo.tanggal_selesai}</small></p>
                                 </div>
                             </div>
                         </div>
