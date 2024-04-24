@@ -65,8 +65,20 @@ footer h6{
     color: #78C6EA;
 }
 
-.hero .carousel-item{
-    height: 100vh;
+.hero .carousel-item {
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero .carousel-item.active {
+    transform: rotateY(0deg);
+}
+
+.hero .carousel-item-next {
+    transform: rotateY(-180deg);
+}
+
+.hero .carousel-item-prev {
+    transform: rotateY(180deg);
 }
 
 .hero .text-wrapper{
