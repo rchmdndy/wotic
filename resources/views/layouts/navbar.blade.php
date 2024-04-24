@@ -36,9 +36,9 @@
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}" class="dropdown-item">Wisata Buatan</a></li>
                     </ul>
                 </li>
-                <a class="nav-link text-white me-3" href="#">Promo</a> <!-- Tambahkan margin kanan -->
-                <a class="nav-link text-white me-3" href="#">Hotel</a> <!-- Tambahkan margin kanan -->
-                <a class="nav-link text-white me-3" href="/event">Event</a> <!-- Tambahkan margin kanan -->
+                <a class="nav-link text-white me-3" href="{{route('promo.index')}}">Promo</a> <!-- Tambahkan margin kanan -->
+                <a class="nav-link text-white me-3" href="{{route('hotel.index')}}">Hotel</a> <!-- Tambahkan margin kanan -->
+                <a class="nav-link text-white me-3" href="{{route('event.fetch_all')}}">Event</a> <!-- Tambahkan margin kanan -->
                 <a class="nav-link text-white" href="{{ route('about') }}">About</a>
             </div>
         </div>
