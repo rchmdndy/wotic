@@ -66,6 +66,9 @@ footer h6{
 
 .hero .carousel-item {
     transition: transform 0.5s ease-in-out;
+    width: 1750px;
+    height: 820px;
+
 }
 
 .hero .carousel-item.active {
