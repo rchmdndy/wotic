@@ -14,13 +14,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="...">
+                    <img src="{{ asset('images/wisata/bukitcinta.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/wisata/kulinerwonogiri.jpeg') }}" alt="...">
+                    <img src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/events/event1.jpeg') }}" alt="...">
+                    <img src="{{ asset('images/events/dieng.jpg') }}" alt="...">
                 </div>
             </div>
         </div>
@@ -75,18 +75,6 @@
         </div>
     </section>
     {{-- End Infromasi --}}
-    {{-- About --}}
-    <section class="about-wrapper">
-        <div class="container d-flex flex-column align-items-center">
-            <h1 class="about-title text-center">Tentang Kami</h1>
-            <p class="text-center my-4">
-                Selamat datang di Wotic - pusat informasi pariwisata terkemuka untuk destinasi wisata di Wonosobo,
-                Indonesia!
-            </p>
-            <a href="{{ route('about') }}" class="btn btn-my-primary rounded-pill px-4">Baca Selengkapnya</a>
-        </div>
-    </section>
-    {{-- End About --}}
     {{-- Wisata Unik --}}
         <div class="container mt-4">
             <h1 class="text-center fw-medium">Kalender Promo 2024</h1>

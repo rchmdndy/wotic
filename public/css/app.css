@@ -13,9 +13,8 @@ body{
 }
 
 .navbar-brand {
-    width: 100px;
+    width: 250px;
 }
-
 
 .logo-right{
     width: 50px;
@@ -28,7 +27,7 @@ body{
 }
 
 .logo-footer{
-    width: 100px;
+    width: 200px;
 }
 
 .logo-footer-2{
@@ -65,8 +64,23 @@ footer h6{
     color: #78C6EA;
 }
 
-.hero .carousel-item{
-    height: 100vh;
+.hero .carousel-item {
+    transition: transform 0.5s ease-in-out;
+    width: 1750px;
+    height: 820px;
+
+}
+
+.hero .carousel-item.active {
+    transform: rotateY(0deg);
+}
+
+.hero .carousel-item-next {
+    transform: rotateY(-180deg);
+}
+
+.hero .carousel-item-prev {
+    transform: rotateY(180deg);
 }
 
 .hero .text-wrapper{
