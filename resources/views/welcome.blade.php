@@ -75,18 +75,6 @@
         </div>
     </section>
     {{-- End Infromasi --}}
-    {{-- About --}}
-    <section class="about-wrapper">
-        <div class="container d-flex flex-column align-items-center">
-            <h1 class="about-title text-center">Tentang Kami</h1>
-            <p class="text-center my-4">
-                Selamat datang di Wotic - pusat informasi pariwisata terkemuka untuk destinasi wisata di Wonosobo,
-                Indonesia!
-            </p>
-            <a href="{{ route('about') }}" class="btn btn-my-primary rounded-pill px-4">Baca Selengkapnya</a>
-        </div>
-    </section>
-    {{-- End About --}}
     {{-- Wisata Unik --}}
     <section class="wisata-wrapper">
         <div class="container">
