@@ -10,7 +10,7 @@
 
     <script>
         // Make AJAX request to the API endpoint
-            fetch('https://wotic.id/api/v2/wonosobo/getAllPromo')
+            fetch('http://serverapi.test/api/v1/promo')
             .then(response => response.json())
             .then(promos => {
                 const promoListDiv = document.getElementById('promoList');

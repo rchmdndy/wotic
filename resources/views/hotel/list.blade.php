@@ -10,7 +10,7 @@
 
     <script>
         // Make AJAX request to the API endpoint for hotels
-        fetch('https://wotic.id/api/v2/wonosobo/getAllHotels')
+        fetch('http://serverapi.test/api/v1/hotels')
             .then(response => response.json())
             .then(hotels => {
                 const hotelListDiv = document.getElementById('hotelList');
@@ -35,7 +35,6 @@
                                         <p class="card-text"><small class="text-body-secondary">Kelas: ${hotel.kelas}</small></p>
                                     </div>
                                     <p class="card-text">Alamat: ${hotel.alamat}</p>
-                                    <p class="card-text">Deskripsi: ${hotel.deskripsi}</p>
                                 </div>
                             </div>
                         </div>
