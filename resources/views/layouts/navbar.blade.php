@@ -6,8 +6,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('images/logos/logo.png') }}" alt="logo">
-        </a>
+             <img src="{{ asset('images/logos/logo.png') }}" alt="logo" width="500" height="auto">
+</a>
+
         <div class="gap-3 d-lg-none d-flex">
             <div class="logo-right">
                 <img src="{{ asset('images/logos/logodinas.png') }}" alt="logodinas">

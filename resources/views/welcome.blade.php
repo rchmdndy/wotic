@@ -313,6 +313,27 @@
                                     </i>
                                     Pesta Adat Dan Budaya Lom Plai
                                 </a>
+                                <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                                    <i
+                                        class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                        <span class="position-absolute fs-6">30</span>
+                                    </i>
+                                    Pesta Adat Dan Budaya Lom Plai
+                                </a>
+                                <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                                    <i
+                                        class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                        <span class="position-absolute fs-6">30</span>
+                                    </i>
+                                    Pesta Adat Dan Budaya Lom Plai
+                                </a>
+                                <a href="" class="d-flex align-items-center text-decoration-none text-black">
+                                    <i
+                                        class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                        <span class="position-absolute fs-6">30</span>
+                                    </i>
+                                    Pesta Adat Dan Budaya Lom Plai
+                                </a>
                             </div>
                         </div>
                     </div>
