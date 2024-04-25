@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <<script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetchEvents();
 
@@ -29,20 +29,20 @@
                             const eventCardDiv = document.createElement('div');
                             eventCardDiv.classList.add('col');
                             eventCardDiv.innerHTML = `
-                    <div class="card rounded-4">
-                        <h5 class="card-header text-center bg-my-primary text-white">${month}</h5>
-                        <div class="card-body d-flex flex-column gap-3 px-5">
-                            ${eventsByMonth[month].map(event => `
-                                <a href="#" class="d-flex align-items-center text-decoration-none text-black">
-                                    <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
-                                        <span class="position-absolute fs-6">${event.hari_mulai}</span>
-                                    </i>
-                                    ${event.nama_event}
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
+                                <div class="card rounded-4">
+                                    <h5 class="card-header text-center bg-my-primary text-white">${month}</h5>
+                                    <div class="card-body d-flex flex-column gap-3 px-5">
+                                        ${eventsByMonth[month].map(event => `
+                                            <a href="/event/${event.id}/detail" class="d-flex align-items-center text-decoration-none text-black">
+                                                <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                                    <span class="position-absolute fs-6">${event.hari_mulai}</span>
+                                                </i>
+                                                ${event.nama_event}
+                                            </a>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `;
                             eventListDiv.appendChild(eventCardDiv);
                         });
                     })

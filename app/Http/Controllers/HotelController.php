@@ -11,4 +11,9 @@ class HotelController extends Controller
     {
         return view('hotel.list');
     }
+    public function detail($id)
+    {
+        $hotel = Hotel::findOrFail($id);
+        return view('hotel.detail', compact('hotel'));
+    }
 }
