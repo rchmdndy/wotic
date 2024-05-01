@@ -9,12 +9,11 @@ class PromoController extends Controller
 {
     public function fetch_all()
     {
-        return view('promo.list');
+        return view('promo.list', ['promoList' => $this->fetchJson('http://serverapi.test/api/v1/promo')]);
     }
 
     public function detail($id)
     {
-        $promo = Promo::findOrFail($id);
-        return view('promo.detail', compact('promo'));
+        return view('promo.detail',['promoDetail' => $this->fetchJson("http://serverapi.test/api/v1/promo/$id/detail")]);
     }
 }

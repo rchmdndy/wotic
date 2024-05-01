@@ -4,36 +4,33 @@
     <div class="container mt-4">
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4">
             <div class="col">
-                <img src="{{ asset('storage/' . $promo->image) }}" alt="image" class="rounded-4 image-detail">
-                <h4 class="mt-3 fw-medium">{{ $promo->nama_promo }}</h4>
+                <img src="{{ $promoDetail['image'] }}" alt="image" class="rounded-4 image-detail">
+                <h4 class="mt-3 fw-medium">{{ $promoDetail['nama_promo'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
                     </div>
-                    <h6 class="m-0">{{ $promo->lokasi }}</h6>
+{{--                    <h6 class="m-0">Location: {{ $promoDetail['lokasi'] }}</h6>--}}
                 </div>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
-                    <h6 class="m-0">{{ $promo->tanggal_mulai }} - {{ $promo->tanggal_selesai }}</h6>
+                    <h6 class="m-0">Date: {{ $promoDetail['tanggal_mulai'] }} - {{ $promoDetail['tanggal_selesai'] }}</h6>
                 </div>
             </div>
             <div class="col">
                 <p class="text-justify">
-                    {{ $promo->deskripsi }}
+                    {{ $promoDetail['deskripsi'] }}
                 </p>
-                <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1">
-                    Pesan Sekarang
-                </button>
-                {{-- Modal Pesan --}}
+
+                {{-- Order Modal --}}
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Aplikasi Pemesanan</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Ordering Application</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>

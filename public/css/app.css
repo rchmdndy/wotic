@@ -11,6 +11,12 @@ body{
 .bg-my-primary {
     background-color: #78C6EA;
 }
+#map{
+    padding-top: 100px;
+    margin-top: 20px;
+    height: 400px;
+    width: 400px;
+}
 
 .navbar-brand {
     width: 250px;
@@ -108,19 +114,19 @@ footer h6{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #78C6EA; 
-    border: none; 
-    opacity: 1; 
+    background-color: #78C6EA;
+    border: none;
+    opacity: 1;
     border-radius: 100px;
-    color: white; 
+    color: white;
 }
 
 .rekomendasi .carousel-control-prev {
-    left: -3%; 
+    left: -3%;
 }
 
 .rekomendasi .carousel-control-next {
-    right: -3%; 
+    right: -3%;
 }
 
 .carousel-item img{
@@ -132,6 +138,10 @@ footer h6{
 
 .card-bg {
     background-color: rgba(147, 218, 255, 0.46);
+}
+
+.card-important{
+    background-color: rgba(255, 99, 99, 0.5);
 }
 
 .destination-card {
@@ -162,6 +172,13 @@ footer h6{
      width: 100%; /* Auto-adjust width to maintain aspect ratio */
      object-fit: cover; /* Scale images uniformly */
  }
+
+.scrolling-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+}
+
 
 
 .information-wrapper{
@@ -217,7 +234,7 @@ footer h6{
     width: 100%;
     height: 400px;
     overflow: hidden;
-    
+
 }
 
 .wisata-wrapper a:hover .card-title{

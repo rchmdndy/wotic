@@ -13,6 +13,6 @@
         </div>
     </div>
     <h6 class="text-white mt-4 text-center fw-medium">
-        ©2024 Made with 🧠💻 by TIM PBL Politeknik Negeri Semarang
+        ©2024 Made with 🧠💻💵 by TIM PBL Politeknik Negeri Semarang
     </h6>
 </footer>
