@@ -1,0 +1,130 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Destination API",
+        "description": "API for retrieving destination data",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/v1/destination/getAll/{jenis_wisata}": {
+            "get": {
+                "description": "Get all wisata with defined jenis_wisata",
+                "parameters": [
+                    {
+                        "name": "jenis_wisata",
+                        "in": "path",
+                        "description": "The type of wisata",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success retrieve wisata",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": { "type": "integer" },
+                                            "nama_destinasi": { "type": "string" },
+                                            "desa": { "type": "string" },
+                                            "tiket_weekend_local": { "type": ["string", "null"] },
+                                            "jenis_wisata": { "type": "string" },
+                                            "image": { "type": "string", "format": "uri" }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/destination/getDetail/{jenis_wisata}/{id}": {
+            "get": {
+                "description": "Get the detail of a wisata by jenis_wisata and ID",
+                "parameters": [
+                    {
+                        "name": "jenis_wisata",
+                        "in": "path",
+                        "description": "The type of wisata",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the wisata",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success retrieving the detail of a wisata",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "destinasi": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": { "type": "integer" },
+                                                "nama_destinasi": { "type": "string" },
+                                                "deskripsi": { "type": "string" },
+                                                "kecamatan": { "type": "string" },
+                                                "desa": { "type": "string" },
+                                                "tiket": { "type": "string" },
+                                                "jenis_wisata": { "type": "string" },
+                                                "alamat": { "type": "string" },
+                                                "koordinat_x": { "type": "string" },
+                                                "koordinat_y": { "type": "string" },
+                                                "blank_spot_jaringan": { "type": "string" },
+                                                "penginapan": { "type": ["string", "null"] },
+                                                "route_perjalanan": { "type": "string" },
+                                                "viewer": { "type": "integer" },
+                                                "banner": { "type": "string" },
+                                                "created_at": { "type": "string" },
+                                                "updated_at": { "type": "string" },
+                                                "transportasi": { "type": "string" },
+                                                "link_order": { "type": "string" },
+                                                "tiket_internasional": { "type": "string" },
+                                                "tiket_weekend_local": { "type": ["string", "null"] },
+                                                "tiket_weekend_internasional": { "type": "string" }
+                                            }
+                                        },
+                                        "image": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "image_path": { "type": "string", "format": "uri" }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

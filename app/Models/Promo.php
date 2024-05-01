@@ -12,7 +12,7 @@ class Promo extends Model
     protected $fillable = [
         'nama_promo',
         'deskripsi',
-        'image',
+        'img',
         'tanggal_mulai',
         'tanggal_selesai',
     ];

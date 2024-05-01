@@ -9,7 +9,7 @@ class Background extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
+    protected $fillable = [
         'splash_image',
         'background_image',
     ];

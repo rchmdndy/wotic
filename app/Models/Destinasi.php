@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Destinasi extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'nama_destinasi',
         'deskripsi',
-        // 'image',
+        // 'img',
         'kecamatan',
         'desa',
         'tiket',
