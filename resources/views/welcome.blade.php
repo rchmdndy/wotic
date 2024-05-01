@@ -25,8 +25,8 @@
             </div>
         </div>
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
-            <h1 class="text-white text-center">Travel, enjoy and live a new and full life</h1>
-            <p class="text-white text-center">Best Destinations around the world</p>
+            <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
+            <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
             <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>
         </div>
     </section>
@@ -39,7 +39,7 @@
                 Informasi apa yang anda cari ?
             </h1>
             <div class="d-flex gap-3 mt-3 justify-content-center w-100">
-                <a href="{{ route('destination.category') }}"
+                <a href="{{ route('destination.categories') }}"
                    class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/destinasilogo.png') }}" alt="" />
@@ -76,6 +76,166 @@
         </div>
     </section>
     {{-- End Informasi --}}
+{{--    Wisata Unik--}}
+    <section class="wisata-wrapper">
+        <div class="container">
+            <h1 class="wisata-title text-center">Wisata Unik</h1>
+            <div class="wisata d-none d-lg-flex">
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1" class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1" class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                 class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                 class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                 class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="text-decoration-none text-black w-100 h-100">
+                    <div class="card h-100 rounded-5 shadow">
+                        <div class="card-img-top rounded-top-5">
+                            <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                 class="rounded-top-5">
+                        </div>
+                        <div class="card-body d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h5 class="card-title">Rome, Italy</h5>
+                                <h5 class="text-secondary">$ 500</h5>
+                            </div>
+                            <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="wisataunik" class="carousel slide d-lg-none d-sm-block" data-bs-ride="carousel">
+                <div class="carousel-inner py-3">
+                    <div class="carousel-item active">
+                        <a href="" class="text-decoration-none text-black w-100 h-100">
+                            <div class="card h-100 rounded-5 shadow">
+                                <div class="card-img-top rounded-top-5">
+                                    <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                         class="rounded-top-5">
+                                </div>
+                                <div class="card-body d-flex flex-column gap-5">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="card-title">Rome, Italy</h5>
+                                        <h5 class="text-secondary">$ 500</h5>
+                                    </div>
+                                    <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="" class="text-decoration-none text-black w-100 h-100">
+                            <div class="card h-100 rounded-5 shadow">
+                                <div class="card-img-top rounded-top-5">
+                                    <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                         class="rounded-top-5">
+                                </div>
+                                <div class="card-body d-flex flex-column gap-5">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="card-title">Rome, Italy</h5>
+                                        <h5 class="text-secondary">$ 500</h5>
+                                    </div>
+                                    <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="" class="text-decoration-none text-black w-100 h-100">
+                            <div class="card h-100 rounded-5 shadow">
+                                <div class="card-img-top rounded-top-5">
+                                    <img src="{{ asset('images/wisata/bukitcinta.webp') }}" alt="wisata1"
+                                         class="rounded-top-5">
+                                </div>
+                                <div class="card-body d-flex flex-column gap-5">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="card-title">Rome, Italy</h5>
+                                        <h5 class="text-secondary">$ 500</h5>
+                                    </div>
+                                    <p class="card-text"><i class="bi bi-send-fill me-4"></i> 10 Days Trip</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#wisataunik" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#wisataunik" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+{{--    End Wisata Unik--}}
 
     {{-- Rekomendasi --}}
     <section class="rekomendasi-wrapper">
