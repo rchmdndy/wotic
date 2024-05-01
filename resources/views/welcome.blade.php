@@ -14,7 +14,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('images/wisata/bukitcinta.jpg') }}" alt="...">
+                    <img src="{{ asset('images/wisata/dieng kulon.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
