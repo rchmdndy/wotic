@@ -145,9 +145,9 @@ footer h6{
 }
 
 .destination-card {
-    max-width: 1000px; /* Set a maximum width for the card */
-    min-width: 300px; /* Set a minimum width for the card */
-    height: 400px; /* Set a fixed height for the card */
+    max-width: 1000px;
+    min-width: 300px;
+    height: 300px;
 }
 
 .card-list-wisata .card-body {

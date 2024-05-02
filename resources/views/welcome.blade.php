@@ -90,9 +90,7 @@
                             <div class="card-body d-flex flex-column gap-5">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
-                                    <!-- You can add other details like price, duration, etc. here -->
                                 </div>
-                                <!-- You can add other details like price, duration, etc. here -->
                             </div>
                         </div>
                     </a>
