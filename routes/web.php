@@ -64,5 +64,4 @@ Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->gro
 Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->group(function (){
     Route::get('/', 'index')->name('index');
     Route::get('/{id}/detail', 'detail')->name('detail');
-    Route::get('/{id}/detail', 'detail')->name('detail');
 });
