@@ -11,11 +11,16 @@ body{
 .bg-my-primary {
     background-color: #78C6EA;
 }
-
-.navbar-brand {
-    width: 100px;
+#map{
+    padding-top: 100px;
+    margin-top: 20px;
+    height: 400px;
+    width: 400px;
 }
 
+.navbar-brand {
+    width: 250px;
+}
 
 .logo-right{
     width: 50px;
@@ -28,7 +33,7 @@ body{
 }
 
 .logo-footer{
-    width: 100px;
+    width: 200px;
 }
 
 .logo-footer-2{
@@ -65,8 +70,23 @@ footer h6{
     color: #78C6EA;
 }
 
-.hero .carousel-item{
-    height: 100vh;
+.hero .carousel-item {
+    transition: transform 0.5s ease-in-out;
+    width: 1750px;
+    height: 820px;
+
+}
+
+.hero .carousel-item.active {
+    /*transform: rotateY(0deg);*/
+}
+
+.hero .carousel-item-next {
+    /*transform: rotateY(-180deg);*/
+}
+
+.hero .carousel-item-prev {
+    /*transform: rotateY(180deg);*/
 }
 
 .hero .text-wrapper{
@@ -93,20 +113,20 @@ footer h6{
     height: 50px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: #78C6EA; 
-    border: none; 
-    opacity: 1; 
+    /*transform: translateY(-50%);*/
+    background-color: #78C6EA;
+    border: none;
+    opacity: 1;
     border-radius: 100px;
-    color: white; 
+    color: white;
 }
 
 .rekomendasi .carousel-control-prev {
-    left: -3%; 
+    left: -3%;
 }
 
 .rekomendasi .carousel-control-next {
-    right: -3%; 
+    right: -3%;
 }
 
 .carousel-item img{
@@ -118,6 +138,10 @@ footer h6{
 
 .card-bg {
     background-color: rgba(147, 218, 255, 0.46);
+}
+
+.card-important{
+    background-color: rgba(255, 99, 99, 0.5);
 }
 
 .destination-card {
@@ -148,6 +172,13 @@ footer h6{
      width: 100%; /* Auto-adjust width to maintain aspect ratio */
      object-fit: cover; /* Scale images uniformly */
  }
+
+.scrolling-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+}
+
 
 
 .information-wrapper{
@@ -203,7 +234,7 @@ footer h6{
     width: 100%;
     height: 400px;
     overflow: hidden;
-    
+
 }
 
 .wisata-wrapper a:hover .card-title{
