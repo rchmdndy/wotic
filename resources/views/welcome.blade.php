@@ -3,7 +3,7 @@
 @section('content')
     {{-- Hero Section --}}
     <section class="hero">
-        <div id="carouselExampleAutoplaying" class="carousel carousel-fade slide" data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" class="carousel carousel-fade slide position-relative" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -14,7 +14,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-flex" src="{{ asset('images/wisata/bukitcinta.jpg') }}" alt="...">
+                    <img class="img-flex" src="{{ asset('images/wisata/bukitsikunir.webp') }}" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img class="img-flex" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
@@ -27,7 +27,7 @@
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
             <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
-            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>
+{{--            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>--}}
         </div>
     </section>
     {{-- End Hero Section --}}

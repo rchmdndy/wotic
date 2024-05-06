@@ -18,20 +18,3 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::prefix('/v1')->name('api.')->group(function (){
-    Route::prefix('destination')
-        ->controller(\App\Http\Controllers\Api\DestinationApiController::class)
-        ->name('destination.')
-        ->group(function(){
-            Route::get('/getAll/{jenis_wisata}', 'getDestinationType')->name('type');
-            Route::get('/getDetail/{jenis_wisata}/{id}', 'getDestinationDetail')->name('detail');
-            Route::get('/ambilsemua', 'ambilSemua')->name('ambil.semua') ;
-    });
-    Route::prefix('event')
-        ->controller(\App\Http\Controllers\Api\EventApiController::class)
-        ->name('event.')
-        ->group(function (){
-            Route::get('/getAll', 'getAllEvents')->name('getall');
-    });
-//   Route::get();
-});

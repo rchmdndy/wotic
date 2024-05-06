@@ -13,6 +13,6 @@ class HotelController extends Controller
     }
 
     public function detail($id){
-        return view('hotel.detail', ['hotelDetail' => $this->fetchJson("http://serverapi.test/api/v1/hotels/$id/detail")]);
+        return view('hotel.detail', ['hotel' => $this->fetchJson("http://serverapi.test/api/v1/hotels/$id/detail")]);
     }
 }

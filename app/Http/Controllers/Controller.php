@@ -19,6 +19,7 @@ class Controller extends BaseController
         }
         return $data;
     }
+
     public function calculateDistance($lat1, $lon1, $lat2, $lon2)
     {
         // Convert latitude and longitude from degrees to radians

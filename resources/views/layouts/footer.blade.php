@@ -1,18 +1,36 @@
-<footer class="py-4 bg-my-primary text-white mt-5">
-    <div class="container d-flex justify-content-between align-items-center">
-        <div class="logo-footer">
-        <img src="{{ asset('images/logos/logo.png') }}" alt="logo" width="600" height="auto">
-        </div>
-        <div class="d-flex gap-3 align-items-center">
-            <div class="logo-footer-3">
-                <img src="{{ asset('images/logos/logodinas.png') }}" alt="logo">
-            </div>
-            <div class="logo-footer-3">
-                <img src="{{ asset('images/logos/logo2.png') }}" alt="logo">
-            </div>
-        </div>
+
+<footer class="footer body-footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
     </div>
-    <h6 class="text-white mt-4 text-center fw-medium">
-        ©2024 Made with 🧠💻💵 by TIM PBL Politeknik Negeri Semarang
-    </h6>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+    </ul>
+    <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>Wonosobo Tourism Information Center</p>
 </footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+

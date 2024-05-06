@@ -25,7 +25,8 @@
                         Destinasi Wisata
                     </a>
                     <ul class="dropdown-menu">
-                    <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}" class="dropdown-item">Wisata Alam</a></li>
+                        <li><a href="{{ route('destination.all')}}" class="dropdown-item">Tampilkan Semua Wisata</a></li>
+                        <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}" class="dropdown-item">Wisata Alam</a></li>
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}" class="dropdown-item">Wisata Petualangan</a></li>
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'perbelanjaan']) }}" class="dropdown-item">Wisata Perbelanjaan</a></li>
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'kuliner']) }}" class="dropdown-item">Wisata Kuliner</a></li>

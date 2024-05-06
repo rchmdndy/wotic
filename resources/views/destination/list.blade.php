@@ -11,7 +11,7 @@
                             <div class="card-body">
                                 <div class="row row-cols-md-2 row-cols-1 g-1">
                                     <div class="col">
-                                        <img src="{{ $destinasi['image'] }}" alt="Image" class="img-fluid rounded-4" style="margin-bottom: 15px;">
+                                        <img src="{{ $destinasi['image'][0] }}" alt="Image" class="img-fluid rounded-4" style="margin-bottom: 15px;">
                                     </div>
                                     <div class="col" style="padding-left: 20px;">
                                         <h4 class="card-title mb-3">{{ $destinasi['nama_destinasi'] }}</h4>
@@ -22,20 +22,20 @@
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <i class="bi bi-cash fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">{{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : '' }}</h6>
+                                                <h6 class="card-subtitle text-body-secondary">{{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</h6>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="bi bi-currency-dollar fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">{{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : '' }}</h6>
+                                                <i class="bi bi-globe fs-6"></i>
+                                                <h6 class="card-subtitle text-body-secondary">{{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</h6>
                                             </div>
                                             <h5>Jarak</h5>
                                             <div class="d-flex align-items-center gap-2">
                                                 <i class="bi bi-geo-alt fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">20 km</h6>
+                                                <h6 class="card-subtitle text-body-secondary">Dari Semarang {{ $destinasi['jarak_dari_semarang'] }} KM</h6>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <i class="bi bi-geo-alt fs-6"></i>
-                                                <h6 class="card-subtitle text-body-secondary">20 km</h6>
+                                                <h6 class="card-subtitle text-body-secondary">Dari Jogja {{ $destinasi['jarak_dari_jogja'] }} KM</h6>
                                             </div>
                                         </div>
                                     </div>

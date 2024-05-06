@@ -6,7 +6,7 @@
         <div class="d-flex flex-column align-items-center mt-4 gap-4" id="hotelList">
             <!-- Hotel items will be appended here -->
             @foreach($hotelList as $hotel)
-                <a href="{{ route('hotel.detail', ['id' => $hotel['id']]) }}"> // ANCHOR -> ENGKER
+                <a href="{{ route('hotel.detail', ['id' => $hotel['id']]) }}">
                 <div class="card mb-3 card-hotel">
                     <div class="row g-0">
 {{--                        div 1--}}
