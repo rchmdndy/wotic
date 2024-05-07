@@ -1,4 +1,3 @@
-
 <footer class="footer body-footer">
     <div class="waves">
         <div class="wave" id="wave1"></div>

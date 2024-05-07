@@ -17,27 +17,28 @@ class DestinasiController extends Controller
         $destinationList = $this->processDistance($destinationList);
 
         // Pass the updated destination list to the view
-        return view('destination.all', [
-            'destinationList' => $destinationList
+        return view('destination.list', [
+            'destinationList' => $destinationList,
+            'jenis_wisata' => ''
         ]);
     }
     public function fetch_jenis_wisata(string $jenis_wisata){
         // Fetch destinations from API
-        $destinationList = Http::withQueryParameters(['jenis_wisata' => $jenis_wisata])
-            ->get(env('API_SERVER')."getDestinationType");
+        $destinationList = $this->fetchJson(env('API_SERVER')."getDestinationType?jenis_wisata=$jenis_wisata");
 
         // Coordinates of the two points
         $destinationList = $this->processDistance($destinationList);
 
         // Pass the updated destination list to the view
         return view('destination.list', [
-            'destinationList' => $destinationList
+            'destinationList' => $destinationList,
+            'jenis_wisata' => $jenis_wisata
         ]);
     }
 
     public function fetch_detail_wisata($id){
         $hotelList = $this->fetchJson(env("API_SERVER")."getAllHotels");
-        $destinationDetail = $this->fetchJson(env("API_SERVER")."getDetailDestination/$id");
+        $destination = $this->fetchJson(env("API_SERVER")."getDetailDestination/$id");
 
         $hotelCollection = collect($hotelList);
 
@@ -45,11 +46,11 @@ class DestinasiController extends Controller
             return $hotel['koordinat'] != null && $hotel['koordinat_y'] != null;
         });
         // Calculate distance for each hotel and destination
-        $hotels->transform(function ($hotel) use ($destinationDetail) {
+        $hotels->transform(function ($hotel) use ($destination) {
             $latitudeHotel = (float) $hotel['koordinat'];
             $longitudeHotel = (float) $hotel['koordinat_y'];
-            $latitudeDestination = (float) $destinationDetail['destinasi']['koordinat_x'];
-            $longitudeDestination = (float) $destinationDetail['destinasi']['koordinat_y'];
+            $latitudeDestination = (float) $destination['destinasi']['koordinat_x'];
+            $longitudeDestination = (float) $destination['destinasi']['koordinat_y'];
 
             // Check if any of the parsed values are 0
             if ($latitudeHotel == 0 || $longitudeHotel == 0 || $latitudeDestination == 0 || $longitudeDestination == 0) {
@@ -83,7 +84,7 @@ class DestinasiController extends Controller
 
         return view('destination.detail', [
             'hotelList' => $hotelList,
-            'destinationDetail' => $destinationDetail,
+            'destinationDetail' => $destination,
         ]);
     }
 

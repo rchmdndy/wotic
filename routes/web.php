@@ -64,3 +64,9 @@ Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->gro
 Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->group(function (){
     Route::get('/', 'index')->name('index');
 });
+
+Route::get('/coba_layout', function (){
+    return view('destination.detail-modify');
+});
+
+

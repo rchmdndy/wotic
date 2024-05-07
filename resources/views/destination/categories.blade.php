@@ -1,114 +1,183 @@
-@extends('layouts.layout')
+@extends('layouts.custom_layout')
 
-@section('content')
-<div class="container">
-    <h2 class="section-title my-4">Jelajahi Berbagai Destinasi Wonosobo</h2>
-    
-    <div class="row row-cols-md-3 row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-3 g-4">
+@section('stylesheet')
+    <link rel="stylesheet" href="{{ asset('css/categories.css') }}">
+@endsection
 
-       <div class="col highlight-item onpagination-load ">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-              <img src="{{ asset('storage/destination-images/TelagaMenjer.jpg') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Wisata Alam" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Alam</h6>
-             </div>
-          </a>
-       </div>
+@section('custom-content')
+    <div class="container h-100 g-4">
+        <h2 class="h1 text-center">Kategori Wisata</h2>
+        <div class="row align-middle g-5">
 
-       <div class="col highlight-item onpagination-load onhide">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-              <img src="{{ asset('storage/destination-images/fgUKNEOY4iYnNEAN0bh4ok7o6Jg6PtlMq8k7zarl.jpg') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Bali" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Petualangan</h6>
-             </div>
-          </a>
-       </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-alam.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                ALAM</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-petualangan.jpeg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                PETUALANGAN</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'perbelanjaan']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-perbelanjaan.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                PERBELANJAAN</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'kuliner']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-kuliner.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                KULINER</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'industri']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-industri.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                INDUSTRI</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'budaya']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-budaya.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                BUDAYA</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'pertanian']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-pertanian.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                PERTANIAN</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'perdesaan']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-pedesaan.jpeg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                PEDESAAN</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'religi']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-religi.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                RELIGI</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'industri kecil']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-industri-kecil.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                INDUSTRI KECIL</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'edukasi']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-edukasi.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                EDUKASI</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 column">
+                <a href='{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}'>
+                    <div class="card gr-1" style="
+                    background-image:
+                    linear-gradient(rgba(1, 228, 248, 0.5),
+                    rgba(29, 62, 222, 0.5)),
+                    url('{{asset('/images/categories/wisata-buatan.jpg')}}')">
+                        <div class="txt">
+                            <h2>WISATA </br>
+                                BUATAN</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-       <div class="col highlight-item onpagination-load onhide">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'perbelanjaan']) }}">
-              <img src="{{ asset('images/destinationlogos/logodestinasibelanja.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Maluku & Papua" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Perbelanjaan</h6>
-             </div>
-          </a>
-       </div>
-
-       <div class="col highlight-item onpagination-load onhide">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'kuliner']) }}">
-              <img src="{{ asset('storage/destination-images/vRKLpjZm3cko7C3L0rXYN9flsVU3qKQtbOAdeexI.webp') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Kalimantan" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Kuliner</h6>
-             </div>
-          </a>
-       </div>
-
-       <div class="col highlight-item onpagination-load onhide">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'industri']) }}">
-              <img src="{{ asset('images/destinationlogos/logodestinasiindustri.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sulawesi" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Industri</h6>
-             </div>
-          </a>
-       </div>
-
-       <div class="col highlight-item onpagination-load onhide">
-          <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'budaya']) }}">
-              <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-             <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-                <h6 class="text-white fs-2 pb-2 mb-4">Wisata Budaya</h6>
-             </div>
-          </a>
-       </div>
-       <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'pertanian']) }}">
-            <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Pertanian</h6>
-           </div>
-        </a>
-     </div>
-     <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'perdesaan']) }}">
-            <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Perdesaan</h6>
-           </div>
-        </a>
-     </div>
-     <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'religi']) }}">
-            <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Religi</h6>
-           </div>
-        </a>
-     </div>
-     <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'industri kecil']) }}">
-            <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Industri Kecil</h6>
-           </div>
-        </a>
-     </div>
-     <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'edukasi']) }}">
-            <img src="{{ asset('images/destinationlogos/logodestinasiperdesaan.png') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Edukasi</h6>
-           </div>
-        </a>
-     </div>
-     <div class="col highlight-item onpagination-load onhide">
-        <a style="--bs-aspect-ratio: 100%" class="ratio d-block rounded-3 overflow-hidden" href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}">
-            <img src="{{ asset('storage/destination-images/wadaslintang.jpg') }}" class="bg-img w-100 h-100 object-fit-cover position-absolute top-0" alt="Sumatra" loading="lazy">
-           <div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-              <h6 class="text-white fs-2 pb-2 mb-4">Wisata Buatan</h6>
-           </div>
-        </a>
-     </div>
-
+        </div>
     </div>
-    
- </div>
 @endsection
