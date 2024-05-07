@@ -5,11 +5,11 @@ body{
 }
 
 .h-100vh{
-    min-height: 70vh;
+    min-height: 100vh;
 }
 
 .bg-my-primary {
-    background-color: #78C6EA;
+    background-color: #9ad6f1;
 }
 #map{
     padding-top: 100px;
@@ -463,14 +463,12 @@ footer h6{
     align-items: flex-end;
 }
 .footer {
-    position: relative;
+    position: inherit;
     width: 100%;
-    margin-top: 180px;
     background: #3586ff;
     min-height: 100px;
-    padding: 20px 50px;
+    padding: 50px 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -566,7 +564,7 @@ footer h6{
         background-position-x: 1000px;
     }
     100% {
-        background-positon-x: 0px;
+        background-position-x: 0px;
     }
 }
 
@@ -575,6 +573,6 @@ footer h6{
         background-position-x: -1000px;
     }
     100% {
-        background-positon-x: 0px;
+        background-position-x: 0px;
     }
 }

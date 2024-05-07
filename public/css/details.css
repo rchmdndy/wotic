@@ -1,0 +1,129 @@
+.card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+.thumb-sm {
+    height: 36px;
+    width: 36px;
+}
+
+.task-detail .task-dates li {
+    width: 50%;
+    float: left
+}
+
+.task-detail .task-tags .bootstrap-tagsinput {
+    padding: 0;
+    border: none
+}
+
+.task-detail .assign-team a {
+    display: inline-block;
+    margin: 5px 5px 5px 0
+}
+
+.task-detail .files-list .file-box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    padding: 2px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    background-clip: padding-box
+}
+
+.task-detail .files-list .file-box img {
+    line-height: 70px
+}
+
+.task-detail .files-list .file-box p {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.add-new-plus {
+    height: 32px;
+    text-align: center;
+    width: 32px;
+    display: block;
+    line-height: 32px;
+    color: #98a6ad;
+    font-weight: 700;
+    background-color: #e3eaef;
+    border-radius: 50%
+}
+
+.project-sort-item .form-group {
+    margin-right: 30px
+}
+
+.project-sort-item .form-group:last-of-type {
+    margin-right: 0
+}
+
+.project-box {
+    position: relative
+}
+
+.project-box .badge {
+    position: absolute;
+    right: 20px
+}
+
+.project-box h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    overflow: hidden
+}
+
+.project-box ul li {
+    padding-right: 30px
+}
+
+.project-box .project-members a {
+    margin: 0 0 10px -12px;
+    display: inline-block;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, .06), 0 1px 0 0 rgba(0, 0, 0, .02);
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, .06), 0 1px 0 0 rgba(0, 0, 0, .02)
+}
+
+.project-box .project-members a:first-of-type {
+    margin-left: 0
+}
+
+.company-card .company-logo {
+    float: left;
+    height: 60px;
+    width: 60px;
+    border-radius: 3px
+}
+
+.company-card .company-detail {
+    margin: 0 0 50px 75px
+}
+.text-muted {
+    color: #98a6ad!important;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.bootstrap-tagsinput .label-info {
+    background-color: #02c0ce;
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 13px;
+    margin: 3px 1px;
+    border-radius: 3px;
+}

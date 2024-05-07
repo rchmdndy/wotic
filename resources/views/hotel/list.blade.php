@@ -48,34 +48,23 @@
                     </div>
                 </div>
 
-                <script>
-                    $(document).ready(function(){
-                        $('.mapButton').click(function () {
+    <script>
 
-                            var lat = $(this).data('lat');
-                            var lng = $(this).data('lng');
-                            const position = {lat: lat, lng: lng}
-                            var map;
+        const position = {lat: {{$destinationDetail['destinasi']['koordinat_x']}}, lng: {{$destinationDetail['destinasi']['koordinat_y']}}}
+        var map;
 
-                            function initMap() {
-                                map = new google.maps.Map(document.getElementById('map'), {
-                                    center: position,
-                                    zoom: 18
-                                });
-                                const marker = new google.maps.Marker({
-                                    map: map,
-                                    position: position,
-                                });
-                            }
-                            fetch('js/map.js')
-                                 .then(scriptText => {
-                                    const scriptTag = document.createElement('script');
-                                    scriptTag.textContent = scriptText;
-                                    document.body.appendChild(scriptTag);
-                                })
-                                .catch(error => console.error('Error fetching script:', error));
-                        })
-                    })
-                </script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: position,
+                zoom: 18
+            });
+            const marker = new google.maps.Marker({
+                map: map,
+                position: position,
+                title: '{{$destinationDetail['destinasi']['nama_destinasi']}}'
+            });
+        }
+    </script>
+    <script src="/js/map.js" async defer></script>
 
 @endsection
