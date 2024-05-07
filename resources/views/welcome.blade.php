@@ -125,4 +125,8 @@
         </div>
     </section>
     {{-- End Rekomendasi --}}
+{{--    Start Wisata Banner --}}
+    <section class="banner-wrapper">
+
+    </section>
 @endsection

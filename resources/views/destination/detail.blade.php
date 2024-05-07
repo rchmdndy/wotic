@@ -138,7 +138,6 @@
                 });
             }
         </script>
-        <script src="/js/map.js"
-                async defer></script>
+        <script src="/js/map.js" async defer></script>
 
 @endsection
