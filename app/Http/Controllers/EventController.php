@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function fetch_all()
     {
-        $events = $this->fetchJson("http://serverapi.test/api/v1/events");
+        $events = $this->fetchJson(env('API_SERVER')."getEventsForCurrentMonth");
 
         $eventsByMonth = [];
         foreach ($events as $event) {
@@ -26,6 +26,6 @@ class EventController extends Controller
 
     public function detail($id)
     {
-        return view('event.detail', ['eventDetail' => $this->fetchJson("http://serverapi.test/api/v1/events/$id/detail")]);
+        return view('event.detail', ['eventDetail' => $this->fetchJson(env("API_SERVER")."getDetailEvent/$id")]);
     }
 }

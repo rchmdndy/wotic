@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $events = $this->fetchJson('http://serverapi.test/api/v1/events');
-        $attractiveDestinations = $this->fetchJson('http://serverapi.test/api/v1/attractiveDestination');
+        $events = $this->fetchJson(env('API_SERVER')."getEventsForCurrentMonth");
+        $attractiveDestinations = $this->fetchJson(env('API_SERVER').'getAllAttractiveDestination');
         return view('welcome', [
             'eventList' => $events,
             'attractiveDestinationList' => $attractiveDestinations

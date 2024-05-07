@@ -23,7 +23,8 @@ class DestinasiController extends Controller
     }
     public function fetch_jenis_wisata(string $jenis_wisata){
         // Fetch destinations from API
-        $destinationList = $this->fetchJson(env("API_SERVER")."getDestinationType?jenis_wisata=$jenis_wisata");
+        $destinationList = Http::withQueryParameters(['jenis_wisata' => $jenis_wisata])
+            ->get(env('API_SERVER')."getDestinationType");
 
         // Coordinates of the two points
         $destinationList = $this->processDistance($destinationList);
