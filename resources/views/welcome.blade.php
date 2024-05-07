@@ -3,7 +3,7 @@
 @section('content')
     {{-- Hero Section --}}
     <section class="hero">
-        <div id="carouselExampleAutoplaying" class="carousel carousel-fade slide position-relative" data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" class="carousel slide position-relative" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
