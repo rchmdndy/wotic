@@ -8,6 +8,11 @@ body{
     min-height: 100vh;
 }
 
+.img-hero{
+    width: 100%;
+    height: 900px;
+}
+
 .bg-my-primary {
     background-color: #9ad6f1;
 }

@@ -14,13 +14,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-flex" src="{{ asset('images/wisata/bukitsikunir.webp') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/bukitsikunir.webp') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="img-flex" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="img-flex" src="{{ asset('images/events/dieng.jpg') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/events/dieng.jpg') }}" alt="...">
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
             <h1 class="wisata-title text-center">Wisata Unik</h1>
             <div class="wisata d-none d-lg-flex">
                 @foreach($attractiveDestinationList as $destination)
-                    <a href="#" class="text-decoration-none text-black w-100 h-100">
+                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-100 h-100">
                         <div class="card h-100 rounded-5 shadow">
                             <div class="card-img-top rounded-top-5">
                                 <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
@@ -99,34 +99,48 @@
         </div>
     </section>
     {{-- End Wisata Unik --}}
-    {{-- Rekomendasi --}}
+    {{-- Event Start --}}
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
             <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
-            <div id="carouselCalender" class="carousel slide" data-bs-interval="false">
-                <div class="carousel-inner">
+            <div class="card rounded-4 w-75">
+                <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
+                <div class="card-body d-flex flex-column gap-3 px-4">
                     @foreach($eventList as $index => $event)
-                        <div class="carousel-item{{ $index === 0 ? ' active' : '' }}">
-                            <div class="card rounded-4">
-                                <h5 class="card-header text-center bg-my-primary text-white">{{ date('F', strtotime($event['tanggal_mulai'])) }}</h5>
-                                <div class="card-body d-flex flex-column gap-3 px-4">
-                                    <a href="#" class="d-flex align-items-center text-decoration-none text-black">
-                                        <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
-                                            <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
-                                        </i>
-                                        {{ $event['nama_event'] }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="#" class="d-flex align-items-center text-decoration-none text-black">
+                            <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
+                            </i>
+                            {{ $event['nama_event'] }}
+                        </a>
                     @endforeach
                 </div>
             </div>
+                </div>
+    </section>
+    {{-- End Event --}}
+    {{--Start Wisata Banner --}}
+    <section class="wisata-wrapper">
+        <div class="container">
+            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
+            <div class="wisata d-none d-lg-flex">
+                @foreach($bannerDestinationList as $bannerDestination)
+                    <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
+                        <div class="card h-50 rounded-5 shadow">
+                            <div class="card-img-top rounded-top-5">
+                                <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $bannerDestination['nama_destinasi'] }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </section>
-    {{-- End Rekomendasi --}}
-{{--    Start Wisata Banner --}}
-    <section class="banner-wrapper">
+    {{--End Wisata Banner--}}
 
-    </section>
 @endsection
