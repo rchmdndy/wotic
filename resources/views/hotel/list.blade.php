@@ -26,7 +26,6 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
         </div>
     </div>
                 <!-- Map Modal -->
@@ -50,7 +49,7 @@
 
     <script>
 
-        const position = {lat: {{$destinationDetail['destinasi']['koordinat_x']}}, lng: {{$destinationDetail['destinasi']['koordinat_y']}}}
+        const position = {lat: {{$hotel['koordinat']}}, lng: {{$hotel['koordinat_y']}}}
         var map;
 
         function initMap() {
@@ -61,10 +60,10 @@
             const marker = new google.maps.Marker({
                 map: map,
                 position: position,
-                title: '{{$destinationDetail['destinasi']['nama_destinasi']}}'
             });
         }
     </script>
     <script src="/js/map.js" async defer></script>
+    @endforeach
 
 @endsection

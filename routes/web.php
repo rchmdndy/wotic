@@ -50,9 +50,9 @@ Route::prefix('/event')->controller(EventController::class)->name('event.')->gro
 });
 
 // Attractive Destination
-Route::prefix('/attractive_destination')->controller(AtractiveDestinationController::class)->name('Attractive_Destination.')->group(function (){
+Route::prefix('/attractive_destination')->controller(AtractiveDestinationController::class)->name('attractive_destination.')->group(function (){
     Route::get('/','fetch_all')->name('all');
-    Route::get('/{id}/detail', 'fetch_detail')->name('detail');
+    Route::get('/{id}/detail', 'detail')->name('detail');
 });
 // Promo
 Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->group(function (){

@@ -38,13 +38,27 @@ class DestinasiController extends Controller
 
     public function fetch_detail_wisata($id){
         $hotelList = $this->fetchJson(env("API_SERVER")."getAllHotels");
-        $destination = $this->fetchJson(env("API_SERVER")."getDetailDestination/$id");
+        $destination = $this->fetchJson(env('API_SERVER')."getDetailDestination/$id");
+
+        // Explode the transportasi string into an array
+        $transportasiArray = array_map(function ($value) {
+            return filter_var($value, FILTER_VALIDATE_BOOLEAN);
+        }, explode(',', $destination['destinasi']['transportasi']));
+
+        // Add transportasiArray to the destination array
+        $destination['transportasiArray'] = $transportasiArray;
+
+        $jeniswisata = explode(',', $destination['destinasi']['jenis_wisata']);
+
+        $destination['jenis_wisata'] = $jeniswisata;
+
 
         $hotelCollection = collect($hotelList);
 
         $hotels = $hotelCollection->filter(function ($hotel) {
             return $hotel['koordinat'] != null && $hotel['koordinat_y'] != null;
         });
+
         // Calculate distance for each hotel and destination
         $hotels->transform(function ($hotel) use ($destination) {
             $latitudeHotel = (float) $hotel['koordinat'];
@@ -54,9 +68,7 @@ class DestinasiController extends Controller
 
             // Check if any of the parsed values are 0
             if ($latitudeHotel == 0 || $longitudeHotel == 0 || $latitudeDestination == 0 || $longitudeDestination == 0) {
-                // Handle the special case, such as skipping the calculation or treating it differently
-                // For example, you can set distance_to_destination to a default value or null
-                $hotel['distance_to_destination'] = null; // Or any default value you prefer
+                $hotel['distance_to_destination'] = null;
             } else {
                 // Calculate distance for each hotel and destination
                 $hotel['distance_to_destination'] = $this->calculateDistance(
@@ -69,7 +81,6 @@ class DestinasiController extends Controller
 
             return $hotel;
         });
-
 
         // Sort hotels by distance
         $hotels = $hotels->sortBy('distance_to_destination')->sortByDesc('is_important')->filter(function ($hotels){
@@ -85,8 +96,10 @@ class DestinasiController extends Controller
         return view('destination.detail', [
             'hotelList' => $hotelList,
             'destinationDetail' => $destination,
+            'transportasiArray' => $transportasiArray,
         ]);
     }
+
 
     public function categories(){
         return view('destination.categories');
