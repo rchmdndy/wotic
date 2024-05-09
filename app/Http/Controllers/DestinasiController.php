@@ -108,7 +108,7 @@ class DestinasiController extends Controller
 
         $search_result = $this->processDistance($search_result);
 
-        return view('destination.search_results', ['results' => $search_result, 'query' => $query]);
+        return view('destination.search_results', ['destinationList' => $search_result, 'query' => $query]);
     }
 
 
