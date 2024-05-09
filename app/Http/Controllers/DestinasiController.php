@@ -100,6 +100,15 @@ class DestinasiController extends Controller
         ]);
     }
 
+    public function search_destinasi(Request $request)
+    {
+        $query = $request->input('search');
+
+        $search_result = $this->fetchJson(env('API_SERVER').'getDestinationByName', ['search' => $query]);
+
+        return view('destination.search_results', ['results' => $search_result, 'query' => $query]);
+    }
+
 
     public function categories(){
         return view('destination.categories');

@@ -38,6 +38,7 @@ Route::prefix('/')->controller(HomeController::class)->group(function (){
 // Destination
 Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name('destination.')->group(function (){
     Route::get('/','fetch_all')->name('all');
+    Route::get('/search', 'search_destinasi')->name('search');
     Route::get('/categories', 'categories')->name('categories');
     Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
     Route::get('/{id}/detail','fetch_detail_wisata')->name('detail');
@@ -66,7 +67,7 @@ Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->gro
 });
 
 Route::get('/coba_layout', function (){
-    return view('destination.detail-modify');
+    return view('search.search_results');
 });
 
 

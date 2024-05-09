@@ -27,7 +27,13 @@
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
             <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
-{{--            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>--}}
+            <form class="d-flex w-25" role="search" method="get" action="{{route('destination.search')}}">
+                <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control" name="search" placeholder="Cari Destinasi" aria-describedby="button-addon2">
+                    <label for="code1">Cari Destinasi</label>
+                </div>
+                <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search px-2"></i></button>
+            </form>
         </div>
     </section>
     {{-- End Hero Section --}}
