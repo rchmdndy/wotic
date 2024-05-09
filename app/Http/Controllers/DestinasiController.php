@@ -106,6 +106,8 @@ class DestinasiController extends Controller
 
         $search_result = $this->fetchJson(env('API_SERVER').'getDestinationByName', ['search' => $query]);
 
+        $search_result = $this->processDistance($search_result);
+
         return view('destination.search_results', ['results' => $search_result, 'query' => $query]);
     }
 
