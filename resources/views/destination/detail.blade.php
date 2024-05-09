@@ -12,16 +12,16 @@
                         <div class="carousel-inner">
                             @foreach($destinationDetail['image'] as $index => $image)
                                 <div class="carousel-item{{ $index === 0 ? ' active' : '' }}">
-                                    <img src="{{ $image }}" class="d-block w-100" alt="Image">
+                                    <img src="{{ $image }}" class="d-block w-100 h-75 rounded-4" alt="Image">
                                 </div>
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -29,7 +29,7 @@
             @else
                 <!-- Single Image -->
                 <div class="col align-items-center">
-                    <img src="{{ $destinationDetail['image'][0] }}" alt="Image" class="img-fluid rounded-4">
+                    <img src="{{ $destinationDetail['image'][0] }}" alt="Image" class="img-fluid mx-auto d-block rounded-4">
                 </div>
             @endif
             <!-- Destination Details -->
@@ -81,7 +81,7 @@
                 <div class="d-flex m-4 mt-5 py-2">
                     <h2 class="display-6"> <i class="bi bi-compass px-4"></i>Informasi Lokasi</h2>
                 </div>
-                <table class="table table-striped-columns table-hover" style="width: 50%">
+                <table class="table table-striped-columns table-hover" style="width: 40%">
                     <tbody>
                         <tr>
                             <td class="table-info">Kecamatan</td>

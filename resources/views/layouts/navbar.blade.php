@@ -21,7 +21,7 @@
             <div class="navbar-nav mx-auto">
                 <a class="nav-link text-white me-3" href="/"><strong>BERANDA</strong></a> <!-- Tambahkan margin kanan -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                         <strong>DESTINASI WISATA</strong>
                     </a>
                     <ul class="dropdown-menu">

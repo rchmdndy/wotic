@@ -82,8 +82,8 @@
             <h1 class="wisata-title text-center">Wisata Unik</h1>
             <div class="wisata d-none d-lg-flex">
                 @foreach($attractiveDestinationList as $destination)
-                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-100 h-100">
-                        <div class="card h-100 rounded-5 shadow">
+                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
+                        <div class="card rounded-5 shadow">
                             <div class="card-img-top rounded-top-5">
                                 <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
                             </div>
