@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Http;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function fetchJson(string $link){
-        $apiJson = Http::get($link);
+    public function fetchJson(string $link, array $queryParam = []){
+        $apiJson = Http::get($link, $queryParam);
         if ($apiJson->successful()){
             $data = $apiJson->json();
         }else{
