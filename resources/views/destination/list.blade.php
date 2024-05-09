@@ -1,110 +1,105 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3">List Wisata</h1>
+    <style>
 
+
+        .title {
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            background-color: #e9ecef; /* Light gray background for section title */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .card-info {
+            margin-top: auto;
+        }
+
+        .btn {
+            border-radius: 0; /* Make button square */
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        /* Add glass effect */
+        .glass {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+
+    <!-- Add Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <section class="container mt-3">
+        <h1 class="text-center fs-4 mt-3 title">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
-            <!-- Destination items will be appended here -->
+            @foreach($destinationList as $index => $destinasi)
+                <div class="col">
+                    <div class="card h-100 glass">
+                        <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
+                            <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>
+                            <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
+                            <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
+                            <div class="card-info">
+                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>
+                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>
+                            </div>
+                            <a href="{{ route('destination.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
+                                <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </section>
-    <script>
-        // Make AJAX request to the API endpoint
-        fetch('{{ route('api.destination.type', ['jenis_wisata' => $jenis_wisata]) }}')
-            .then(response => response.json())
-            .then(destinasiList => {
-                console.log('Data from API:', destinasiList); // Log the data from the API
-                const destinationListDiv = document.getElementById('destinationList');
-
-                // Iterate over the destination list returned by the API
-                destinasiList.forEach(destinasi => {
-                    console.log('Destination:', destinasi); // Log each destination object
-
-                    const cardDiv = document.createElement('div');
-                    cardDiv.classList.add('col', 'destination-card'); // Add 'destination-card' class
-
-                    const imageSrc = destinasi.image;
-                    console.log('Image source:', imageSrc); // Log the image source
-
-                    const defaultImageSrc = "{{ asset('storage/default.jpg') }}";
-
-                    // Check if the image exists, if not, set it to the default image
-                    const img = new Image();
-                    img.src = imageSrc;
-                    img.onload = function() {
-                        const detailUrl =
-                            `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
-                        const urlWithId = detailUrl.replace(':destinasiId', destinasi.id);
-                        cardDiv.innerHTML = `
-                            <div class="card-content">
-                                <a href="${urlWithId}">
-                                    <div class="card h-100 w-100 card-list-wisata rounded-4 card-bg shadow p-3 mb-2">
-                                        <div class="card-body">
-                                            <div class="row row-cols-md-2 row-cols-1 g-3">
-                                                <div class="col">
-                                                    <img src="${imageSrc}" alt="Image" class="img-fluid rounded-4">
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="card-title mb-3">${destinasi.nama_destinasi}</h5>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-map"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.desa}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-cash fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-geo-alt fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.jenis_wisata}</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        `;
-                    };
-                    img.onerror = function() {
-                        const detailUrl =
-                            `{{ route('destination.detail', ['jenis_wisata' => $jenis_wisata, 'id' => ':destinasiId']) }}`;
-                        const urlWithId = detailUrl.replace(':destinasiId', destinasi.id);
-                        cardDiv.innerHTML = `
-                            <div class="card-content">
-                                <a href="${urlWithId}">
-                                    <div class="card h-100 w-100 card-list-wisata rounded-4">
-                                        <div class="card-body">
-                                            <div class="row row-cols-md-2 row-cols-1 g-3">
-                                                <div class="col">
-                                                    <img src="${defaultImageSrc}" alt="Default Image" class="img-fluid rounded-4">
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="card-title mb-3">${destinasi.nama_destinasi}</h5>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-map"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.desa}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-cash fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-geo-alt fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.jenis_wisata}</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        `;
-                    };
-
-                    destinationListDiv.appendChild(cardDiv);
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    </script>
 @endsection

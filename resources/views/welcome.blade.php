@@ -14,20 +14,20 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('images/wisata/bukitcinta.jpg') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/bukitsikunir.webp') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('images/events/dieng.jpg') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/events/dieng.jpg') }}" alt="...">
                 </div>
             </div>
         </div>
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
-            <h1 class="text-white text-center">Travel, enjoy and live a new and full life</h1>
-            <p class="text-white text-center">Best Destinations around the world</p>
-            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>
+            <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
+            <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
+{{--            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>--}}
         </div>
     </section>
     {{-- End Hero Section --}}
@@ -39,7 +39,7 @@
                 Informasi apa yang anda cari ?
             </h1>
             <div class="d-flex gap-3 mt-3 justify-content-center w-100">
-                <a href="{{ route('destination.category') }}"
+                <a href="{{ route('destination.categories') }}"
                    class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/destinasilogo.png') }}" alt="" />
@@ -76,105 +76,71 @@
         </div>
     </section>
     {{-- End Informasi --}}
-
-    {{-- Rekomendasi --}}
-    <section class="rekomendasi-wrapper">
-        <div class="rekomendasi">
-            <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
-            <div id="carouselCalender" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card rounded-4">
-                            <h5 class="card-header text-center bg-my-primary text-white">January</h5>
-                            <div class="card-body d-flex flex-column gap-3 px-4">
-                                <a href="" class="d-flex align-items-center text-decoration-none text-black">
-                                    <i
-                                        class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
-                                        <span class="position-absolute fs-6">5</span>
-                                    </i>
-                                    Grebeg Sudiro Tahun
-                                </a>
+    {{-- Wisata Unik Start --}}
+    <section class="wisata-wrapper">
+        <div class="container">
+            <h1 class="wisata-title text-center">Wisata Unik</h1>
+            <div class="wisata d-none d-lg-flex">
+                @foreach($attractiveDestinationList as $destination)
+                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
+                        <div class="card rounded-5 shadow">
+                            <div class="card-img-top rounded-top-5">
+                                <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="card rounded-4">
-                            <h5 class="card-header text-center bg-my-primary text-white">February</h5>
-                            <div class="card-body d-flex flex-column gap-3 px-4">
-                                <a href="" class="d-flex align-items-center text-decoration-none text-black">
-                                    <i
-                                        class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
-                                        <span class="position-absolute fs-6">10</span>
-                                    </i>
-                                    Cap Go Meh Singkawang
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="card rounded-4">
-                            <h5 class="card-header text-center bg-my-primary text-white">March</h5>
-                            <div class="card-body d-flex flex-column gap-3 px-4">
-                                <!-- Isi kartu acara di sini -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCalender"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselCalender"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
-    {{-- End Rekomendasi --}}
-@endsection
-
-<script>
-    // Make AJAX request to the API endpoint
-    fetch('https://wotic.id/api/v2/wonosobo/getAllAttractiveDestination')
-        .then(response => response.json())
-        .then(promos => {
-            const promoListDiv = document.getElementById('promoList');
-
-            // Iterate over the promo list returned by the API
-            promos.forEach(promo => {
-                const promoCardDiv = document.createElement('div');
-                promoCardDiv.classList.add('mb-3', 'card-promo');
-                promoCardDiv.addEventListener('click', function() {
-                    window.location.href = `/promo/${promo.id}/detail`;
-                });
-
-                promoCardDiv.innerHTML = `
-                <div class="container">
-                    <h1 class="wisata-title text-center">${promo.title}</h1>
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <a href="" class="text-decoration-none text-black">
-                                <div class="h-100 rounded-5 shadow">
-                                    <img src="${promo.image}" alt="${promo.title}" class="card-img-top rounded-top-5 img-fluid">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${promo.location}</h5>
-                                        <h5 class="text-secondary">$ ${promo.price}</h5>
-                                        <p class="card-text"><i class="bi bi-send-fill me-2"></i> ${promo.duration}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+    {{-- End Wisata Unik --}}
+    {{-- Event Start --}}
+    <section class="rekomendasi-wrapper">
+        <div class="rekomendasi">
+            <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
+            <div class="card rounded-4 w-75">
+                <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
+                <div class="card-body d-flex flex-column gap-3 px-4">
+                    @foreach($eventList as $index => $event)
+                        <a href="#" class="d-flex align-items-center text-decoration-none text-black">
+                            <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
+                            </i>
+                            {{ $event['nama_event'] }}
+                        </a>
+                    @endforeach
                 </div>
-            `;
+            </div>
+                </div>
+    </section>
+    {{-- End Event --}}
+    {{--Start Wisata Banner --}}
+    <section class="wisata-wrapper">
+        <div class="container">
+            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
+            <div class="wisata d-none d-lg-flex">
+                @foreach($bannerDestinationList as $bannerDestination)
+                    <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
+                        <div class="card h-50 rounded-5 shadow">
+                            <div class="card-img-top rounded-top-5">
+                                <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $bannerDestination['nama_destinasi'] }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    {{--End Wisata Banner--}}
 
-                promoListDiv.appendChild(promoCardDiv);
-            });
-        })
-        .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
-        });
-</script>
+@endsection

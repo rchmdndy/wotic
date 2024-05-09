@@ -9,11 +9,6 @@ class HotelController extends Controller
 {
     public function index()
     {
-        return view('hotel.list');
-    }
-    public function detail($id)
-    {
-        $hotel = Hotel::findOrFail($id);
-        return view('hotel.detail', compact('hotel'));
+        return view('hotel.list', ['hotelList' => $this->fetchJson(env('API_SERVER').'getAllHotels')]);
     }
 }

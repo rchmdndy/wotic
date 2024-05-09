@@ -29,8 +29,19 @@ use App\Http\Controllers\AtractiveDestinationController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/about',[HomeController::class, 'about'])->name('about');
+// Home
+Route::prefix('/')->controller(HomeController::class)->group(function (){
+    Route::get('/', 'index')->name('index');
+    Route::get('/about','about')->name('about');
+});
+
+// Destination
+Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name('destination.')->group(function (){
+    Route::get('/','fetch_all')->name('all');
+    Route::get('/categories', 'categories')->name('categories');
+    Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
+    Route::get('/{id}/detail','fetch_detail_wisata')->name('detail');
+});
 
 // Event
 Route::prefix('/event')->controller(EventController::class)->name('event.')->group(function (){
@@ -38,24 +49,24 @@ Route::prefix('/event')->controller(EventController::class)->name('event.')->gro
     Route::get('/{id}/detail', 'detail')->name('detail');
 });
 
-// Destination
-Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name('destination.')->group(function (){
-    Route::get('/','fetch_all')->name('all');
-    Route::get('/category', 'category')->name('category');
-    Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
-    Route::get('/{jenis_wisata}/{id}/detail','fetch_detail_wisata')->name('detail');
-});
 // Attractive Destination
-Route::prefix('/attractive_destination')->controller(AtractiveDestinationController::class)->name('Attractive_Destination.')->group(function (){
+Route::prefix('/attractive_destination')->controller(AtractiveDestinationController::class)->name('attractive_destination.')->group(function (){
     Route::get('/','fetch_all')->name('all');
+    Route::get('/{id}/detail', 'detail')->name('detail');
 });
 // Promo
 Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->group(function (){
     Route::get('/', 'fetch_all')->name('index');
     Route::get('/{id}/detail', 'detail')->name('detail');
 });
-// hotel
+
+// Hotel
 Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->group(function (){
-    Route::get('/getAllHotel', 'index')->name('index');
-    Route::get('/{id}/detail', 'detail')->name('detail');
+    Route::get('/', 'index')->name('index');
 });
+
+Route::get('/coba_layout', function (){
+    return view('destination.detail-modify');
+});
+
+

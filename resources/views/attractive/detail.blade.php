@@ -12,16 +12,16 @@
                         <div class="carousel-inner">
                             @foreach($destinationDetail['image'] as $index => $image)
                                 <div class="carousel-item{{ $index === 0 ? ' active' : '' }}">
-                                    <img src="{{ $image }}" class="d-block w-100 h-75 rounded-4" alt="Image">
+                                    <img src="{{ $image }}" class="d-block w-100" alt="Image">
                                 </div>
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -29,7 +29,7 @@
             @else
                 <!-- Single Image -->
                 <div class="col align-items-center">
-                    <img src="{{ $destinationDetail['image'][0] }}" alt="Image" class="img-fluid mx-auto d-block rounded-4">
+                    <img src="{{ $destinationDetail['image'][0] }}" alt="Image" class="img-fluid rounded-4">
                 </div>
             @endif
             <!-- Destination Details -->
@@ -81,7 +81,7 @@
                 <div class="d-flex m-4 mt-5 py-2">
                     <h2 class="display-6"> <i class="bi bi-compass px-4"></i>Informasi Lokasi</h2>
                 </div>
-                <table class="table table-striped-columns table-hover" style="width: 40%">
+                <table class="table table-striped-columns table-hover" style="width: 60%">
                     <tbody>
                         <tr>
                             <td class="table-info">Kecamatan</td>
@@ -96,25 +96,11 @@
                             <td><h6 class="mb-0 text-body-secondary">{{ $destinationDetail['destinasi']['desa'] }}</h6></td>
                         </tr>
                         <tr>
-                            <td class="table-info">Moda Transportasi</td>
-                            <td>
-                                @if($destinationDetail['transportasiArray'][0])
-                                    <i class="bi bi-airplane px-2">
-                                @endif
-                                @if($destinationDetail['transportasiArray'][1])
-                                    <i class="bi bi-bus-front px-2">
-                                @endif
-                                @if($destinationDetail['transportasiArray'][2])
-                                    <i class="bi bi-train-front px-2">
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-info">Jenis Wisata</td>
+                            <td class="table-info" style="width: 30%">Jenis Wisata</td>
                             <td>
                                 @foreach($destinationDetail['jenis_wisata'] as $jenis)
                                     <span class="badge rounded-pill text-bg-success px-2">{{$jenis}}</span>
-                              @endforeach
+                                @endforeach
                             </td>
                         </tr>
                     </tbody>
@@ -122,44 +108,6 @@
 
                 <div id="map" class="d-flex gap-3 m-4 w-100 border border-info-subtle"></div>
 
-            </div>
-        </div>
-
-        <div class="mt-5 mb-5">
-            <div class="d-flex m-4 mt-5">
-                <h2 class="display-6"> <i class="bi bi-buildings px-4"></i>List Hotel Terdekat</h2>
-            </div>
-            <div class="overflow-auto">
-                <div class="row flex-nowrap">
-                    @foreach($hotelList as $hotel)
-                        <div class="col">
-                            @if($hotel['is_important'] == 'yes')
-                                <div class="card mb-4 card-important rounded-3" style="width: 18rem; height: 25rem;">
-                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 250px">
-                                    <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                                        <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                        <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
-                                        <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
-                                        <p class="card-text mb-3">📌 {{$hotel['distance_to_destination']}} KM</p>
-                                        {{--                                    <p class="card-text">{{ $hotel['alamat'] }}</p>--}}
-                                        <!-- Add other hotel details as needed -->
-                                    </div>
-                                </div>
-                            @else
-                                <div class="card mb-4" style="width: 18rem; height: 25rem;">
-                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 250px">
-                                    <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                                        <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                        <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
-                                        <p class="card-text">📌 {{$hotel['distance_to_destination']}} KM</p>
-{{--                                        <p class="card-text">{{ $hotel['alamat'] }}</p>--}}
-                                        <!-- Add other hotel details as needed -->
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    @endforeach
-                </div>
             </div>
         </div>
     </section>

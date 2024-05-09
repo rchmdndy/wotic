@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Event;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
-        return view('welcome', compact('events'));
+        Carbon::setLocale('id');
+        $events = $this->fetchJson(env('API_SERVER').'getEventsForCurrentMonth');
+        $attractiveDestinations = $this->fetchJson(env('API_SERVER').'getAllAttractiveDestination');
+        $bannerDestinatons = $this->fetchJson(env('API_SERVER').'getHighlightDestinations');
+        $currentMonth = Carbon::now()->monthName;
+        return view('welcome', [
+            'eventList' => $events,
+            'attractiveDestinationList' => $attractiveDestinations,
+            'bannerDestinationList' => $bannerDestinatons,
+            'currentMonth' => $currentMonth
+        ]);
     }
 
     public function about()
