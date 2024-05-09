@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Http;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function fetchJson(string $link){
-        $apiJson = Http::get($link);
+    public function fetchJson(string $link, array $queryParam = []){
+        $apiJson = Http::get($link, $queryParam);
         if ($apiJson->successful()){
             $data = $apiJson->json();
         }else{
@@ -19,6 +19,7 @@ class Controller extends BaseController
         }
         return $data;
     }
+
     public function calculateDistance($lat1, $lon1, $lat2, $lon2)
     {
         // Convert latitude and longitude from degrees to radians

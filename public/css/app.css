@@ -2,14 +2,21 @@
 body{
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    /*zoom: 90%;*/
+
 }
 
 .h-100vh{
-    min-height: 70vh;
+    min-height: 100vh;
+}
+
+.img-hero{
+    width: 100%;
+    height: 900px;
 }
 
 .bg-my-primary {
-    background-color: #78C6EA;
+    background-color: #9ad6f1;
 }
 #map{
     padding-top: 100px;
@@ -31,7 +38,8 @@ body{
     border-width: 2px;
     border-color: #78C6EA;
 }
-
+.dropdown-menu {display: block;visibility: hidden;opacity:0;transform: translateY(-10px);transition:.5s ease all;}
+.dropdown-menu.show {display: block;visibility: visible;opacity:1;transform: translateY(0px);transition:.5s ease all;}
 .logo-footer{
     width: 200px;
 }
@@ -70,24 +78,24 @@ footer h6{
     color: #78C6EA;
 }
 
-.hero .carousel-item {
-    transition: transform 0.5s ease-in-out;
-    width: 1750px;
-    height: 820px;
+/*.hero .carousel-item {*/
+/*    !*transition: transform 0.5s ease-in-out;*!*/
+/*    width: 1750px;*/
+/*    height: 820px;*/
 
-}
+/*}*/
 
-.hero .carousel-item.active {
-    /*transform: rotateY(0deg);*/
-}
+/*.hero .carousel-item.active {*/
+/*    !*transform: rotateY(0deg);*!*/
+/*}*/
 
-.hero .carousel-item-next {
-    /*transform: rotateY(-180deg);*/
-}
+/*.hero .carousel-item-next {*/
+/*    !*transform: rotateY(-180deg);*!*/
+/*}*/
 
-.hero .carousel-item-prev {
-    /*transform: rotateY(180deg);*/
-}
+/*.hero .carousel-item-prev {*/
+/*    !*transform: rotateY(180deg);*!*/
+/*}*/
 
 .hero .text-wrapper{
     position: absolute;
@@ -113,7 +121,7 @@ footer h6{
     height: 50px;
     position: absolute;
     top: 50%;
-    /*transform: translateY(-50%);*/
+    transform: translateY(-50%);
     background-color: #78C6EA;
     border: none;
     opacity: 1;
@@ -131,7 +139,7 @@ footer h6{
 
 .carousel-item img{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     object-fit: cover;
     object-position: center;
 }
@@ -145,9 +153,9 @@ footer h6{
 }
 
 .destination-card {
-    max-width: 1000px; /* Set a maximum width for the card */
-    min-width: 300px; /* Set a minimum width for the card */
-    height: 400px; /* Set a fixed height for the card */
+    max-width: 1000px;
+    min-width: 300px;
+    height: 300px;
 }
 
 .card-list-wisata .card-body {
@@ -221,7 +229,7 @@ footer h6{
 }
 
 .wisata-wrapper{
-    width: 100%;
+    /*width: 70%;*/
     margin-top: 100px;
 }
 
@@ -231,8 +239,8 @@ footer h6{
 }
 
 .wisata-wrapper .card-img-top{
-    width: 100%;
-    height: 400px;
+    width: 50%;
+    height: 50%;
     overflow: hidden;
 
 }
@@ -247,7 +255,7 @@ footer h6{
 }
 
 .wisata {
-    width: 100%;
+    /*width: 100%;*/
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -456,3 +464,125 @@ footer h6{
         padding: 5px;
     }
 }
+.body-footer {
+    display: flex;
+    background: #333;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.footer {
+    position: inherit;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 50px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+    list-style: none;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+.social-icon__link:hover {
+    transform: translateY(-10px);
+}
+
+.menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.menu__link:hover {
+    opacity: 1;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+

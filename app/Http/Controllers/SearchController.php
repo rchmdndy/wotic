@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Destinasi;
 use Illuminate\Http\Request;
-use App\Models\Tempat; // Sesuaikan dengan model Anda
+use App\Models\Tempat;
+use Illuminate\Support\Facades\Http;
+
+// Sesuaikan dengan model Anda
 
 class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $query = $request->input('q');
+        $query = $request->input('search');
 
-        $results = Destinasi::where('nama', 'like', '%' . $query . '%')
-                         ->orWhere('deskripsi', 'like', '%' . $query . '%')
-                         ->get();
+        $search_result = Http::withQueryParameters(['search' => $query])
+            ->get(env('API_SERVER').'getDestinationByName');
 
-        return view('search_results', ['results' => $results, 'query' => $query]);
+        return view('search_results', ['results' => $search_result, 'query' => $query]);
     }
 }

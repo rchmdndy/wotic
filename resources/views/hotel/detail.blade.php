@@ -4,18 +4,18 @@
     <div class="container mt-4">
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4">
             <div class="col">
-                <img src="{{ asset('storage/' . $hotel->image) }}" alt="Hotel Image" class="rounded-4 image-detail">
-                <h4 class="mt-3 fw-medium">{{ $hotel->nama_hotel }}</h4>
+                <img src="{{ asset('storage/' . $hotel['image']) }}" alt="Hotel Image" class="rounded-4 image-detail">
+                <h4 class="mt-3 fw-medium">{{ $hotel['nama_hotel'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/mapslogo.png') }}" alt="Location Logo">
                     </div>
-                    <h6 class="m-0">{{ $hotel->alamat}}</h6>
+                    <h6 class="m-0">{{ $hotel['alamat']}}</h6>
                 </div>
             </div>
             <div class="col">
                 <p class="text-justify">
-                    {{ $hotel->kelas}}
+                    {{ $hotel['kelas']}}
                 </p>
                 <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal"
                         data-bs-target="#exampleModal1">
