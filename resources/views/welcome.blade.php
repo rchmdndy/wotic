@@ -27,7 +27,13 @@
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
             <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
-{{--            <a href="/destination" class="btn btn-primary rounded-pill">Cari Sekarang</a>--}}
+           <div class="input-group mb-3 w-25">
+                <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control" name="code1" placeholder="Code 1" aria-describedby="button-addon2">
+                    <label for="code1">Cari Destinasi</label>
+                </div>
+                <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search px-2"></i></button>
+            </div>
         </div>
     </section>
     {{-- End Hero Section --}}
