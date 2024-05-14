@@ -1,6 +1,13 @@
 @extends('layouts.layout')
 
 @section('content')
+    <style>
+        .card-img-top {
+            height: 200px; /* Atur tinggi gambar sesuai kebutuhan Anda */
+            object-fit: cover; /* Pastikan gambar terpotong atau di-stretch untuk mengisi ruang yang ditentukan */
+        }
+    </style>
+
     <div class="container">
         <h1 class="text-center mb-4 search-results-heading">Hasil Pencarian untuk "{{ $query }}"</h1>
 
