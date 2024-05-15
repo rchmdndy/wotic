@@ -10,14 +10,14 @@
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
                     </div>
-{{--                    <h6 class="m-0">{{ $eventDetail['lokasi'] }}</h6>--}}
+                    <h6 class="m-0">{{ $eventDetail['lokasi'] }}</h6>
                 </div>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
-                    <h6 class="m-0">{{ $eventDetail['tanggal_mulai'] }} - {{ $eventDetail['tanggal_selesai'] }}</h6>
                 </div>
+                    <h6 class="m-0">{{ $eventDetail['tanggal_mulai'] }} - {{ $eventDetail['tanggal_selesai'] }}</h6>
             </div>
             <div class="col">
                 <p class="text-justify">

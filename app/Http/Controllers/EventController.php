@@ -11,7 +11,7 @@ class EventController extends Controller
     public function fetch_all()
     {
         Carbon::setLocale('id');
-        $events = $this->fetchJson(env('API_SERVER')."getEventsForCurrentMonth");
+        $events = $this->fetchJson("http://serverapi.test/api/v1/events");
         $currentMonth = Carbon::now()->monthName;
 
         return view('event.list', ['eventList' => $events, 'currentMonth' => $currentMonth]);

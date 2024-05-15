@@ -9,6 +9,14 @@ class HotelController extends Controller
 {
     public function index()
     {
-        return view('hotel.list', ['hotelList' => $this->fetchJson(env('API_SERVER').'getAllHotels')]);
+        $hotelList = $this->fetchJson(env('API_SERVER')."getAllHotels");
+
+        $hotelCollection = collect($hotelList);
+
+        $hotelList = $hotelCollection->sortByDesc('is_important')->toArray();
+
+
+
+        return view('hotel.list', ['hotelList' => $hotelList]);
     }
 }

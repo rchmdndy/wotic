@@ -90,7 +90,7 @@
                 @foreach($attractiveDestinationList as $destination)
                     <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
                         <div class="card rounded-5 shadow">
-                            <div class="card-img-top rounded-top-5">
+                            <div class="card-img-top h-100 rounded-top-5">
                                 <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
                             </div>
                             <div class="card-body d-flex flex-column gap-5">
@@ -132,7 +132,7 @@
             <div class="wisata d-none d-lg-flex">
                 @foreach($bannerDestinationList as $bannerDestination)
                     <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
-                        <div class="card h-50 rounded-5 shadow">
+                        <div class="card h-100 rounded-5 shadow">
                             <div class="card-img-top rounded-top-5">
                                 <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
                             </div>

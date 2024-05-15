@@ -5,12 +5,13 @@
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4">
             <div class="col">
                 <img src="{{ $promoDetail['image'] }}" alt="image" class="rounded-4 image-detail">
+            </div>
+            <div class="col">
                 <h4 class="mt-3 fw-medium">{{ $promoDetail['nama_promo'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
                     </div>
-{{--                    <h6 class="m-0">Location: {{ $promoDetail['lokasi'] }}</h6>--}}
                 </div>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
@@ -18,8 +19,6 @@
                     </div>
                     <h6 class="m-0">Date: {{ $promoDetail['tanggal_mulai'] }} - {{ $promoDetail['tanggal_selesai'] }}</h6>
                 </div>
-            </div>
-            <div class="col">
                 <p class="text-justify">
                     {{ $promoDetail['deskripsi'] }}
                 </p>

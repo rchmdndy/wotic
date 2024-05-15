@@ -10,7 +10,7 @@
         }
         .section-title {
             font-size: 1.8rem;
-            font-weight: bold;
+            /*font-weight: bold;*/
             margin-bottom: 10px;
             color: #333;
             background-color: #e9ecef; /* Light gray background for section title */
@@ -78,7 +78,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3 title">Hasil Pencarian Destinasi Wisata {{$query}}</h1>
+        <h1 class="text-center fs-4 mt-3 title">Hasil Pencarian Destinasi Wisata "{{$query}}"</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
             @foreach($destinationList as $index => $destinasi)
                 <div class="col">
