@@ -146,7 +146,11 @@ form {
     border-radius: 100px;
     color: white;
 }
-
+.img-fluid {
+    width: 500px;
+    height: 500px;
+  }
+  
 
 .search-results-heading {
     margin-top: 40px; 
