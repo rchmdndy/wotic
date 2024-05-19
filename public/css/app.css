@@ -1,19 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,800;1,9..40,800&family=Raleway:wght@700&display=swap');
 body{
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     /*zoom: 90%;*/
 
 }
-
 .h-100vh{
     min-height: 100vh;
 }
-.fjalla-one-regular {
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
 
 .img-hero{
     width: 100%;
@@ -103,8 +98,8 @@ footer h6{
 /*}*/
 
 .hero .text-wrapper{
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
     font-style: normal;
     position: absolute;
     top: 50%;
@@ -113,7 +108,7 @@ footer h6{
 
 .hero .text-wrapper h1,
 .hero .text-wrapper p{
-    text-shadow: black 0.1em 0.1em;
+    text-shadow: black 0.07em 0.1em;
 }
 
 .bi-calendar span {
@@ -242,7 +237,7 @@ footer h6{
 }
 
 .wisata-title{
-    font-size: 20px;
+    font-size: 50px;
     font-weight: normal;
 }
 
@@ -301,7 +296,7 @@ footer h6{
 }
 
 .rekomendasi-title{
-    font-size: 20px;
+    font-size: 50px;
     font-weight: normal;
 }
 

@@ -5,7 +5,7 @@
 
 
         .title {
-            margin-bottom: 50px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
         .section-title {
@@ -33,7 +33,7 @@
 
         .card-img-top {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
@@ -78,7 +78,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3 title">List Wisata {{$jenis_wisata}}</h1>
+        <h1 class="wisata-title text-center">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
             @foreach($destinationList as $index => $destinasi)
                 <div class="col">

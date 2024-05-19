@@ -14,7 +14,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="img-flex img-hero" src="{{ asset('images/wisata/bukitsikunir.webp') }}" alt="...">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/wonosoboo.jpg') }}" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img class="img-flex img-hero" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">

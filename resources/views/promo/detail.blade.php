@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 @extends('layouts.layout')
 
 @section('content')
@@ -17,9 +18,13 @@
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
-                    <h6 class="m-0">Date: {{ $promoDetail['tanggal_mulai'] }} - {{ $promoDetail['tanggal_selesai'] }}</h6>
+                    <h6 class="m-0">
+                        Date: {{ Carbon::parse($promoDetail['tanggal_mulai'])->format('d-m-Y') }}
+                        - {{ Carbon::parse($promoDetail['tanggal_selesai'])->format('d-m-Y') }}
+                    </h6>
+
                 </div>
-                <p class="text-justify">
+                <p class="text-justify" style="margin-top: 20px">
                     {{ $promoDetail['deskripsi'] }}
                 </p>
 
