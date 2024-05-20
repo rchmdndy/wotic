@@ -2,104 +2,48 @@
 
 @section('content')
     <style>
-
-
-        .title {
-            margin-bottom: 50px;
-            text-transform: uppercase;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            /*font-weight: bold;*/
-            margin-bottom: 10px;
-            color: #333;
-            background-color: #e9ecef; /* Light gray background for section title */
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
-
         .card-img-top {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .card-subtitle {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-
-        .card-info {
-            margin-top: auto;
-        }
-
-        .btn {
-            border-radius: 0; /* Make button square */
-        }
-
-        .btn-icon {
-            font-size: 1.2rem;
-            margin-right: 5px;
-        }
-
-        /* Add glass effect */
-        .glass {
-            background-color: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
+            height: 200px; /* Atur tinggi gambar sesuai kebutuhan Anda */
+            object-fit: cover; /* Pastikan gambar terpotong atau di-stretch untuk mengisi ruang yang ditentukan */
         }
     </style>
 
-    <!-- Add Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <form action="{{ route('destination.search') }}" method="GET" role="search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Cari destinasi..." value="{{ $query }}">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Cari</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-    <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3 title">Hasil Pencarian Destinasi Wisata "{{$query}}"</h1>
-        <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
-            @foreach($destinationList as $index => $destinasi)
-                <div class="col">
-                    <div class="card h-100 glass">
-                        <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
+        <div class="row">
+            @foreach ($results as $result)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ $result['image'][0] ?? 'placeholder.jpg' }}" class="card-img-top" alt="{{ $result['nama_destinasi'] }}">
                         <div class="card-body">
-                            <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
-                            <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>
-                            <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <div class="card-info">
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>
-                            </div>
-                            <a href="{{ route('destination.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
-                                <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
-                            </a>
+                            <h5 class="card-title mb-3" style="font-weight: bold;">{{ $result['nama_destinasi'] }}</h5>
+                            <p class="card-text"><i class="bi bi-geo-alt-fill"></i> Alamat: {{ $result['alamat'] }}</p>
+                            <p class="card-text"><i class="bi bi-cash-stack"></i> Harga Tiket Weekend Local: {{ $result['tiket_weekend_local'] ? 'IDR ' . number_format($result['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
+                            <p class="card-text"><i class="bi bi-cash-stack"></i> Harga Tiket Weekend Internasional: {{ $result['tiket_weekend_internasional'] ? 'IDR ' . number_format($result['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
+                            <p class="card-text"><i class="bi bi-geo-alt"></i> Jarak dari Semarang: {{ $result['jarak_dari_semarang'] }}</p>
+                            <p class="card-text"><i class="bi bi-geo-alt"></i> Jarak dari Jogja: {{ $result['jarak_dari_jogja'] }}</p>
+
+                            <a href="{{ route('destination.detail', ['id' => $result['id']]) }}" class="btn btn-primary">Detail</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-    </section>
+
+        @if (empty($results))
+            <p class="text-center">Tidak ada hasil yang ditemukan.</p>
+        @endif
+    </div>
 @endsection

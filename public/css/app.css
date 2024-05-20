@@ -117,6 +117,24 @@ footer h6{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/* Form pencarian */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Sesuaikan dengan kebutuhan Anda */
+}
+
+/* Input pencarian */
+#search-container {
+    width: 250px; /* Sesuaikan lebar input dengan kebutuhan Anda */
+    margin-right: 10px; /* Jarak antara input dan tombol pencarian */
+}
+
+/* Tombol pencarian */
+#button-addon2 {
+    padding: 8px 16px; /* Sesuaikan padding tombol dengan kebutuhan Anda */
+}
 
 .rekomendasi .carousel-control-prev,
 .rekomendasi .carousel-control-next {
@@ -130,6 +148,17 @@ footer h6{
     opacity: 1;
     border-radius: 100px;
     color: white;
+}
+.img-fluid {
+    width: 500px;
+    height: 500px;
+  }
+  
+
+.search-results-heading {
+    margin-top: 40px; 
+    margin-bottom: 20px; 
+    font-size: 30px;
 }
 
 .rekomendasi .carousel-control-prev {
