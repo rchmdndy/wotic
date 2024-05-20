@@ -11,9 +11,9 @@
     <div class="container">
         <div class="row justify-content-center mb-4">
             <div class="col-md-8">
-                <form action="{{ route('destination.search') }}" method="GET">
+                <form action="{{ route('destination.search') }}" method="GET" role="search">
                     <div class="input-group">
-                        <input type="text" name="query" class="form-control" placeholder="Cari destinasi..." value="{{ $query }}">
+                        <input type="text" name="search" class="form-control" placeholder="Cari destinasi..." value="{{ $query }}">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">Cari</button>
                         </div>
@@ -41,7 +41,7 @@
                 </div>
             @endforeach
         </div>
-        
+
         @if (empty($results))
             <p class="text-center">Tidak ada hasil yang ditemukan.</p>
         @endif
