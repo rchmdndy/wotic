@@ -2,27 +2,26 @@
 
 @section('content')
     <div class="container mt-4">
-        <a href="{{ route('event.index') }}" class="btn btn-primary btn-sm rounded-pill">Back</a>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4">
             <div class="col">
-                <img src="{{ asset('storage/' . $event->image) }}" alt="image" class="rounded-4 image-detail">
-                <h4 class="mt-3 fw-medium">{{ $event->nama_event }}</h4>
+                <img src="{{ $eventDetail['image'] }}" alt="image" class="rounded-4 image-detail">
+                <h4 class="mt-3 fw-medium">{{ $eventDetail['nama_event'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
                     </div>
-                    <h6 class="m-0">{{ $event->lokasi }}</h6>
+                    <h6 class="m-0">{{ $eventDetail['lokasi'] }}</h6>
                 </div>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
-                    <h6 class="m-0">{{ $event->tanggal_mulai }} - {{ $event->tanggal_selesai }}</h6>
                 </div>
+                    <h6 class="m-0">{{ $eventDetail['tanggal_mulai'] }} - {{ $eventDetail['tanggal_selesai'] }}</h6>
             </div>
             <div class="col">
                 <p class="text-justify">
-                    {{ $event->deskripsi }}
+                    {{ $eventDetail['deskripsi'] }}
                 </p>
                 <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal"
                     data-bs-target="#exampleModal1">

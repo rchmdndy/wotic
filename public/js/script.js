@@ -5,6 +5,12 @@ document.querySelector("#Hmenu").onclick = () => {
   navbarNav.classList.toggle("active");
 };
 
+var myCarousel = document.querySelector('#carouselExampleIndicators')
+    var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 4000, // Interval perubahan gambar dalam milidetik
+        wrap: true // Mengaktifkan perputaran gambar
+    })
+
 const Hmenu = document.querySelector("#Hmenu");
 
 document.addEventListener("click", function (e) {

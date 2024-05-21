@@ -3,41 +3,50 @@
 @section('content')
     {{-- Hero Section --}}
     <section class="hero">
-        <video autoplay muted loop class="video-hero">
-            <source src="{{ asset('videos/video.mp4') }}" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <div class="d-flex flex-column align-items-center justify-content-center gap-[20px]">
-            <h1 class="title-hero">
-                Let's Explore Wonosobo
-            </h1>
-            <p class="subtitle-hero">
-                Pesan dan jelajahi destinasi baru dengan mudah dari mana saja
-            </p>
+        <div id="carouselExampleAutoplaying" class="carousel slide position-relative" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/wonosoboo.jpg') }}" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="img-flex img-hero" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="img-flex img-hero" src="{{ asset('images/events/dieng.jpg') }}" alt="...">
+                </div>
+            </div>
+        </div>
+        <div class="text-wrapper w-100 d-flex flex-column align-items-center">
+            <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
+            <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
+            <form class="d-flex w-25" role="search" method="get" action="{{route('destination.search')}}">
+            <div class="form-floating flex-grow-1" id="search-container">
+                <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" onfocus="removePlaceholder()">
+                <label for="search-input" id="search-label">Cari Destinasi</label>
+            </div>
+            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search px-2"></i></button>
+            </form>
         </div>
     </section>
     {{-- End Hero Section --}}
-    {{-- Search --}}
-    <section class="search-wrapper">
-        <div class="search bg-white shadow mx-auto p-2 rounded-5">
-            <div class="d-flex align-items-center gap-1 bg-my-primary py-1 px-3 rounded-4">
-                <button class="button-search">
-                    <i class="bi bi-search"></i>
-                </button>
-                <input type="text" class="input-search" placeholder="Cari Destinasi" />
-            </div>
-        </div>
-    </section>
-    {{-- End Search --}}
+
     {{-- Informasi --}}
     <section class="information-wrapper">
         <div class="information w-100 d-flex flex-column align-items-center">
             <h1 class="information-title">
                 Informasi apa yang anda cari ?
             </h1>
-            <div class="d-flex gap-3 mt-3">
-                <a href="{{route('destination.index')}}"
-                    class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+            <div class="d-flex gap-3 mt-3 justify-content-center w-100">
+                <a href="{{ route('destination.categories') }}"
+                   class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/destinasilogo.png') }}" alt="" />
                     </div>
@@ -45,7 +54,7 @@
                         Destinasi wisata
                     </p>
                 </a>
-                <a href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a href="{{route('promo.index')}}" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/promologo.png') }}" alt="" />
                     </div>
@@ -72,130 +81,78 @@
             </div>
         </div>
     </section>
-    {{-- End Infromasi --}}
-    {{-- Wisata Unik --}}
+    {{-- End Informasi --}}
+    {{-- Wisata Unik Start --}}
     <section class="wisata-wrapper">
-        <div class="w-100 d-flex flex-column align-items-center wisata">
-            <h1 class="wisata-title">Wisata Unik</h1>
-            <div class="wisata-wrapper-box">
-                <div class="wisata-box">
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/candiborobudur.webp') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Candi Borobudur
-                        </p>
+        <div class="container">
+            <h1 class="wisata-title text-center">Wisata Unik</h1>
+            <div class="wisata d-none d-lg-flex">
+                @foreach($attractiveDestinationList as $destination)
+                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
+                        <div class="card rounded-5 shadow">
+                            <div class="card-img-top h-100 rounded-top-5">
+                                <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
+                                </div>
+                            </div>
+                        </div>
                     </a>
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/telagawarna.jpeg') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Telaga Warna
-                        </p>
-                    </a>
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/bukitsikunir.webp') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Bukit Sikunir
-                        </p>
-                    </a>
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/kebunteh.webp') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Kebun Teh
-                        </p>
-                    </a>
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/bukitcinta.webp') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Bukit Cinta
-                        </p>
-                    </a>
-                    <a href="#" class="box"
-                        style="background-image: url('{{ asset('images/wisata/gunungprau.webp') }}')">
-                        <p class="box-text bg-black bg-opacity-50">
-                            Gunung Prau
-                        </p>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
     {{-- End Wisata Unik --}}
-    {{-- Rekomendasi --}}
+    {{-- Event Start --}}
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
-            <h1 class="rekomendasi-title">
-                Rekomendasi Wisata & Event
-            </h1>
-            <div class="d-flex flex-md-row flex-column justify-content-between w-100 mt-3 gap-3">
-                <div class="d-flex flex-column gap-3 p-2 w-100 w-md-50">
-                    <h1 class="text-center fw-normal rekomendasi-title">Wisata</h1>
-                    <div class="w-100 d-flex flex-wrap gap-2 justify-content-center">
-                        <a href="#" class="box"
-                            style="background-image: url('{{ asset('images/wisata/candiborobudur.webp') }}')">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Candi Borobudur
-                            </p>
-                        </a>
-                        <a href="#" class="box"
-                            style="background-image: url('{{ asset('images/wisata/telagawarna.jpeg') }}')">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Telaga Warna
-                            </p>
-                        </a>
-                        <a href="#" class="box"
-                            style="background-image: url('{{ asset('images/wisata/bukitsikunir.webp') }}')">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Bukit Sikunir
-                            </p>
-                        </a>
-                        <a href="#" class="box"
-                            style="background-image: url('{{ asset('images/wisata/kebunteh.webp') }}')">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Kebun Teh
-                            </p>
-                        </a>
-                        <a href="#" class="box"
-                            style="background-image: url('{{ asset('images/wisata/bukitcinta.webp') }}')">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Bukit Cinta
-                            </p>
-                        </a>
-                        <a href="#" class="box" style="background-color: #F2F2F2">
-                            <p class="box-text bg-black bg-opacity-50">
-                                Lainnya
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="container mt-4">
-                    <div class="card p-2 rounded-6" onclick="window.location.href='/event'" style="background-color: #EDEDFF;">
-                        <h3 class="fw-medium mb-0 text-center" style="font-size: 1.25rem; color: black; padding: 1rem">Event</h3>
-                        <div class="d-flex flex-column align-items-center gap-1">
-                            @foreach ($events as $event)
-                                <div class="card mb-3 card-event" onclick="window.location.href='/event/{{ $event->id }}/detail'" style="max-width: 50rem; background-color: #d2d0d07b;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="{{ asset('storage/' . $event->image) }}" class="img-fluid"
-                                                alt="{{ $event->nama_event }}" style="max-width: 100%; height: auto;">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="font-size: 1rem;">{{ $event->nama_event }}
-                                                </h5>
-                                                <p class="card-text"><small class="text-body-secondary">
-                                                        {{ $event->tanggal_mulai }} -
-                                                        {{ $event->tanggal_selesai }}</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+            <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
+            <div class="card rounded-4 w-75">
+                <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
+                <div class="card-body d-flex flex-column gap-3 px-4">
+                    @if(empty($eventList))
+                        <div class="d-flex align-items-center text-decoration-none text-black">
+                            Tidak ada event bulan ini
                         </div>
-                    </div>
+                    @else
+                        @foreach($eventList as $index => $event)
+                            <a href="#" class="d-flex align-items-center text-decoration-none text-black">
+                                <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                    <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
+                                </i>
+                                {{ $event['nama_event'] }}
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
-        </div>
+                </div>
+    </section>
+    {{-- End Event --}}
+    {{--Start Wisata Banner --}}
+    <section class="wisata-wrapper mb-5">
+        <div class="container">
+            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
+            <div class="wisata d-none d-lg-flex">
+                @foreach($bannerDestinationList as $bannerDestination)
+                    <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
+                        <div class="card h-100 rounded-5 shadow">
+                            <div class="card-img-top rounded-top-5">
+                                <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $bannerDestination['nama_destinasi'] }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </section>
-    {{-- End Rekomendasi --}}
+    {{--End Wisata Banner--}}
+
 @endsection

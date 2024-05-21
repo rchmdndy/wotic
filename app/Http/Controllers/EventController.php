@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
+    public function fetch_all()
     {
-        $events = Event::all();
-        return view('event.index', compact('events'));
+        Carbon::setLocale('id');
+        $events = $this->fetchJson("http://serverapi.test/api/v1/events");
+        $currentMonth = Carbon::now()->monthName;
+
+        return view('event.list', ['eventList' => $events, 'currentMonth' => $currentMonth]);
     }
-    
+
+
     public function detail($id)
     {
-        $event = Event::findOrFail($id);
-        return view('event.detail', compact('event'));
+        return view('event.detail', ['eventDetail' => $this->fetchJson(env('API_SERVER')."getDetailEvent/$id")]);
     }
 }
