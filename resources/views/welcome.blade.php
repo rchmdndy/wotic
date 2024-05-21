@@ -37,7 +37,7 @@
         </div>
     </section>
     {{-- End Hero Section --}}
-    
+
     {{-- Informasi --}}
     <section class="information-wrapper">
         <div class="information w-100 d-flex flex-column align-items-center">
@@ -112,21 +112,27 @@
             <div class="card rounded-4 w-75">
                 <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
                 <div class="card-body d-flex flex-column gap-3 px-4">
-                    @foreach($eventList as $index => $event)
-                        <a href="#" class="d-flex align-items-center text-decoration-none text-black">
-                            <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
-                                <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
-                            </i>
-                            {{ $event['nama_event'] }}
-                        </a>
-                    @endforeach
+                    @if(empty($eventList))
+                        <div class="d-flex align-items-center text-decoration-none text-black">
+                            Tidak ada event bulan ini
+                        </div>
+                    @else
+                        @foreach($eventList as $index => $event)
+                            <a href="#" class="d-flex align-items-center text-decoration-none text-black">
+                                <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
+                                    <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
+                                </i>
+                                {{ $event['nama_event'] }}
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
                 </div>
     </section>
     {{-- End Event --}}
     {{--Start Wisata Banner --}}
-    <section class="wisata-wrapper">
+    <section class="wisata-wrapper mb-5">
         <div class="container">
             <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
             <div class="wisata d-none d-lg-flex">

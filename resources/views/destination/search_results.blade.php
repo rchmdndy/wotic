@@ -23,7 +23,7 @@
         </div>
 
         <div class="row">
-            @foreach ($results as $result)
+            @foreach ($destinationList as $result)
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="{{ $result['image'][0] ?? 'placeholder.jpg' }}" class="card-img-top" alt="{{ $result['nama_destinasi'] }}">
@@ -41,8 +41,7 @@
                 </div>
             @endforeach
         </div>
-
-        @if (empty($results))
+        @if (empty($destinationList))
             <p class="text-center">Tidak ada hasil yang ditemukan.</p>
         @endif
     </div>

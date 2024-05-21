@@ -70,4 +70,8 @@ Route::get('/coba_layout', function (){
     return view('search.search_results');
 });
 
+Route::get('/map_redirect/{lat}/{lng}', function($lat, $lng){
+    return redirect()->away("https://www.google.com/maps?q={$lat},{$lng}");
+})->name('map_redirect');
+
 

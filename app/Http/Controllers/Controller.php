@@ -10,14 +10,22 @@ use Illuminate\Support\Facades\Http;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function fetchJson(string $link, array $queryParam = []){
-        $apiJson = Http::get($link, $queryParam);
-        if ($apiJson->successful()){
-            $data = $apiJson->json();
-        }else{
-            $data = [];
+    public function fetchJson(string $link, array $queryParam = [], $tries=1){
+        try {
+            $apiJson = Http::get($link, $queryParam);
+            if ($apiJson->successful()){
+                $data = $apiJson->json();
+            }else{
+                $data = [];
+            }
+            return $data;
+        }catch(\Exception $e){
+            $tries += 1;
+            if ($tries < 10){
+                return $this->fetchJson($link, $queryParam);
+            }
+            return $tries;
         }
-        return $data;
     }
 
     public function calculateDistance($lat1, $lon1, $lat2, $lon2)

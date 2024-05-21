@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function index()
     {
         Carbon::setLocale('id');
-        $events = $this->fetchJson(env('API_SERVER').'getEventsForCurrentMonth');
+        $events = $this->fetchJson("http://serverapi.test/api/v1/events");
         $attractiveDestinations = $this->fetchJson(env('API_SERVER').'getAllAttractiveDestination');
         $bannerDestinatons = $this->fetchJson(env('API_SERVER').'getHighlightDestinations');
         $currentMonth = Carbon::now()->monthName;
