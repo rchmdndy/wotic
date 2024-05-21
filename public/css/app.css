@@ -3,6 +3,7 @@ body{
     overflow-x: hidden;
     font-family: 'DM Sans', sans-serif;
     /*zoom: 90%;*/
+    background-color:#fff;
 
 }
 .h-100vh{
@@ -598,6 +599,72 @@ form {
     opacity: 0.7;
     bottom: 20px;
     animation: animate 3s linear infinite;
+}
+
+#handboy
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 98% 98%;
+    transform-box: fill-box;
+    
+}
+
+
+#girllight
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 0% 97%;
+    transform-box: fill-box;
+}
+
+#hairgirl
+{
+    animation: swinghair ease-in-out 1.3s infinite alternate;
+   transform-origin: 60% 0%;
+    transform-box: fill-box;
+  
+}
+
+#zero
+{
+  transform-origin:bottom;
+  transform-box:fill-box;
+  
+}
+.error-container {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px; /* Menambahkan margin bawah untuk menaikkan posisi */
+}
+
+.error-container button {
+    background-color: #2F1829;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+/*************swing************/
+@keyframes swing {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+
+/*************swing hair************/
+@keyframes swinghair {
+    0% { transform: rotate(6deg); }
+    100% { transform: rotate(-6deg); }
 }
 
 @keyframes animateWaves {
