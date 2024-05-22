@@ -636,6 +636,21 @@ form {
     text-align: center;
 }
 
+.error-container h2 {
+    color: #2F1829; /* Atur warna teks menjadi warna yang diinginkan */
+    text-decoration: none !important; /* Hilangkan underline dengan menggunakan !important */
+    border: none; /* Pastikan tidak ada border */
+    outline: none; /* Pastikan tidak ada outline */
+    display: inline; /* Pastikan display tidak menyebabkan underline */
+}
+
+.error-container h2:focus, 
+.error-container h2:hover, 
+.error-container h2:visited, 
+.error-container h2:active {
+    text-decoration: none !important; /* Hilangkan underline pada semua pseudo-class */
+}
+
 .error-container p {
     font-size: 18px;
     color: #666;
@@ -649,9 +664,13 @@ form {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin-top: 0px; /* Atur margin atas ke 0px */
+    margin-bottom: 20px; /* Atur margin bawah ke 20px */
 }
+
+
+
+
 
 
 /*************swing************/
