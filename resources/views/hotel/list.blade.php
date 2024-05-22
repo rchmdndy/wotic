@@ -6,7 +6,7 @@
 
 <section class="light">
     <div class="container py-2">
-        <div class="h1 text-center text-dark" id="pageHeaderTitle">My Cards Light</div>
+        <div class="h1 text-center text-dark" id="pageHeaderTitle">Hotel</div>
         @foreach($hotelList as $hotel)
                 <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
