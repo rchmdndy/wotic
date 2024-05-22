@@ -321,7 +321,9 @@
 <div class="error-container">
     <h2>Ups! Halaman tidak ditemukan.</h2>
     <p>Maaf, halaman yang Anda cari tidak tersedia.</p>
-    <button onclick="window.location.href='/';">Kembali ke Beranda</button>
+    <a href="/">
+        <button >Kembali ke Beranda</button>
+    </a>
 </div>
 
 
