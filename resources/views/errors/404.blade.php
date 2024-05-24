@@ -322,7 +322,7 @@
     <h2>Ups! Halaman tidak ditemukan.</h2>
     <p>Maaf, halaman yang Anda cari tidak tersedia.</p>
     <a href="/">
-        <button >Kembali ke Beranda</button>
+        <button class="btn btn-primary">Kembali ke Beranda</button>
     </a>
 </div>
 
