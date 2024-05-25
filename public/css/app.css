@@ -269,7 +269,6 @@ form {
 
 .wisata-title{
     font-size: 50px;
-    font-weight: normal;
 }
 
 .wisata-wrapper .card-img-top{
@@ -405,17 +404,6 @@ form {
         width: 90%;
     }
 
-    .logo-footer{
-        width: 50px;
-    }
-
-    .logo-footer-2{
-        width: 100px;
-    }
-
-    .logo-footer-3{
-        width: 30px;
-    }
 
     footer h6{
         font-size: 10px;
@@ -504,16 +492,6 @@ form {
     justify-content: flex-end;
     align-items: flex-end;
 }
-.footer {
-    position: inherit;
-    width: 100%;
-    background: #3586ff;
-    min-height: 100px;
-    padding: 50px 50px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 
 .social-icon,
 .menu {
@@ -527,6 +505,7 @@ form {
 
 .social-icon__item,
 .menu__item {
+    font-family: "DM Sans", sans-serif;
     list-style: none;
 }
 
@@ -542,6 +521,7 @@ form {
 }
 
 .menu__link {
+    font-family: "DM Sans", sans-serif;
     font-size: 1.2rem;
     color: #fff;
     margin: 0 10px;
@@ -606,7 +586,7 @@ form {
    animation: swing ease-in-out 1.3s infinite alternate;
     transform-origin: 98% 98%;
     transform-box: fill-box;
-    
+
 }
 
 
@@ -622,14 +602,14 @@ form {
     animation: swinghair ease-in-out 1.3s infinite alternate;
    transform-origin: 60% 0%;
     transform-box: fill-box;
-  
+
 }
 
 #zero
 {
   transform-origin:bottom;
   transform-box:fill-box;
-  
+
 }
 .error-container {
     margin-top: 0px;
@@ -644,9 +624,9 @@ form {
     display: inline; /* Pastikan display tidak menyebabkan underline */
 }
 
-.error-container h2:focus, 
-.error-container h2:hover, 
-.error-container h2:visited, 
+.error-container h2:focus,
+.error-container h2:hover,
+.error-container h2:visited,
 .error-container h2:active {
     text-decoration: none !important; /* Hilangkan underline pada semua pseudo-class */
 }
