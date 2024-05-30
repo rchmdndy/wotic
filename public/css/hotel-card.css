@@ -40,9 +40,9 @@ a, a:hover {
     overflow: hidden;
     position: relative;
     color: #ffffff;
-    align-items: center;
+    align-items: stretch;
     background-color: #e1e5ea;
-    height: 375px;
+    height: 400px;
     width: 100%;
     max-width: 650px;
 }
