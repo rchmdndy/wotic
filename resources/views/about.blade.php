@@ -37,7 +37,7 @@
             <p class="lead fs-4 text-secondary mb-3">Selamat datang di Wotic - pusat informasi pariwisata terkemuka untuk destinasi wisata di Wonosobo,
                 Indonesia!
                 </p>
-            <p class="mb-5">Kami bertekad untuk memberikan pengalaman tak terlupakan kepada para wisatawan yang ingin menjelajahi keindahan alam, petualangan seru, perbelanjaan, kuliner lezat, budaya yang kaya, serta acara menarik sepanjang tahun dikota ini.Dengan informasi lengkap dan terpercaya tentang destinasi wisata di Wonosobo, foto-foto yang memukau, dan kalender acara yang terus diperbarui, Wotic menjadi teman setia Anda dalam merencanakan petualangan yang tak terlupakan. Jelajahi keberagaman destinasi wisata kami, mulai dari alam yang memukau hingga kuliner yang lezat, dan tetap terhubung dengan event - event spesial melalui fitur pencarian yang mudah digunakan.Mari temukan keindahan dan kekayaan Wonosobo bersama Wotic! Selamat menikmati perjalanan Anda dan ciptakan
+            <p class="mb-5 text-justify">Kami bertekad untuk memberikan pengalaman tak terlupakan kepada para wisatawan yang ingin menjelajahi keindahan alam, petualangan seru, perbelanjaan, kuliner lezat, budaya yang kaya, serta acara menarik sepanjang tahun dikota ini.Dengan informasi lengkap dan terpercaya tentang destinasi wisata di Wonosobo, foto-foto yang memukau, dan kalender acara yang terus diperbarui, Wotic menjadi teman setia Anda dalam merencanakan petualangan yang tak terlupakan. Jelajahi keberagaman destinasi wisata kami, mulai dari alam yang memukau hingga kuliner yang lezat, dan tetap terhubung dengan event - event spesial melalui fitur pencarian yang mudah digunakan.Mari temukan keindahan dan kekayaan Wonosobo bersama Wotic! Selamat menikmati perjalanan Anda dan ciptakan
                 pengalaman tak terlupakan di kota ini!</p>
             <div class="row gy-4 gy-md-0 gx-xxl-5X">
               <div class="col-12 col-md-6">
@@ -74,5 +74,5 @@
   </div>
 </section>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        
+
 @endsection
