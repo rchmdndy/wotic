@@ -62,7 +62,7 @@
                         Promo wisata
                     </p>
                 </a>
-                <a href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a id="notImplemented" href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/umkmlogo.png') }}" alt="" />
                     </div>
@@ -70,7 +70,7 @@
                         UMKM wisata
                     </p>
                 </a>
-                <a href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a id="notImplemented" href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/lainnyalogo.png') }}" alt="" />
                     </div>
@@ -88,7 +88,7 @@
             <h1 class="wisata-title text-center">Wisata Unik</h1>
             <div class="wisata d-none d-lg-flex">
                 @if(isset($attractiveDestinationList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black">
+                    <div class="d-flex align-items-center text-decoration-none text-black text-center">
                         <a href="/" class="btn btn-warning">
                             Gagal mendapatkan data event, silahkan refresh halaman
                         </a>
@@ -177,4 +177,20 @@
     </section>
     {{--End Wisata Banner--}}
 
+    <script>
+        // Select all anchor tags with the id 'myAnchor'
+        const anchors = document.querySelectorAll('#notImplemented');
+
+        // Loop through each anchor and add click event listener
+        anchors.forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                // Prevent default action
+                event.preventDefault();
+
+                // Trigger alert
+                alert('Fitur belum diimplementasi');
+            });
+        });
+
+    </script>
 @endsection
