@@ -1,105 +1,106 @@
-@extends('layouts.layout')
+@extends('layouts.custom_layout')
+@section('head_content')
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        font-size: 3rem;
+        color: #333; /* Adjust color as needed */
+    }
 
-@section('content')
-    <style>
+    .card-custom {
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+        padding-top: 170px; /* Adjust padding to accommodate image height */
+    }
 
+    .card-custom img {
+        position: absolute;
+        top: -20px; /* Move image further up */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 200px; /* Set a fixed height for the images */
+        object-fit: cover; /* Ensure the image covers the entire area */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .title {
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            background-color: #e9ecef; /* Light gray background for section title */
-            padding: 10px;
-            border-radius: 10px;
-        }
+    .card-body-custom {
+        padding-top: 20px; /* Adjust padding to account for moved image */
+    }
 
-        .card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease-in-out;
-        }
+    .card-title {
+        font-size: 1.25rem;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
+    .card-text {
+        font-size: 0.7rem;
+    }
 
-        .card-img-top {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
+    .btn-custom {
+        border-radius: 20px;
+        padding: 0.4rem 0rem;
+        display: block;
+        width: 100%;
+        max-width: 130px;
+        margin: 0 auto;
+        font-size: 0.7rem;
 
-        .card-body {
-            padding: 20px;
-        }
+    }
 
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    .icon {
+        margin-right: 5px;
+        color: #FF5733; /* Change icon color */
+    }
 
-        .card-subtitle {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
+    .separator {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin: 10px 0;
+    }
 
-        .card-info {
-            margin-top: auto;
-        }
+</style>
+@endsection
 
-        .btn {
-            border-radius: 0; /* Make button square */
-        }
+@section('custom-content')
+<section id="page-title" class="page-title">
+    DESTINASI WISATA
+</section>
 
-        .btn-icon {
-            font-size: 1.2rem;
-            margin-right: 5px;
-        }
-
-        /* Add glass effect */
-        .glass {
-            background-color: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-        }
-    </style>
-
-    <!-- Add Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-    <section class="container mt-3">
-        <h1 class="wisata-title text-center">List Wisata {{$jenis_wisata}}</h1>
-        <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
-            @foreach($destinationList as $index => $destinasi)
-                <div class="col">
-                    <div class="card h-100 glass">
-                        <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
-                            <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>
-                            <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <div class="card-info">
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>
-                            </div>
-                            <a href="{{ route('destination.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
-                                <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
-                            </a>
-                        </div>
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+            @foreach ($destinationList as $destination)
+            <div class="col-lg-4 mb-4">
+                <div class="card card-custom">
+                    <img src="{{ $destination['image'][0] }}" alt="Image">
+                    <div class="card-body card-body-custom">
+                        <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
+                        <div class="separator"></div>
+                        <p class="card-text">
+                            <i class="fas fa-map-marker-alt icon"></i>{{ $destination['alamat'] }}<br>
+                            <i class="fas fa-ticket-alt icon"></i>{{ $destination['tiket_weekend_local'] ? 'Tiket Weekend (Local): IDR ' . number_format($destination['tiket_weekend_local'], 0, ',', '.') : 'Tiket Weekend (Local): IDR 0' }}<br>
+                            <i class="fas fa-globe icon"></i>{{ $destination['tiket_weekend_internasional'] ? 'Tiket Weekend (Internasional): IDR ' . number_format($destination['tiket_weekend_internasional'], 0, ',', '.') : 'Tiket Weekend (Internasional): IDR 0' }}<br>
+                            <i class="fas fa-route icon"></i>Dari Semarang: {{ $destination['jarak_dari_semarang'] }} KM<br>
+                            <i class="fas fa-route icon"></i>Dari Jogja: {{ $destination['jarak_dari_jogja'] }} KM
+                        </p>
+                        <a href="{{ route('destination.detail', ['id' => $destination['id']]) }}" class="btn btn-primary btn-custom">
+                            Baca Selengkapnya
+                        </a>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 @endsection

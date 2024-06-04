@@ -2,175 +2,104 @@
 
 @section('stylesheet')
     <link rel="stylesheet" href="{{ asset('css/categories.css') }}">
+    <!-- Tambahkan link stylesheet untuk Bootstrap jika belum termasuk -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        h1 {
+            font-size: 200%;
+            margin-bottom: 20px;
+        }
+
         .card {
-            transition: transform 0.3s ease, filter 0.3s ease;
-            color: white;
             height: 100%;
             position: relative;
-            overflow: hidden; /* Ensure overflow is hidden to prevent extending issues */
+            overflow: hidden;
             text-align: center;
-            opacity: 70%;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card:hover {
-            transform: scaleY(1.02);
-            transform: scaleX(1.02);
-            filter: brightness(1);
-            opacity: 100%;
+            transform: scale(1.05);
         }
 
-        .row{
-            border-radius: 25px;
-            margin: 20px;
-            padding: 20px;
-            background-color: #F5F5F5;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        .card-body {
+            position: relative;
+            padding-bottom: 40px; /* space for the button */
         }
-        
-        .card:hover .txt h2 {
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            margin: 10px auto;
+            border-bottom: 2px solid #000;
+        }
+
+        .card-img-top {
+            height: 200px; /* fixed height for images */
+            object-fit: cover;
+        }
+
+        .card-hover-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            transform: scaleY(1.02);
-            transform: scaleX(1.02);
-            filter: brightness(1);
-            opacity: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        h1{
-            text-size: 150%;
+        .card:hover .card-hover-content {
+            opacity: 1;
         }
-
-
     </style>
 @endsection
 
 @section('custom-content')
-    <div class="container mt-5" >
-        <h1 class="text-center mb-5">Kategori Wisata</h1>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">KATEGORI WISATA</h1>
         <div class="row align-items-center justify-content-center">
+            @php
+                $categories = [
+                    ['jenis_wisata' => 'alam', 'image' => 'wisata-alam.jpg', 'title' => 'WISATA ALAM'],
+                    ['jenis_wisata' => 'petualangan', 'image' => 'wisata-petualangan.jpeg', 'title' => 'WISATA PETUALANGAN'],
+                    ['jenis_wisata' => 'perbelanjaan', 'image' => 'wisata-perbelanjaan.jpg', 'title' => 'WISATA PERBELANJAAN'],
+                    ['jenis_wisata' => 'kuliner', 'image' => 'wisata-kuliner.jpg', 'title' => 'WISATA KULINER'],
+                    ['jenis_wisata' => 'industri', 'image' => 'wisata-industri.jpg', 'title' => 'WISATA INDUSTRI'],
+                    ['jenis_wisata' => 'budaya', 'image' => 'wisata-budaya.jpg', 'title' => 'WISATA BUDAYA'],
+                    ['jenis_wisata' => 'pertanian', 'image' => 'wisata-pertanian.jpg', 'title' => 'WISATA PERTANIAN'],
+                    ['jenis_wisata' => 'pedesaan', 'image' => 'wisata-pedesaan.jpeg', 'title' => 'WISATA PEDESAAN'],
+                    ['jenis_wisata' => 'religi', 'image' => 'wisata-religi.jpg', 'title' => 'WISATA RELIGI'],
+                    ['jenis_wisata' => 'industri_kecil', 'image' => 'wisata-industri-kecil.jpg', 'title' => 'WISATA INDUSTRI KECIL'],
+                    ['jenis_wisata' => 'edukasi', 'image' => 'wisata-edukasi.jpg', 'title' => 'WISATA EDUKASI'],
+                    ['jenis_wisata' => 'buatan', 'image' => 'wisata-buatan.jpg', 'title' => 'WISATA BUATAN']
+                ];
+            @endphp
 
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-alam.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA ALAM</h2>
+            @foreach($categories as $category)
+                <div class="col-md-5 col-sm-6 mb-4">
+                    <a href="{{ route('destination.fetch', ['jenis_wisata' => $category['jenis_wisata']]) }}" class="card">
+                        <img src="{{ asset('/images/categories/' . $category['image']) }}" class="card-img-top" alt="{{ $category['title'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $category['title'] }}</h5>
                         </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-petualangan.jpeg') }}');">
-                        <div class="txt">
-                            <h2>WISATA PETUALANGAN</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-perbelanjaan.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA PERBELANJAAN</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-kuliner.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA KULINER</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-industri.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA INDUSTRI</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-budaya.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA BUDAYA</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-pertanian.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA PERTANIAN</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-pedesaan.jpeg ') }}');">
-                        <div class="txt">
-                            <h2>WISATA PEDESAAN</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-religi.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA RELIGI</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-industri-kecil.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA INDUSTRI KECIL</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md-5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'alam']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-edukasi.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA EDUKASI</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-5 col-md -5 column">
-                <a href="{{ route('destination.fetch', ['jenis_wisata' => 'petualangan']) }}">
-                    <div class="card gr-1" style="background-image: linear-gradient(rgba(1, 228, 248, 0.5), rgba(29, 62, 222, 0.5)), url('{{ asset('/images/categories/wisata-buatan.jpg') }}');">
-                        <div class="txt">
-                            <h2>WISATA BUATAN</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-
-
-
-            <!-- Add more cards here -->
-        
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

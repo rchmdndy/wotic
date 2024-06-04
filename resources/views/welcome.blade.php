@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    {{-- Hero Section --}}
+    {{-- Bagian Hero --}}
     <section class="hero">
         <div id="carouselExampleAutoplaying" class="carousel slide position-relative" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -26,7 +26,7 @@
         </div>
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
-            <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
+            <p class="text-white text-center">PUSAT INFORMASI PARIWISATA WONOSOBO</p>
             <form class="d-flex w-25" role="search" method="get" action="{{route('destination.search')}}">
             <div class="form-floating flex-grow-1" id="search-container">
                 <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" onfocus="removePlaceholder()">
@@ -36,13 +36,13 @@
             </form>
         </div>
     </section>
-    {{-- End Hero Section --}}
+    {{-- Akhir Bagian Hero --}}
 
     {{-- Informasi --}}
     <section class="information-wrapper">
         <div class="information w-100 d-flex flex-column align-items-center">
             <h1 class="information-title">
-                Informasi apa yang anda cari ?
+                Informasi apa yang anda cari?
             </h1>
             <div class="d-flex gap-3 mt-3 justify-content-center w-100">
                 <a href="{{ route('destination.categories') }}"
@@ -81,8 +81,8 @@
             </div>
         </div>
     </section>
-    {{-- End Informasi --}}
-    {{-- Wisata Unik Start --}}
+    {{-- Akhir Informasi --}}
+    {{-- Wisata Unik --}}
     <section class="wisata-wrapper">
         <div class="container">
             <h1 class="wisata-title text-center">Wisata Unik</h1>
@@ -112,8 +112,8 @@
             </div>
         </div>
     </section>
-    {{-- End Wisata Unik --}}
-    {{-- Event Start --}}
+    {{-- Akhir Wisata Unik --}}
+    {{-- Kalender Event --}}
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
             <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
@@ -142,10 +142,10 @@
                     @endif
                 </div>
             </div>
-                </div>
+        </div>
     </section>
-    {{-- End Event --}}
-    {{--Start Wisata Banner --}}
+    {{-- Akhir Kalender Event --}}
+    {{-- Wisata Rekomendasi --}}
     <section class="wisata-wrapper mb-5">
         <div class="container">
             <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
@@ -175,6 +175,6 @@
             </div>
         </div>
     </section>
-    {{--End Wisata Banner--}}
+    {{-- Akhir Wisata Rekomendasi --}}
 
 @endsection

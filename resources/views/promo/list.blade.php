@@ -9,70 +9,67 @@
         .wisata-title {
             margin-bottom: 50px;
             text-transform: uppercase;
-            background-color: #e9ecef;
             padding: 10px;
             border-radius: 10px;
+            color: #333;
         }
 
         .card-promo {
-            border: none;
-            border-radius: 10px;
+            border: 1px solid #ccc; /* Thin border */
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease-in-out;
             position: relative;
-        }
-
-        .card-promo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background-color: #ADD8E6; /* Light blue color */
-            border-radius: 10px 10px 0 0;
-        }
-
-        .card-promo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+            background-color: #fff; /* Remove shadow by setting background color */
         }
 
         .card-img-top {
-            width: 100%;
-            height: 450px;
+            width: calc(100% - 20px); /* Reduced width to account for margin */
+            height: 250px; /* Reduced height */
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
+            margin: 10px; /* Margin around the image */
         }
 
         .card-body {
             padding: 20px;
             background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .promo-title {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 10px;
             color: #333;
-            background-color: #e9ecef;
-            padding: 10px;
-            border-radius: 10px;
         }
 
         .card-info {
-            margin-top: auto;
+            font-size: 0.9rem; /* Smaller font size for dates */
+            color: #000; /* Change color of date to black */
         }
 
         .promo-date {
-            font-size: 1.2rem;
             margin-bottom: 5px;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 10px 0;
         }
 
         .btn {
             border-radius: 0;
-            float: right;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Margin top to position below date */
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
         }
 
         .btn-text {
@@ -83,24 +80,30 @@
         .end-icon {
             margin-right: 5px;
         }
+
+        .footer-margin {
+            margin-bottom: 50px; /* Margin to avoid hitting footer */
+        }
     </style>
 
-    <div class="container mt-4">
+    <div class="container mt-4 footer-margin">
         <h1 class="wisata-title text-center">Kalender Promo 2024</h1>
-        <div class="row row-cols-md-2 row-cols-1 g-4">
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
             @foreach($promoList as $promo)
                 <div class="col">
                     <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="text-decoration-none">
-                        <div class="card mb-3 card-promo">
+                        <div class="card card-promo h-100">
                             <img src="{{ $promo['image'] }}" class="img-fluid card-img-top" alt="{{ $promo['nama_promo'] }}">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <div class="promo-title">{{ $promo['nama_promo'] }}</div>
+                                <div class="separator"></div>
                                 <div class="card-info">
                                     <p class="promo-date"><i class="bi bi-calendar-check start-icon"></i>
-                                        <small class="text-body-secondary">Start Date: <?php echo date('d-m-Y', strtotime($promo['tanggal_mulai'])); ?></small></p>
+                                        <small>Start Date: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
-                                        <small class="text-body-secondary">End Date: <?php echo date('d-m-Y', strtotime($promo['tanggal_selesai'])); ?></small></p>
+                                        <small>End Date: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                                 </div>
+                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-primary btn-text">Detail</a>
                             </div>
                         </div>
                     </a>

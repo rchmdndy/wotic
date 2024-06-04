@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-2 {{ request()->routeIs('index') ? 'bg-black bg-opacity-50 fixed-top' : 'bg-my-primary sticky-top' }}" id="navbar">
     <div class="container">
-{{--        GAMBAR--}}
+        {{-- GAMBAR --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,8 +15,8 @@
                 <img src="{{ asset('images/logos/logo2.png') }}" alt="logo2">
             </div>
         </div>
-{{--        END GAMBAR--}}
-{{--        TENGAH --}}
+        {{-- END GAMBAR --}}
+        {{-- TENGAH --}}
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto">
                 <a class="nav-link text-white me-3" href="/"><strong>BERANDA</strong></a> <!-- Tambahkan margin kanan -->
@@ -47,8 +47,8 @@
                 <a class="nav-link text-white" href="{{ route('about') }}"><strong>TENTANG</strong></a>
             </div>
         </div>
-{{--        END TENGAH--}}
-        <div class=" gap-3 d-none d-lg-flex">
+        {{-- END TENGAH --}}
+        <div class="gap-3 d-none d-lg-flex">
             <div class="logo-right">
                 <img src="{{ asset('images/logos/logodinas.png') }}" alt="logodinas">
             </div>
@@ -75,3 +75,9 @@
         });
     </script>
 @endif
+
+<style>
+    .nav-link:hover {
+        color: #ffcc00 !important; /* Contoh warna hover: kuning */
+    }
+</style>
