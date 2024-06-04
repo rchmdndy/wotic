@@ -2,12 +2,6 @@
 
 @section('content')
     <style>
-
-
-        .title {
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
         .section-title {
             font-size: 1.8rem;
             font-weight: bold;
