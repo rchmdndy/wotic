@@ -11,15 +11,10 @@
                 <h4 class="mt-3 fw-medium">{{ $promoDetail['nama_promo'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
-                        <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
-                    </div>
-                </div>
-                <div class="d-flex gap-3 align-items-center mt-3">
-                    <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
                     <h6 class="m-0">
-                        Date: {{ Carbon::parse($promoDetail['tanggal_mulai'])->format('d-m-Y') }}
+                        Tanggal: {{ Carbon::parse($promoDetail['tanggal_mulai'])->format('d-m-Y') }}
                         - {{ Carbon::parse($promoDetail['tanggal_selesai'])->format('d-m-Y') }}
                     </h6>
 

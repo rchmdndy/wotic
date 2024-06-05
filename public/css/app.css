@@ -181,8 +181,8 @@ form {
     background-color: rgba(147, 218, 255, 0.46);
 }
 
-.card-important{
-    background-color: rgba(255, 99, 99, 0.5);
+.card-reccomendation{
+    background-color: #0cefff;
 }
 
 .destination-card {
@@ -227,13 +227,54 @@ form {
     margin-top: 100px;
 }
 
+.promo-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.promo-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-carousel .carousel-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-carousel .carousel-item {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.promo-carousel .promo-image {
+    width: 300px;  /* Adjust the width as needed */
+    height: 300px;  /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.promo-carousel .active-image {
+    opacity: 1;
+    transform: scale(1.2);  /* Scale up the active image */
+}
+
+.promo-carousel .inactive-image {
+    opacity: 0.7;
+}
+
+.promo-carousel .carousel-item:not(.active) .promo-image {
+    opacity: 0.7;
+    transform: scale(1);  /* Keep inactive images at normal scale */
+}
+
+
 .information{
     padding-inline: 40px;
 }
 
 .information-title{
-    font-size: 20px;
+    font-size: 50px;
     font-weight: normal;
+    margin-bottom: 20px;
 }
 
 .information-image{
@@ -268,6 +309,10 @@ form {
 }
 
 .wisata-title{
+    font-size: 50px;
+}
+
+.promo-title{
     font-size: 50px;
 }
 
@@ -418,6 +463,10 @@ form {
     }
 
     .information-wrapper{
+        margin-top: 50px;
+    }
+
+    .promo-wrapper{
         margin-top: 50px;
     }
 

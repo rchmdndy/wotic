@@ -87,7 +87,7 @@
     </style>
 
     <div class="container mt-4 footer-margin">
-        <h1 class="wisata-title text-center">Kalender Promo 2024</h1>
+        <h1 class="wisata-title text-center">Daftar Promo 2024</h1>
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
             @foreach($promoList as $promo)
                 <div class="col">
@@ -99,9 +99,9 @@
                                 <div class="separator"></div>
                                 <div class="card-info">
                                     <p class="promo-date"><i class="bi bi-calendar-check start-icon"></i>
-                                        <small>Start Date: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
+                                        <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
-                                        <small>End Date: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
+                                        <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                                 </div>
                                 <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-primary btn-text">Detail</a>
                             </div>

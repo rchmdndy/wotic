@@ -3,6 +3,8 @@
 @section('content')
     <section class="mt-3 container">
         <div id="destinationDetail" class="row row-cols-1 g-5 mt-3 align-items-center">
+            <div class="text-center">
+            </div>
             <div class="col-12">
                 <div class="position-relative">
                     <h1 class="position-absolute text-white bg-dark p-2" style="bottom: 10px; left: 10px;">{{ $destinationDetail['destinasi']['nama_destinasi'] }}</h1>
@@ -20,7 +22,7 @@
                                 <span class="carousel-control-prev-icon"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" style="top: 10px; left: 50px;">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" style="top: 10px; right: 10px;">
                                 <span class="carousel-control-next-icon"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -76,13 +78,14 @@
                         </tbody>
                     </table>
                 </div>
+                <button class="btn btn-primary btn-block">Pesan Sekarang</button>
                 {{-- Harga Tiket End --}}
             </div>
-            <div class="col bg-dark text-white p-4 rounded">
-                <div class="d-flex m-4 mt-5 py-2">
+            <div class="col p-4 rounded">
+                <div class="d-flex m-4 mt-1 py-1">
                     <h2 class="display-6"><i class="bi bi-compass px-4"></i>Informasi Lokasi</h2>
                 </div>
-                <table class="table table-striped-columns table-hover text-white" style="width: 100%">
+                <table class="table table-striped-columns table-hover text-white" style="width: 50%">
                     <tbody>
                         <tr>
                             <td class="table-info">Kecamatan</td>
@@ -133,7 +136,7 @@
                     @foreach($hotelList as $hotel)
                         <div class="col">
                             @if($hotel['is_important'] == 'yes')
-                                <div class="card mb-4 card-important rounded-3" style="width: 18rem; height: 25rem;">
+                                <div class="card mb-4 card-reccomendation rounded-3" style="width: 18rem; height: 25rem;">
                                     <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 250px">
                                     <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
                                         <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
@@ -154,6 +157,40 @@
                             @endif
                         </div>
                     @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ordering Application</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row row-cols-4 g-4 justify-content-center align-items-center">
+                            <div class="col">
+                                <a href="" class="d-flex justify-content-center">
+                                    <img src="{{ asset('images/logos/logotraveloka.png') }}" alt=""
+                                         class="img-fluid rounded-4">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="" class="d-flex justify-content-center">
+                                    <img src="{{ asset('images/logos/logotiketcom.png') }}" alt=""
+                                         class="img-fluid rounded-4">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="" class="d-flex justify-content-center">
+                                    <img src="{{ asset('images/logos/logoaccesskai.png') }}" alt=""
+                                         class="img-fluid rounded-4">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

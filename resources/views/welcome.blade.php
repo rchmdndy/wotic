@@ -1,6 +1,10 @@
-@extends('layouts.layout')
-
-@section('content')
+@extends('layouts.custom_layout')
+@section('head_content')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/promo-welcome.css">
+@endsection
+@section('custom-content')
     {{-- Hero Section --}}
     <section class="hero">
         <div id="carouselExampleAutoplaying" class="carousel slide position-relative" data-bs-ride="carousel">
@@ -37,6 +41,28 @@
         </div>
     </section>
     {{-- End Hero Section --}}
+    {{-- Promo section--}}
+    <section class="promo-wrapper">
+        <div class="gtco-testimonials">
+            <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
+            <div class="owl-carousel owl-carousel1 owl-theme">
+                @foreach($promoList as $promo)
+                    <a href="#" style="text-decoration: none;">
+                    <div class="card text-center"><img class="card-img-top" src="{{$promo['image']}}" alt="">
+                            <div class="card-body">
+                                <h5 style="color: black; font-weight: bold">{{$promo['nama_promo']}} <br /></h5>
+                                <p class="promo-date" style="margin-top: 1rem"><i class="bi bi-calendar-check start-icon"></i>
+                                    <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
+                                <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
+                                    <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+
+    </section>
 
     {{-- Informasi --}}
     <section class="information-wrapper">
@@ -177,6 +203,9 @@
     </section>
     {{--End Wisata Banner--}}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <script>
         // Select all anchor tags with the id 'myAnchor'
         const anchors = document.querySelectorAll('#notImplemented');
@@ -191,6 +220,40 @@
                 alert('Fitur belum diimplementasi');
             });
         });
-
     </script>
+    <script>
+        (function () {
+            "use strict";
+
+            var carousels = function () {
+                $(".owl-carousel1").owlCarousel({
+                    loop: true,
+                    center: true,
+                    margin: 0,
+                    responsiveClass: true,
+                    nav: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false
+                        },
+                        680: {
+                            items: 2,
+                            nav: false,
+                            loop: false
+                        },
+                        1000: {
+                            items: 3,
+                            nav: true
+                        }
+                    }
+                });
+            };
+
+            (function ($) {
+                carousels();
+            })(jQuery);
+        })();
+    </script>
+
 @endsection
