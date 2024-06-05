@@ -68,9 +68,9 @@
     </style>
     <section class="container mt-3">
         @if(isset($destinationList['Error']))
-            <div class="d-flex align-items-center text-decoration-none text-black">
+            <div class="d-flex justify-content-center text-decoration-none text-black">
                 <a href="/" class="btn btn-warning">
-                    Gagal mendapatkan data event, silahkan refresh halaman
+                    Gagal mendapatkan data wisata, silahkan refresh halaman
                 </a>
             </div>
         @else

@@ -24,11 +24,14 @@
 
         <div class="row">
             @if(isset($destinationList['Error']))
-                <div class="d-flex align-items-center text-decoration-none text-black">
-                    <a href="/" class="btn btn-warning">
-                        Gagal mendapatkan data event, silahkan refresh halaman
-                    </a>
-                </div>
+                <form action="{{route('destination.search')}}" method="get">
+                    <div class="d-flex justify-content-center text-decoration-none text-black">
+                        <input type="hidden" name="search" value="{{ $query }}">
+                        <button type="submit" class="btn btn-warning">
+                            Gagal mendapatkan data pencarian, silahkan refresh halaman
+                        </button>
+                    </div>
+                </form>
             @else
             @foreach ($destinationList as $result)
                 <div class="col-md-4 mb-4">

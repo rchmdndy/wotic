@@ -5,7 +5,7 @@
         </a>
         <div class="footer-columns">
             <div class="footer-column">
-                <h3>Browse</h3>
+                <h3>Telusuri</h3>
                 <ul>
                     <li><a href="{{route('destination.all')}}">Destination</a></li>
                     <li><a href="{{route('promo.index')}}">Promo</a></li>
@@ -14,7 +14,7 @@
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Follow</h3>
+                <h3>Social Media</h3>
                 <ul class="social-icons">
                     <li><a href="https://www.instagram.com/disparbudwonosobo/"><ion-icon name="logo-instagram"></ion-icon> disparbudwonosobo</a></li>
                     <li><a href="https://x.com/disparbud_WSB"><ion-icon name="logo-twitter"></ion-icon> disparbud_WSB</a></li>

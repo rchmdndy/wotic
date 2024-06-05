@@ -7,14 +7,15 @@
     <section class="light">
         <div class="container py-2">
             <div class="h1 text-center text-dark" id="pageHeaderTitle">Hotel</div>
+            @if(isset($hotelList['Error']))
+                <div class="d-flex justify-content-center text-decoration-none text-black">
+                    <a href="/" class="btn btn-warning">
+                        Gagal mendapatkan data hotel, silahkan refresh halaman
+                    </a>
+                </div>
+            @else
             <div class="row">
-                @if(isset($hotelList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black">
-                        <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data event, silahkan refresh halaman
-                        </a>
-                    </div>
-                @else
+
                 @foreach($hotelList as $hotel)
                     <div class="col-md-6 mb-4">
                         <article class="postcard light blue">

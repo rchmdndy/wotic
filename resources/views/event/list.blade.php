@@ -3,6 +3,7 @@
 @section('content')
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
+            <h1 class="display-2 mb-5">Event 2024</h1>
             @if(isset($eventList['Error']))
                 <div class="d-flex align-items-center text-decoration-none text-black">
                     <a href="/" class="btn btn-warning">

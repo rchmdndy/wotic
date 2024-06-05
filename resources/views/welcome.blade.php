@@ -47,11 +47,13 @@
             <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
             <div class="owl-carousel owl-carousel1 owl-theme">
                 @if(isset($bannerDestinationList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black">
-                        <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data event, silahkan refresh halaman
-                        </a>
-                    </div>
+                    <form method="get">
+                        <div class="d-flex align-items-center text-decoration-none text-black">
+                            <button type="submit" class="btn btn-warning">
+                                Gagal mendapatkan data promo, silahkan refresh halaman
+                            </button>
+                        </div>
+                    </form>
                 @else
                 @foreach($promoList as $promo)
                     <a href="#" style="text-decoration: none;">
@@ -120,14 +122,17 @@
     <section class="wisata-wrapper">
         <div class="container">
             <h1 class="wisata-title text-center">Wisata Unik</h1>
-            <div class="wisata d-none d-lg-flex">
                 @if(isset($attractiveDestinationList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black text-center">
-                        <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data event, silahkan refresh halaman
-                        </a>
+                <form method="get">
+                    <div class="d-flex justify-content-center text-black text-center">
+                        <button type="submit" class="btn btn-warning">
+                            Gagal mendapatkan data wisata, silahkan refresh halaman
+                        </button>
                     </div>
+                </form>
+
                 @else
+            <div class="wisata d-none d-lg-flex">
                 @foreach($attractiveDestinationList as $destination)
                     <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
                         <div class="card rounded-5 shadow">
@@ -155,18 +160,20 @@
                 <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
                 <div class="card-body d-flex flex-column gap-3 px-4">
                     @if(isset($eventList['Error']))
-                        <div class="d-flex align-items-center text-decoration-none text-black">
-                            <a href="/" class="btn btn-warning">
-                                Gagal mendapatkan data event, silahkan refresh halaman
-                            </a>
-                        </div>
+                        <form method="get">
+                            <div class="d-flex justify-content-center text-decoration-none text-black">
+                                <button type="submit" class="btn btn-warning">
+                                    Gagal mendapatkan data event, silahkan refresh halaman
+                                </button>
+                            </div>
+                        </form>
                     @elseif(empty($eventList))
                         <div class="d-flex align-items-center text-decoration-none text-black">
                             Tidak ada event bulan ini
                         </div>
                     @else
                         @foreach($eventList as $index => $event)
-                            <a href="#" class="d-flex align-items-center text-decoration-none text-black">
+                            <a href="#" class="d-flex justify-content-center text-decoration-none text-black">
                                 <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
                                     <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
                                 </i>
@@ -183,14 +190,14 @@
     <section class="wisata-wrapper mb-5">
         <div class="container">
             <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
-            <div class="wisata d-none d-lg-flex">
                 @if(isset($bannerDestinationList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black">
+                    <div class="d-flex justify-content-center text-decoration-none text-black">
                         <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data event, silahkan refresh halaman
+                            Gagal mendapatkan data wisata, silahkan refresh halaman
                         </a>
                     </div>
                 @else
+            <div class="wisata d-none d-lg-flex">
                     @foreach($bannerDestinationList as $bannerDestination)
                         <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
                             <div class="card h-100 rounded-5 shadow">
