@@ -129,7 +129,7 @@
 
         <div class="mt-5 mb-5" style="background: #F8F8F8;">
             <div class="d-flex m-4 mt-5">
-                <h2 class="display-6"><i class="bi bi-buildings px-4"></i>List Hotel Terdekat</h2>
+                <h2 class="display-6"><i class="bi bi-buildings px-4"></i>List  Terdekat</h2>
             </div>
             <div class="overflow-auto">
                 <div class="row flex-nowrap">

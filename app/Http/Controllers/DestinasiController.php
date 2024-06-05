@@ -12,7 +12,11 @@ class DestinasiController extends Controller
     public function fetch_all()
     {
         $destinationList = $this->fetchJson(env("API_SERVER")."getAllDestination");
-
+        if (isset($destinationList['Error'])){
+            return view('destination.list', [
+                'destinationList' => $destinationList,
+                'jenis_wisata' => '']);
+        }
         // Coordinates of the two points
         $destinationList = $this->processDistance($destinationList);
 
@@ -25,7 +29,11 @@ class DestinasiController extends Controller
     public function fetch_jenis_wisata(string $jenis_wisata){
         // Fetch destinations from API
         $destinationList = $this->fetchJson(env('API_SERVER')."getDestinationType", ['jenis_wisata' => $jenis_wisata]);
-
+        if (isset($destinationList['Error'])){
+            return view('destination.list', [
+                'destinationList' => $destinationList,
+                'jenis_wisata' => '']);
+        }
         // Coordinates of the two points
         $destinationList = $this->processDistance($destinationList);
 
@@ -105,6 +113,9 @@ class DestinasiController extends Controller
         $query = $request->input('search');
 
         $search_result = $this->fetchJson(env('API_SERVER').'getDestinationByName', ['search' => $query]);
+        if (isset($search_result['Error'])){
+            return view('destination.search_results', ['destinationList' => $search_result, 'query' => $query]);
+        }
 
         $search_result = $this->processDistance($search_result);
 

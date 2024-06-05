@@ -46,13 +46,13 @@
         <div class="gtco-testimonials">
             <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
             <div class="owl-carousel owl-carousel1 owl-theme">
-            @if(isset($promoList['Error']))
-                    <div class="d-flex align-items-center text-decoration-none text-black text-center">
+                @if(isset($bannerDestinationList['Error']))
+                    <div class="d-flex align-items-center text-decoration-none text-black">
                         <a href="/" class="btn btn-warning">
                             Gagal mendapatkan data event, silahkan refresh halaman
                         </a>
                     </div>
-            @else
+                @else
                 @foreach($promoList as $promo)
                     <a href="#" style="text-decoration: none;">
                     <div class="card text-center"><img class="card-img-top" src="{{$promo['image']}}" alt="">

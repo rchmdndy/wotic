@@ -60,7 +60,7 @@
             margin: 10px 0;
         }
 
-        .btn {
+        .btn-custom {
             border-radius: 0;
             background-color: #007bff;
             color: white;
@@ -68,11 +68,11 @@
             margin-top: 10px; /* Margin top to position below date */
         }
 
-        .btn:hover {
+        .btn-custom:hover {
             background-color: #0056b3;
         }
 
-        .btn-text {
+        .btn-custom-text {
             font-size: 1rem;
         }
 
@@ -89,6 +89,13 @@
     <div class="container mt-4 footer-margin">
         <h1 class="wisata-title text-center">Daftar Promo 2024</h1>
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
+            @if(isset($promoList['Error']))
+                <div class="d-flex align-items-center text-decoration-none text-black">
+                    <a href="/" class="btn btn-warning">
+                        Gagal mendapatkan data event, silahkan refresh halaman
+                    </a>
+                </div>
+            @else
             @foreach($promoList as $promo)
                 <div class="col">
                     <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="text-decoration-none">
@@ -103,12 +110,13 @@
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
                                         <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                                 </div>
-                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-primary btn-text">Detail</a>
+                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn-custom btn-custom-primary btn-custom-text">Detail</a>
                             </div>
                         </div>
                     </a>
                 </div>
             @endforeach
+            @endif
         </div>
     </div>
 @endsection

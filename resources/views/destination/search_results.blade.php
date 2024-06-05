@@ -23,8 +23,16 @@
         </div>
 
         <div class="row">
+            @if(isset($destinationList['Error']))
+                <div class="d-flex align-items-center text-decoration-none text-black">
+                    <a href="/" class="btn btn-warning">
+                        Gagal mendapatkan data event, silahkan refresh halaman
+                    </a>
+                </div>
+            @else
             @foreach ($destinationList as $result)
                 <div class="col-md-4 mb-4">
+
                     <div class="card">
                         <img src="{{ $result['image'][0] ?? 'placeholder.jpg' }}" class="card-img-top" alt="{{ $result['nama_destinasi'] }}">
                         <div class="card-body">
@@ -40,6 +48,7 @@
                     </div>
                 </div>
             @endforeach
+            @endif
         </div>
         @if (empty($destinationList))
             <p class="text-center">Tidak ada hasil yang ditemukan.</p>

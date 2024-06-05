@@ -66,9 +66,14 @@
             backdrop-filter: blur(10px);
         }
     </style>
-
-
     <section class="container mt-3">
+        @if(isset($destinationList['Error']))
+            <div class="d-flex align-items-center text-decoration-none text-black">
+                <a href="/" class="btn btn-warning">
+                    Gagal mendapatkan data event, silahkan refresh halaman
+                </a>
+            </div>
+        @else
         <h1 class="wisata-title card-title text-center">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
             @foreach($destinationList as $index => $destinasi)
@@ -92,5 +97,6 @@
                 </div>
             @endforeach
         </div>
+        @endif
     </section>
 @endsection
