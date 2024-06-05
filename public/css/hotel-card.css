@@ -132,6 +132,8 @@ a, a:hover {
     .postcard {
         flex-direction: column;
         height: auto;
+        display: flex;
+        align-items: stretch;
     }
 
     .postcard .postcard__img_link {
@@ -140,7 +142,8 @@ a, a:hover {
     }
 
     .postcard .postcard__img {
-        padding-top: 20px;
+        width: 50rem;
+        margin: 0;
     }
 
     .postcard .postcard__text {

@@ -15,7 +15,7 @@
                                 <img class="postcard__img" src="{{ $hotel['image'] }}" alt="Image Title" />
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title blue"><a href="#">{{ $hotel['nama_hotel'] }}</a></h1>
+                                <h1 class="postcard__title blue"><a href="#"; style="color: black; font-weight: bolder">{{ $hotel['nama_hotel'] }}</a></h1>
                                 <div class="postcard__subtitle">
                                 <span class="badge rounded-pill text-bg-primary">
                                     <i class="fas fa-calendar-alt mr-2"></i> {{ $hotel['kelas'] }}
