@@ -15,7 +15,7 @@
                                 <img class="postcard__img" src="{{ $hotel['image'] }}" alt="Image Title" />
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title blue"><a href="#"; style="color: black; font-weight: bolder">{{ $hotel['nama_hotel'] }}</a></h1>
+                                <h1 class="postcard__title blue" style="color: black; font-weight: bolder">{{ $hotel['nama_hotel'] }}</a></h1>
                                 <div class="postcard__subtitle">
                                 <span class="badge rounded-pill text-bg-primary">
                                     <i class="fas fa-calendar-alt mr-2"></i> {{ $hotel['kelas'] }}
@@ -31,7 +31,7 @@
                                     {{ $hotel['alamat'] }}
                                 </div>
                                 <div class="my-2">
-                                    <a class="btn btn-my-primary w-100"
+                                    <a class="btn btn-primary w-100"
                                        href="{{
                                         route('map_redirect',
                                         ['lat' => $hotel['koordinat'],
