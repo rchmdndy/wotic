@@ -8,11 +8,13 @@
         <div class="container py-2">
             <div class="h1 text-center text-dark" id="pageHeaderTitle">Hotel</div>
             @if(isset($hotelList['Error']))
-                <div class="d-flex justify-content-center text-decoration-none text-black">
-                    <a href="/" class="btn btn-warning">
-                        Gagal mendapatkan data hotel, silahkan refresh halaman
-                    </a>
-                </div>
+            <form method='get'>
+            <div class="d-flex justify-content-center text-decoration-none text-black">
+                <button type='submit' class="btn btn-warning">
+                    Gagal mendapatkan data hotel, silahkan refresh halaman
+                </button>
+            </div>
+        </form>
             @else
             <div class="row">
 

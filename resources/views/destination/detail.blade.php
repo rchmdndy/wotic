@@ -4,6 +4,7 @@
     <section class="mt-3 container">
         <div id="destinationDetail" class="row row-cols-1 g-5 mt-3 align-items-center">
             <div class="text-center">
+                <h1 class="display-2">{{$destinationDetail['destinasi']['nama_destinasi']}}</h1>
             </div>
             <div class="col-12">
                 <div class="position-relative">

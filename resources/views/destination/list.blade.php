@@ -68,11 +68,13 @@
     </style>
     <section class="container mt-3">
         @if(isset($destinationList['Error']))
+        <form method='get'>
             <div class="d-flex justify-content-center text-decoration-none text-black">
-                <a href="/" class="btn btn-warning">
+                <button type='submit' class="btn btn-warning">
                     Gagal mendapatkan data wisata, silahkan refresh halaman
-                </a>
+                </button>
             </div>
+    </form>
         @else
         <h1 class="wisata-title card-title text-center">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">

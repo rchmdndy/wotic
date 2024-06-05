@@ -89,11 +89,13 @@
     <div class="container mt-4 footer-margin">
         <h1 class="wisata-title text-center">Daftar Promo 2024</h1>
         @if(isset($promoList['Error']))
+        <form method='get'>
             <div class="d-flex justify-content-center text-decoration-none text-black">
-                <a href="/" class="btn btn-warning">
+                <button type='submit' class="btn btn-warning">
                     Gagal mendapatkan data promo, silahkan refresh halaman
-                </a>
+                </button>
             </div>
+        </form>
         @else
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
 

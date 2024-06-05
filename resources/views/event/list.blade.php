@@ -5,11 +5,13 @@
         <div class="rekomendasi">
             <h1 class="display-2 mb-5">Event 2024</h1>
             @if(isset($eventList['Error']))
-                <div class="d-flex align-items-center text-decoration-none text-black">
-                    <a href="/" class="btn btn-warning">
-                        Gagal mendapatkan data event, silahkan refresh halaman
-                    </a>
-                </div>
+            <form method='get'>
+            <div class="d-flex justify-content-center text-decoration-none text-black">
+                <button type='submit' class="btn btn-warning">
+                    Gagal mendapatkan data event, silahkan refresh halaman
+                </button>
+            </div>
+        </form>
             @else
                     <div class="card rounded-4 w-75">
                         <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
