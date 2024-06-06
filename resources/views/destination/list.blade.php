@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+
 @section('content')
     <style>
         .section-title {
@@ -67,7 +68,6 @@
         }
     </style>
 
-
     <section class="container mt-3">
         <h1 class="wisata-title card-title text-center">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
@@ -92,5 +92,8 @@
                 </div>
             @endforeach
         </div>
+        @if (empty($destinationList))
+            <p class="text-center">Belum terdapat data wisata.</p>
+        @endif
     </section>
 @endsection
