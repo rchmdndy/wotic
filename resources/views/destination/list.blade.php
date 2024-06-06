@@ -93,7 +93,7 @@
             @endforeach
         </div>
         @if (empty($destinationList))
-            <p class="text-center">Belum terdapat data wisata.</p>
+            <p class="text-center">Tidak ada hasil yang ditemukan.</p>
         @endif
     </section>
 @endsection
