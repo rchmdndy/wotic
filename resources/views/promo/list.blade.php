@@ -72,7 +72,7 @@
             background-color: #0056b3;
         }
 
-        .btn-text {
+        .btn-custom-text {
             font-size: 1rem;
         }
 
@@ -88,7 +88,17 @@
 
     <div class="container mt-4 footer-margin">
         <h1 class="wisata-title text-center">Daftar Promo 2024</h1>
+        @if(isset($promoList['Error']))
+        <form method='get'>
+            <div class="d-flex justify-content-center text-decoration-none text-black">
+                <button type='submit' class="btn btn-warning">
+                    Gagal mendapatkan data promo, silahkan refresh halaman
+                </button>
+            </div>
+        </form>
+        @else
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
+
             @foreach($promoList as $promo)
                 <div class="col">
                     <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="text-decoration-none">
@@ -103,12 +113,13 @@
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
                                         <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                                 </div>
-                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-primary btn-text">Detail</a>
+                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-custom-primary btn-custom-text">Detail</a>
                             </div>
                         </div>
                     </a>
                 </div>
             @endforeach
+            @endif
         </div>
     </div>
 @endsection

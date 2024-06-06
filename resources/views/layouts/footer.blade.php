@@ -7,7 +7,7 @@
             <div class="footer-column">
                 <h3>Browse</h3>
                 <ul>
-                    <li><a href="{{route('destination.all')}}">Destination</a></li>
+                    <li><a href="{{route('destination.all')}}">Destinasi</a></li>
                     <li><a href="{{route('promo.index')}}">Promo</a></li>
                     <li><a href="{{route('event.fetch_all')}}">Event</a></li>
                     <li><a href="{{route('hotel.index')}}">Hotel</a></li>
