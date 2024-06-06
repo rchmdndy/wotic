@@ -32,11 +32,11 @@
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
             <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
             <form class="d-flex w-25" role="search" method="get" action="{{route('destination.search')}}">
-            <div class="form-floating flex-grow-1" id="search-container">
-                <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" onfocus="removePlaceholder()">
-                <label for="search-input" id="search-label">Cari Destinasi</label>
-            </div>
-            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search px-2"></i></button>
+                <div class="form-floating flex-grow-1" id="search-container">
+                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" onfocus="removePlaceholder()">
+                    <label for="search-input" id="search-label">Cari Destinasi</label>
+                </div>
+                <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search px-2"></i></button>
             </form>
         </div>
     </section>
@@ -173,7 +173,7 @@
                         </div>
                     @else
                         @foreach($eventList as $index => $event)
-                            <a href="#" class="d-flex justify-content-center text-decoration-none text-black">
+                            <a href="{{route('event.detail', ['id' => $event['id']])}}" class="d-flex text-decoration-none text-black">
                                 <i class="bi bi-calendar d-flex align-items-center justify-content-center me-2 fw-bold fs-2 position-relative">
                                     <span class="position-absolute fs-6">{{ date('j', strtotime($event['tanggal_mulai'])) }}</span>
                                 </i>

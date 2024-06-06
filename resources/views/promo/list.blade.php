@@ -60,7 +60,7 @@
             margin: 10px 0;
         }
 
-        .btn-custom {
+        .btn {
             border-radius: 0;
             background-color: #007bff;
             color: white;
@@ -68,7 +68,7 @@
             margin-top: 10px; /* Margin top to position below date */
         }
 
-        .btn-custom:hover {
+        .btn:hover {
             background-color: #0056b3;
         }
 
@@ -113,7 +113,7 @@
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
                                         <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                                 </div>
-                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn-custom btn-custom-primary btn-custom-text">Detail</a>
+                                <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-custom-primary btn-custom-text">Detail</a>
                             </div>
                         </div>
                     </a>

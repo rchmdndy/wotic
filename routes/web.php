@@ -30,10 +30,10 @@ use App\Http\Controllers\AtractiveDestinationController;
 */
 
 // Home
-Route::prefix('/')->controller(HomeController::class)->group(function (){
-    Route::get('/', 'index')->name('index');
-    Route::get('/about','about')->name('about');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/about', function (){
+    return view('about');
+})->name('about');
 
 // Destination
 Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name('destination.')->group(function (){

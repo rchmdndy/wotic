@@ -8,25 +8,19 @@
                 <h4 class="mt-3 fw-medium">{{ $eventDetail['nama_event'] }}</h4>
                 <div class="d-flex gap-3 align-items-center mt-3">
                     <div class="logo-detail">
-                        <img src="{{ asset('images/logos/mapslogo.png') }}" alt="mapslogo">
-                    </div>
-                    <h6 class="m-0">{{ $eventDetail['lokasi'] }}</h6>
-                </div>
-                <div class="d-flex gap-3 align-items-center mt-3">
-                    <div class="logo-detail">
                         <img src="{{ asset('images/logos/logocalander.png') }}" alt="logocalander">
                     </div>
+                        <h6 class="m-0">{{ date('d-m-Y', strtotime($eventDetail['tanggal_mulai']))  }} - {{ date('d-m-Y', strtotime($eventDetail['tanggal_selesai'])) }}</h6>
                 </div>
-                    <h6 class="m-0">{{ $eventDetail['tanggal_mulai'] }} - {{ $eventDetail['tanggal_selesai'] }}</h6>
             </div>
             <div class="col">
                 <p class="text-justify">
                     {{ $eventDetail['deskripsi'] }}
                 </p>
-                <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1">
-                    Pesan Sekarang
-                </button>
+{{--                <button type="button" class="btn btn-success px-3 py-2 btn-sm rounded-5" data-bs-toggle="modal"--}}
+{{--                    data-bs-target="#exampleModal1">--}}
+{{--                    Pesan Sekarang--}}
+{{--                </button>--}}
                 {{-- Modal Pesan --}}
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">

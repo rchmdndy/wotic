@@ -20,6 +20,6 @@ class EventController extends Controller
 
     public function detail($id)
     {
-        return view('event.detail', ['eventDetail' => $this->fetchJson(env('API_SERVER')."getDetailEvent/$id")]);
+        return view('event.detail', ['eventDetail' => $this->fetchJson("http://serverapi.test/api/v1/events/$id/detail")]);
     }
 }
