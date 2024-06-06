@@ -20,3 +20,4 @@ class HotelController extends Controller
         return view('hotel.list', ['hotelList' => $hotelList]);
     }
 }
+

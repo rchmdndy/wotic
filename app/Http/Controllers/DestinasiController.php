@@ -22,19 +22,22 @@ class DestinasiController extends Controller
             'jenis_wisata' => ''
         ]);
     }
-    public function fetch_jenis_wisata(string $jenis_wisata){
-        // Fetch destinations from API
-        $destinationList = $this->fetchJson(env('API_SERVER')."getDestinationType", ['jenis_wisata' => $jenis_wisata]);
+    public function fetch_jenis_wisata(string $jenis_wisata)
+{
+    // Fetch destinations from API
+    $destinationList = $this->fetchJson(env('API_SERVER')."getDestinationType", ['jenis_wisata' => $jenis_wisata]);
 
-        // Coordinates of the two points
+    // Coordinates of the two points
+    if (!empty($destinationList)) {
         $destinationList = $this->processDistance($destinationList);
-
-        // Pass the updated destination list to the view
-        return view('destination.list', [
-            'destinationList' => $destinationList,
-            'jenis_wisata' => $jenis_wisata
-        ]);
     }
+
+    // Pass the updated destination list to the view
+    return view('destination.list', [
+        'destinationList' => $destinationList,
+        'jenis_wisata' => $jenis_wisata
+    ]);
+}
 
     public function fetch_detail_wisata($id){
         $hotelList = $this->fetchJson(env("API_SERVER")."getAllHotels");
@@ -99,7 +102,7 @@ class DestinasiController extends Controller
             'transportasiArray' => $transportasiArray,
         ]);
     }
-
+    
     public function search_destinasi(Request $request)
     {
         $query = $request->input('search');

@@ -73,27 +73,32 @@
 
     <section class="container mt-3">
         <h1 class="wisata-title text-center">List Wisata {{$jenis_wisata}}</h1>
-        <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
-            @foreach($destinationList as $index => $destinasi)
-                <div class="col">
-                    <div class="card h-100 glass">
-                        <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
-                            <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>
-                            <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
-                            <div class="card-info">
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>
-                                <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>
+        
+        @if(empty($destinationList))
+            <p class="text-center">Belum ada data wisata {{$jenis_wisata}}</p>
+        @else
+            <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
+                @foreach($destinationList as $index => $destinasi)
+                    <div class="col">
+                        <div class="card h-100 glass">
+                            <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
+                            <div class="card-body">
+                                <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
+                                <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>
+                                <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>
+                                <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>
+                                <div class="card-info">
+                                    <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>
+                                    <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>
+                                </div>
+                                <a href="{{ route('destination.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
+                                    <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
+                                </a>
                             </div>
-                            <a href="{{ route('destination.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
-                                <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
-                            </a>
                         </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @endif
     </section>
 @endsection
