@@ -1,0 +1,856 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,800;1,9..40,800&family=Raleway:wght@700&display=swap');
+body{
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    /*zoom: 90%;*/
+    background-color:#fff;
+    padding: 0;
+    margin: 0;
+
+}
+.h-100vh{
+    min-height: 100vh;
+}
+
+
+.img-hero{
+    width: 100%;
+    height: 900px;
+}
+
+.bg-my-primary {
+background-color: #004e64;
+}
+#map{
+    padding-top: 100px;
+    margin-top: 20px;
+    height: 400px;
+    width: 400px;
+}
+
+.navbar-brand {
+    width: 250px;
+}
+
+.logo-right{
+    width: 50px;
+}
+
+.card-event{
+    width: 80%;
+    border-width: 2px;
+    border-color: #78C6EA;
+}
+.dropdown-menu {display: block;visibility: hidden;opacity:0;transform: translateY(-10px);transition:.5s ease all;}
+.dropdown-menu.show {display: block;visibility: visible;opacity:1;transform: translateY(0px);transition:.5s ease all;}
+.logo-footer{
+    width: 200px;
+}
+
+.logo-footer-2{
+    width: 200px;
+}
+
+.logo-footer-3{
+    width: 50px;
+}
+
+footer h6{
+    font-size: 12px;
+}
+
+.logo-detail{
+    width: 30px;
+}
+
+.image-detail{
+    width: 80%;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+.btn-my-primary{
+    background-color: #78C6EA;
+    color: white;
+}
+
+.btn-my-primary:hover{
+    border-color: #78C6EA;
+    color: #78C6EA;
+}
+
+/*.hero .carousel-item {*/
+/*    !*transition: transform 0.5s ease-in-out;*!*/
+/*    width: 1750px;*/
+/*    height: 820px;*/
+
+/*}*/
+
+/*.hero .carousel-item.active {*/
+/*    !*transform: rotateY(0deg);*!*/
+/*}*/
+
+/*.hero .carousel-item-next {*/
+/*    !*transform: rotateY(-180deg);*!*/
+/*}*/
+
+/*.hero .carousel-item-prev {*/
+/*    !*transform: rotateY(180deg);*!*/
+/*}*/
+
+.hero .text-wrapper{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero .text-wrapper h1,
+.hero .text-wrapper p{
+    text-shadow: black 0.07em 0.1em;
+}
+
+.bi-calendar span {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Form pencarian */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Sesuaikan dengan kebutuhan Anda */
+}
+
+/* Input pencarian */
+#search-container {
+    width: 250px; /* Sesuaikan lebar input dengan kebutuhan Anda */
+    margin-right: 10px; /* Jarak antara input dan tombol pencarian */
+}
+
+/* Tombol pencarian */
+#button-addon2 {
+    padding: 8px 16px; /* Sesuaikan padding tombol dengan kebutuhan Anda */
+}
+
+.rekomendasi .carousel-control-prev,
+.rekomendasi .carousel-control-next {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #78C6EA;
+    border: none;
+    opacity: 1;
+    border-radius: 100px;
+    color: white;
+}
+.img-fluid {
+    width: 500px;
+    height: 500px;
+  }
+
+.img-modal{
+    width : 50%;
+    height: 50%;
+}
+
+.search-results-heading {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.rekomendasi .carousel-control-prev {
+    left: -3%;
+}
+
+.rekomendasi .carousel-control-next {
+    right: -3%;
+}
+
+.carousel-item img{
+    width: 100%;
+    /*height: 100%;*/
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-bg {
+    background-color: rgba(147, 218, 255, 0.46);
+}
+
+.card-reccomendation{
+    background-color:  #004e64;;
+}
+
+.destination-card {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 300px;
+}
+
+.card-list-wisata .card-body {
+    height: 100%;
+    width: 100%;
+}
+
+.card-list-wisata .card-body .col {
+    height: 100%;
+}
+
+.destination-card img {
+    height: 200px; /* Set a fixed height for the images */
+    width: 150%; /* Ensure images fill the width of their container */
+    /*object-fit: cover; !* Scale images uniformly *!*/
+}
+
+
+     /* Style to ensure consistent sizing for all images */
+ .destination-image img {
+     height: 300px; /* Set a fixed height for the images */
+     width: 100%; /* Auto-adjust width to maintain aspect ratio */
+     object-fit: cover; /* Scale images uniformly */
+ }
+
+.scrolling-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+}
+
+
+
+.information-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.promo-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.promo-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-carousel .carousel-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-carousel .carousel-item {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.promo-carousel .promo-image {
+    width: 300px;  /* Adjust the width as needed */
+    height: 300px;  /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.promo-carousel .active-image {
+    opacity: 1;
+    transform: scale(1.2);  /* Scale up the active image */
+}
+
+.promo-carousel .inactive-image {
+    opacity: 0.7;
+}
+
+.promo-carousel .carousel-item:not(.active) .promo-image {
+    opacity: 0.7;
+    transform: scale(1);  /* Keep inactive images at normal scale */
+}
+
+
+.information{
+    padding-inline: 40px;
+}
+
+.information-title{
+    font-size: 50px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.information-image{
+    width: 50px;
+}
+
+.information-text{
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.about-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.about-title{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.about-text{
+    font-size: 14px;
+    text-align: justify ;
+}
+
+.wisata-wrapper{
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.wisata-title{
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.promo-title{
+    font-size: 50px;
+}
+
+.wisata-wrapper .card-img-top{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+}
+
+.wisata-wrapper a:hover .card-title{
+    color: #78C6EA;
+}
+
+.wisata-wrapper a:hover .card-img-top img{
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+
+.wisata {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    white-space: nowrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.wisata a{
+    min-width: 400px;
+}
+
+.wisata::-webkit-scrollbar{
+    display: none;
+}
+
+.wisata-wrapper .card-img-top img{
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rekomendasi-wrapper{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.rekomendasi{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 40px;
+}
+
+.rekomendasi-title{
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.destination-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.destination-text{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.logo-list{
+    width: 50px;
+}
+
+.navbar-brand img,
+.logo-right img,
+.logo-footer img,
+.logo-footer-2 img,
+.logo-footer-3 img,
+.logo-detail img,
+.information-image img,
+.destination-logo img,
+.logo-list img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-content a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+}
+
+.rekomendasi .carousel{
+    width: 75%;
+}
+
+.rekomendasi .card{
+    width: 100%;
+    height: 300px;
+}
+
+.rekomendasi .card-body{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.event .card{
+    width: 100%;
+    height: 300px;
+}
+
+.event .card-body{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+@media (max-width: 768px) {
+    .hero .text-wrapper h1{
+        width: 80%;
+    }
+
+    .logo-right {
+        width: 40px;
+    }
+
+    .card-event{
+        width: 90%;
+    }
+
+
+    footer h6{
+        font-size: 10px;
+    }
+
+    .logo-detail{
+        width: 20px;
+    }
+
+    .image-detail{
+        width: 100%;
+    }
+
+    .information-wrapper{
+        margin-top: 50px;
+    }
+
+    .promo-wrapper{
+        margin-top: 50px;
+    }
+
+
+    .information-title{
+        font-size: 16px;
+    }
+
+    .information-image{
+        width: 40px;
+    }
+
+    .information-text{
+        font-size: 12px;
+    }
+
+    .about-wrapper{
+        margin-top: 50px;
+    }
+
+    .wisata-wrapper{
+        margin-top: 50px;
+    }
+
+    .wisata-title{
+        font-size: 16px;
+    }
+
+    .about-title{
+        font-size: 16px;
+    }
+
+    .about-text{
+        font-size: 12px;
+    }
+
+    .rekomendasi-wrapper{
+        margin-top: 50px;
+    }
+
+    .rekomendasi-title{
+        font-size: 16px;
+    }
+
+    .card-list-wisata h5{
+        font-size: 14px;
+    }
+
+    .card-list-wista i,
+    .card-list-wisata h6{
+        font-size: 12px;
+    }
+
+    .card-list-wisata a{
+        font-size: 12px;
+    }
+
+    .rekomendasi .carousel{
+        width: 100%;
+    }
+
+    .rekomendasi .carousel-control-next,
+    .rekomendasi .carousel-control-prev{
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+}
+.body-footer {
+    display: flex;
+    background: #333;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+    font-family: "DM Sans", sans-serif;
+    list-style: none;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+.social-icon__link:hover {
+    transform: translateY(-10px);
+}
+
+.menu__link {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.menu__link:hover {
+    opacity: 1;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+#handboy
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 98% 98%;
+    transform-box: fill-box;
+
+}
+
+
+#girllight
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 0% 97%;
+    transform-box: fill-box;
+}
+
+#hairgirl
+{
+    animation: swinghair ease-in-out 1.3s infinite alternate;
+   transform-origin: 60% 0%;
+    transform-box: fill-box;
+
+}
+
+#zero
+{
+  transform-origin:bottom;
+  transform-box:fill-box;
+
+}
+.error-container {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.error-container h2 {
+    color: #2F1829; /* Atur warna teks menjadi warna yang diinginkan */
+    text-decoration: none !important; /* Hilangkan underline dengan menggunakan !important */
+    border: none; /* Pastikan tidak ada border */
+    outline: none; /* Pastikan tidak ada outline */
+    display: inline; /* Pastikan display tidak menyebabkan underline */
+}
+
+.error-container h2:focus,
+.error-container h2:hover,
+.error-container h2:visited,
+.error-container h2:active {
+    text-decoration: none !important; /* Hilangkan underline pada semua pseudo-class */
+}
+
+.error-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px; /* Menambahkan margin bawah untuk menaikkan posisi */
+}
+
+.error-container button {
+    background-color: #2F1829;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0px; /* Atur margin atas ke 0px */
+    margin-bottom: 20px; /* Atur margin bawah ke 20px */
+}
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+
+  #notfound {
+    position: relative;
+    height: 100vh;
+  }
+
+  #notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  .notfound {
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .notfound .notfound-404 {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0px auto 50px;
+  }
+
+  .notfound .notfound-404>div:first-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffa200;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border: 5px dashed #000;
+    border-radius: 5px;
+  }
+
+  .notfound .notfound-404>div:first-child:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    top: -5px;
+    -webkit-box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1) inset;
+            box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+  }
+
+  .notfound .notfound-404 h1 {
+    font-family: 'Cabin', sans-serif;
+    color: #000;
+    font-weight: 700;
+    margin: 0;
+    font-size: 90px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 50%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .notfound h2 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 33px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+  }
+
+  .notfound p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+  }
+
+  .notfound a {
+    font-family: 'Cabin', sans-serif;
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #9ad6f1;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+
+  .notfound a:hover {
+    background-color: #2c2c2c;
+  }
+
+
+
+
+
+
+
+/*************swing************/
+@keyframes swing {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+
+/*************swing hair************/
+@keyframes swinghair {
+    0% { transform: rotate(6deg); }
+    100% { transform: rotate(-6deg); }
+}
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+
