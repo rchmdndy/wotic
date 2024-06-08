@@ -19,7 +19,7 @@ body{
 }
 
 .bg-my-primary {
-    background-color: #9ad6f1;
+background-color: #004e64;
 }
 #map{
     padding-top: 100px;
@@ -157,6 +157,10 @@ form {
     height: 500px;
   }
 
+.img-modal{
+    width : 50%;
+    height: 50%;
+}
 
 .search-results-heading {
     margin-top: 40px;
@@ -184,7 +188,7 @@ form {
 }
 
 .card-reccomendation{
-    background-color: #0cefff;
+    background-color:  #004e64;;
 }
 
 .destination-card {

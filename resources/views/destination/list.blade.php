@@ -75,6 +75,10 @@
                 </button>
             </div>
     </form>
+        @elseif(empty($destinationList))
+            <h5 class="display-5 text-center">
+                Belum ada data terkait wisata {{$jenis_wisata}}
+            </h5>
         @else
         <h1 class="wisata-title card-title text-center">List Wisata {{$jenis_wisata}}</h1>
         <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">

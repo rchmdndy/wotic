@@ -8,7 +8,6 @@
             </div>
             <div class="col-12">
                 <div class="position-relative">
-                    <h1 class="position-absolute text-white bg-dark p-2" style="bottom: 10px; left: 10px;">{{ $destinationDetail['destinasi']['nama_destinasi'] }}</h1>
                     @if(count($destinationDetail['image']) > 1)
                         <!-- Carousel -->
                         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -79,7 +78,7 @@
                         </tbody>
                     </table>
                 </div>
-                <button class="btn btn-primary btn-block">Pesan Sekarang</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Pesan Sekarang</button>
                 {{-- Harga Tiket End --}}
             </div>
             <div class="col p-4 rounded">
@@ -130,7 +129,7 @@
 
         <div class="mt-5 mb-5" style="background: #F8F8F8;">
             <div class="d-flex m-4 mt-5">
-                <h2 class="display-6"><i class="bi bi-buildings px-4"></i>List  Terdekat</h2>
+                <h2 class="display-6"><i class="bi bi-buildings px-4"></i>Hotel Terdekat</h2>
             </div>
             <div class="overflow-auto">
                 <div class="row flex-nowrap">
@@ -138,10 +137,10 @@
                         <div class="col">
                             @if($hotel['is_important'] == 'yes')
                                 <div class="card mb-4 card-reccomendation rounded-3" style="width: 18rem; height: 25rem;">
-                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 250px">
-                                    <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
+                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 400px">
+                                    <div class="card-body text-white" style="margin-left: 10px; margin-right: 10px;">
                                         <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                        <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
+                                        <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
                                         <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
                                         <p class="card-text mb-3">📌 {{$hotel['distance_to_destination']}} KM</p>
                                     </div>
@@ -161,7 +160,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -173,21 +172,21 @@
                     <div class="modal-body">
                         <div class="row row-cols-4 g-4 justify-content-center align-items-center">
                             <div class="col">
-                                <a href="" class="d-flex justify-content-center">
+                                <a href="https://www.traveloka.com/" class="d-flex justify-content-center">
                                     <img src="{{ asset('images/logos/logotraveloka.png') }}" alt=""
-                                         class="img-fluid rounded-4">
+                                         class="img-modal rounded-4">
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="" class="d-flex justify-content-center">
+                                <a href="https://www.tiket.com/" class="d-flex justify-content-center">
                                     <img src="{{ asset('images/logos/logotiketcom.png') }}" alt=""
-                                         class="img-fluid rounded-4">
+                                         class="img-modal rounded-4">
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="" class="d-flex justify-content-center">
+                                <a href="https://booking.kai.id/" class="d-flex justify-content-center">
                                     <img src="{{ asset('images/logos/logoaccesskai.png') }}" alt=""
-                                         class="img-fluid rounded-4">
+                                         class="img-modal rounded-4">
                                 </a>
                             </div>
                         </div>

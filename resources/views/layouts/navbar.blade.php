@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link me-3 {{\Illuminate\Support\Facades\Route::currentRouteName()=='index' ? 'text-warning' : 'text-white'}}" href="/"><strong>BERANDA</strong></a>
+                    <a class="nav-link me-3 {{ Str::startsWith(Route::currentRouteName(), 'index') ? 'text-warning' : 'text-white' }}" href="/"><strong>BERANDA</strong></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{str_contains(request()->route()->getPrefix(), 'destinasi_wisata') ? 'text-warning' : 'text-white'}} me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <a class="nav-link dropdown-toggle {{ Str::startsWith(Route::currentRouteName(), 'destination.') ? 'text-warning' : 'text-white' }} me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                         <strong>DESTINASI WISATA</strong>
                     </a>
                     <ul class="dropdown-menu">
@@ -43,9 +43,9 @@
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}" class="dropdown-item">WISATA BUATAN</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link {{str_contains(request()->route()->getPrefix(), 'promo') ? 'text-warning' : 'text-white'}} me-3" href="{{route('promo.index')}}"><strong>PROMO</strong></a></li> <!-- Tambahkan margin kanan -->
-            <li><a class="nav-link {{str_contains(request()->route()->getPrefix(), 'hotel') ? 'text-warning' : 'text-white'}} me-3" href="{{route('hotel.index')}}"><strong>HOTEL</strong></a></li> <!-- Tambahkan margin kanan -->
-        <li><a class="nav-link {{str_contains(request()->route()->getPrefix(), 'event') ? 'text-warning' : 'text-white'}} me-3" href="{{route('event.fetch_all')}}"><strong>EVENT</strong></a></li> <!-- Tambahkan margin kanan -->
+                <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'promo.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('promo.index')}}"><strong>PROMO</strong></a></li> <!-- Tambahkan margin kanan -->
+            <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'hotel.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('hotel.index')}}"><strong>HOTEL</strong></a></li> <!-- Tambahkan margin kanan -->
+        <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'event.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('event.fetch_all')}}"><strong>EVENT</strong></a></li> <!-- Tambahkan margin kanan -->
         <li><a class="nav-link {{\Illuminate\Support\Facades\Route::currentRouteName()=='about' ? 'text-warning' : 'text-white'}}" href="{{ route('about') }}"><strong>TENTANG</strong></a></li>
             </ul>
         </div>

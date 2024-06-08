@@ -56,7 +56,7 @@
                     </form>
                 @else
                 @foreach($promoList as $promo)
-                    <a href="#" style="text-decoration: none;">
+                    <a href="{{route('promo.detail', ['id' => $promo['id']])}}" style="text-decoration: none;">
                     <div class="card text-center"><img class="card-img-top" src="{{$promo['image']}}" alt="">
                             <div class="card-body">
                                 <h5 style="color: black; font-weight: bold">{{$promo['nama_promo']}} <br /></h5>
@@ -126,7 +126,7 @@
                 <form method="get">
                     <div class="d-flex justify-content-center text-black text-center">
                         <button type="submit" class="btn btn-warning">
-                            Gagal mendapatkan data wisata, silahkan refresh halaman
+                            Gagal mendapatkan data wisata unik, silahkan refresh halaman
                         </button>
                     </div>
                 </form>
@@ -163,7 +163,7 @@
                         <form method="get">
                             <div class="d-flex justify-content-center text-decoration-none text-black">
                                 <button type="submit" class="btn btn-warning">
-                                    Gagal mendapatkan data event, silahkan refresh halaman
+                                    Gagal mendapatkan data event bulan ini, silahkan refresh halaman
                                 </button>
                             </div>
                         </form>
@@ -193,7 +193,7 @@
                 @if(isset($bannerDestinationList['Error']))
                     <div class="d-flex justify-content-center text-decoration-none text-black">
                         <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data wisata, silahkan refresh halaman
+                            Gagal mendapatkan data wisata rekomendasi, silahkan refresh halaman
                         </a>
                     </div>
                 @else
