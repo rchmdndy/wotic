@@ -40,9 +40,13 @@ Route::prefix('/destinasi_wisata')->controller(DestinasiController::class)->name
     Route::get('/','fetch_all')->name('all');
     Route::get('/search', 'search_destinasi')->name('search');
     Route::get('/categories', 'categories')->name('categories');
+    Route::prefix('/unik')->group(function (){
+        Route::get('/','fetch_unik_list')->name('unik.all');
+        Route::get('/{id}/detail', 'fetch_detail_wisata_unik')->name('unik.detail');
+        });
     Route::get('/{jenis_wisata}','fetch_jenis_wisata')->name('fetch');
     Route::get('/{id}/detail','fetch_detail_wisata')->name('detail');
-});
+    });
 
 // Event
 Route::prefix('/event')->controller(EventController::class)->name('event.')->group(function (){
@@ -50,11 +54,6 @@ Route::prefix('/event')->controller(EventController::class)->name('event.')->gro
     Route::get('/{id}/detail', 'detail')->name('detail');
 });
 
-// Attractive Destination
-Route::prefix('/attractive_destination')->controller(AtractiveDestinationController::class)->name('attractive_destination.')->group(function (){
-    Route::get('/','fetch_all')->name('all');
-    Route::get('/{id}/detail', 'detail')->name('detail');
-});
 // Promo
 Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->group(function (){
     Route::get('/', 'fetch_all')->name('index');
@@ -66,9 +65,9 @@ Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->gro
     Route::get('/', 'index')->name('index');
 });
 
-Route::get('/coba_layout', function (){
-    return view('search.search_results');
-});
+//Route::get('/coba_layout', function (){
+//    return view('search.search_results');
+//});
 
 Route::get('/map_redirect/{lat}/{lng}', function($lat, $lng){
     return redirect()->away("https://www.google.com/maps?q=$lat,$lng");

@@ -60,19 +60,19 @@
                             <tr>
                                 <td class="table-secondary"><strong>WEEKDAY</strong></td>
                                 <td>
-                                    IDR {{ (float) ($destinationDetail['destinasi']['tiket']) ? number_format($destinationDetail['destinasi']['tiket']) : '0' }}
+                                    IDR {{ ($destinationDetail['destinasi']['tiket']) ? : '0' }}
                                 </td>
                                 <td>
-                                    IDR {{ (float) $destinationDetail['destinasi']['tiket_internasional'] ? number_format($destinationDetail['destinasi']['tiket_internasional'], 0, ',', '.') : '0' }}
+                                    IDR {{ $destinationDetail['destinasi']['tiket_internasional'] ? : '0' }}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="table-secondary"><strong>WEEKEND</strong></td>
                                 <td>
-                                    IDR {{ (float) $destinationDetail['destinasi']['tiket_weekend_local'] ? number_format($destinationDetail['destinasi']['tiket_weekend_local'], 0, ',', '.') : '0' }}
+                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_local'] ? : '0' }}
                                 </td>
                                 <td>
-                                    IDR {{ (float) $destinationDetail['destinasi']['tiket_weekend_internasional'] ? number_format($destinationDetail['destinasi']['tiket_weekend_internasional'], 0, ',', '.') : '0' }}
+                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_internasional'] ? : '0' }}
                                 </td>
                             </tr>
                         </tbody>
@@ -134,28 +134,37 @@
             <div class="overflow-auto">
                 <div class="row flex-nowrap">
                     @foreach($hotelList as $hotel)
-                        <div class="col">
-                            @if($hotel['is_important'] == 'yes')
-                                <div class="card mb-4 card-reccomendation rounded-3" style="width: 18rem; height: 25rem;">
-                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 400px">
-                                    <div class="card-body text-white" style="margin-left: 10px; margin-right: 10px;">
-                                        <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                        <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
-                                        <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
-                                        <p class="card-text mb-3">📌 {{$hotel['distance_to_destination']}} KM</p>
+                            <div class="col">
+                        <a href="{{route('map_redirect',
+                                        ['lat' => $hotel['koordinat'],
+                                        'lng' => $hotel['koordinat_y']]
+                                        )}}" target="_blank" style="text-decoration: none">
+                                @if($hotel['is_important'] == 'yes')
+                                    <div class="card mb-4 card-reccomendation rounded-3"
+                                         style="width: 18rem; height: 25rem;">
+                                        <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
+                                             alt="Hotel Image" style="width: auto; height: 400px">
+                                        <div class="card-body text-white"
+                                             style="margin-left: 10px; margin-right: 10px;">
+                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
+                                            <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
+                                            <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
+                                            <p class="card-text mb-3">📌 {{$hotel['distance_to_destination']}} KM</p>
+                                        </div>
                                     </div>
-                                </div>
-                            @else
-                                <div class="card mb-4" style="width: 18rem; height: 25rem;">
-                                    <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid" alt="Hotel Image" style="width: auto; height: 250px">
-                                    <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                                        <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                        <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
-                                        <p class="card-text">📌 {{$hotel['distance_to_destination']}} KM</p>
+                                @else
+                                    <div class="card mb-4" style="width: 18rem; height: 25rem;">
+                                        <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
+                                             alt="Hotel Image" style="width: auto; height: 250px">
+                                        <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
+                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
+                                            <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
+                                            <p class="card-text">📌 {{$hotel['distance_to_destination']}} KM</p>
+                                        </div>
                                     </div>
-                                </div>
-                            @endif
-                        </div>
+                                @endif
+                        </a>
+                            </div>
                     @endforeach
                 </div>
             </div>

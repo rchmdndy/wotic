@@ -1,62 +1,104 @@
 @extends('layouts.layout')
-
 @section('content')
+    <style>
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            background-color: #e9ecef; /* Light gray background for section title */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .card-info {
+            margin-top: auto;
+        }
+
+        .btn {
+            border-radius: 0; /* Make button square */
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        /* Add glass effect */
+        .glass {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+    </style>
     <section class="container mt-3">
-        <h1 class="text-center fs-4 mt-3">List Wisata</h1>
-
-        <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
-            <!-- Destination items will be appended here -->
-        </div>
-    </section>
-    <script>
-        // Make AJAX request to the API endpoint
-        fetch('https://wotic.id/api/v2/wonosobo/getAllAttractiveDestination')
-            .then(response => response.json())
-            .then(destinasiList => {
-                console.log('Data from API:', destinasiList); // Log the data from the API
-                const destinationListDiv = document.getElementById('destinationList');
-
-                // Iterate over the destination list returned by the API
-                destinasiList.forEach(destinasi => {
-                    console.log('Destination:', destinasi); // Log each destination object
-
-                    const cardDiv = document.createElement('div');
-                    cardDiv.classList.add('col', 'destination-card'); // Add 'destination-card' class
-
-
-                    // Check if the image exists, if not, set it to the default image
-                        cardDiv.innerHTML = `
-                            <div class="card-content">
-
-                                    <div class="card h-100 w-100 card-list-wisata rounded-4 card-bg shadow p-3 mb-2">
-                                        <div class="card-body">
-                                            <div class="row row-cols-md-2 row-cols-1 g-3">
-                                                <div class="col">
-                                                    <img src="${destinasi.image}" alt="Image" class="img-fluid rounded-4">
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="card-title mb-3">${destinasi.nama_destinasi}</h5>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-map"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.desa}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-cash fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.tiket_weekend_local ? 'IDR ' + parseInt(destinasi.tiket_weekend_local).toLocaleString('id-ID') : ''}</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <i class="bi bi-geo-alt fs-6"></i>
-                                                        <h6 class="card-subtitle text-body-secondary">${destinasi.jenis_wisata}</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+        @if(isset($destinationList['Error']))
+            <form method='get'>
+                <div class="d-flex justify-content-center text-decoration-none text-black">
+                    <button type='submit' class="btn btn-warning">
+                        Gagal mendapatkan data wisata, silahkan refresh halaman
+                    </button>
+                </div>
+            </form>
+        @else
+            <h1 class="wisata-title card-title text-center">List Wisata Unik</h1>
+            <div class="row row-cols-md-2 row-cols-1 mt-3 g-4" id="destinationList">
+                @foreach($attractiveList as $index => $destinasi)
+                    <div class="col">
+                        <div class="card h-100 glass">
+                            <img src="{{ $destinasi['image'][0] }}" class="card-img-top" alt="Image">
+                            <div class="card-body">
+                                <h5 class="section-title">{{ $destinasi['nama_destinasi'] }}</h5>
+{{--                                <p class="card-subtitle"><i class="bi bi-geo-alt-fill"></i> {{ $destinasi['alamat'] }}</p>--}}
+{{--                                <p class="card-subtitle"><i class="bi bi-cash"></i> Tiket Weekend (Local): {{ $destinasi['tiket_weekend_local'] ? 'IDR ' . number_format($destinasi['tiket_weekend_local'], 0, ',', '.') : 'IDR 0' }}</p>--}}
+{{--                                <p class="card-subtitle"><i class="bi bi-globe"></i> Tiket Weekend (Internasional): {{ $destinasi['tiket_weekend_internasional'] ? 'IDR ' . number_format($destinasi['tiket_weekend_internasional'], 0, ',', '.') : 'IDR 0' }}</p>--}}
+                                <div class="card-info">
+{{--                                    <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Semarang: {{ $destinasi['jarak_dari_semarang'] }} KM</p>--}}
+{{--                                    <p class="card-subtitle"><i class="bi bi-geo-fill"></i> Dari Jogja: {{ $destinasi['jarak_dari_jogja'] }} KM</p>--}}
+                                </div>
+                                <a href="{{ route('destination.unik.detail', ['id' => $destinasi['id']]) }}" class="btn btn-primary btn-block">
+                                    <i class="bi bi-info-square btn-icon"></i> Baca Selengkapnya
                                 </a>
                             </div>
-                        `;
-                    destinationListDiv.appendChild(cardDiv);
-            })
-            .catch(error => console.error('Error fetching data:', error));},)
-    </script>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </section>
 @endsection

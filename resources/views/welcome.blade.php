@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/promo-welcome.css">
 @endsection
 @section('custom-content')
-    {{-- Hero Section --}}
+    {{-- Hero Section Start --}}
     <section class="hero">
         <div id="carouselExampleAutoplaying" class="carousel slide position-relative" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -40,41 +40,39 @@
             </form>
         </div>
     </section>
-    {{-- End Hero Section --}}
-    {{-- Promo section--}}
-    <section class="promo-wrapper">
-        <div class="gtco-testimonials">
-            <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
-            <div class="owl-carousel owl-carousel1 owl-theme">
-                @if(isset($bannerDestinationList['Error']))
-                    <form method="get">
-                        <div class="d-flex align-items-center text-decoration-none text-black">
-                            <button type="submit" class="btn btn-warning">
-                                Gagal mendapatkan data promo, silahkan refresh halaman
-                            </button>
-                        </div>
-                    </form>
-                @else
-                @foreach($promoList as $promo)
-                    <a href="{{route('promo.detail', ['id' => $promo['id']])}}" style="text-decoration: none;">
-                    <div class="card text-center"><img class="card-img-top" src="{{$promo['image']}}" alt="">
-                            <div class="card-body">
-                                <h5 style="color: black; font-weight: bold">{{$promo['nama_promo']}} <br /></h5>
-                                <p class="promo-date" style="margin-top: 1rem"><i class="bi bi-calendar-check start-icon"></i>
-                                    <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
-                                <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
-                                    <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
-                            </div>
-                        </div>
+    {{-- Hero Section End--}}
+    {{--Wisata Banner Section Start--}}
+    <section class="wisata-wrapper mb-5">
+        <div class="container">
+            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
+            @if(isset($bannerDestinationList['Error']))
+                <div class="d-flex justify-content-center text-decoration-none text-black">
+                    <a href="/" class="btn btn-warning">
+                        Gagal mendapatkan data wisata rekomendasi, silahkan refresh halaman
                     </a>
-                @endforeach
-                @endif
-            </div>
+                </div>
+            @else
+                <div class="wisata d-none d-lg-flex">
+                    @foreach($bannerDestinationList as $bannerDestination)
+                        <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
+                            <div class="card h-100 rounded-5 shadow">
+                                <div class="card-img-top rounded-top-5">
+                                    <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
+                                </div>
+                                <div class="card-body d-flex flex-column gap-5">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="card-title">{{ $bannerDestination['nama_destinasi'] }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                    @endif
+                </div>
         </div>
-
     </section>
-
-    {{-- Informasi --}}
+    {{--Wisata Banner Section End--}}
+    {{-- Informasi section Start--}}
     <section class="information-wrapper">
         <div class="information w-100 d-flex flex-column align-items-center">
             <h1 class="information-title">
@@ -117,32 +115,30 @@
             </div>
         </div>
     </section>
-    {{-- End Informasi --}}
-    {{-- Wisata Unik Start --}}
-    <section class="wisata-wrapper">
-        <div class="container">
-            <h1 class="wisata-title text-center">Wisata Unik</h1>
-                @if(isset($attractiveDestinationList['Error']))
-                <form method="get">
-                    <div class="d-flex justify-content-center text-black text-center">
-                        <button type="submit" class="btn btn-warning">
-                            Gagal mendapatkan data wisata unik, silahkan refresh halaman
-                        </button>
-                    </div>
-                </form>
-
+    {{-- Informasi section End--}}
+    {{-- Promo section Start--}}
+    <section class="promo-wrapper">
+        <div class="gtco-testimonials">
+            <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
+            <div class="owl-carousel owl-carousel1 owl-theme">
+                @if(isset($bannerDestinationList['Error']))
+                    <form method="get">
+                        <div class="d-flex align-items-center text-decoration-none text-black">
+                            <button type="submit" class="btn btn-warning">
+                                Gagal mendapatkan data promo, silahkan refresh halaman
+                            </button>
+                        </div>
+                    </form>
                 @else
-            <div class="wisata d-none d-lg-flex">
-                @foreach($attractiveDestinationList as $destination)
-                    <a href="{{ route('attractive_destination.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
-                        <div class="card rounded-5 shadow">
-                            <div class="card-img-top h-100 rounded-top-5">
-                                <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
-                            </div>
-                            <div class="card-body d-flex flex-column gap-5">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
-                                </div>
+                @foreach($promoList as $promo)
+                    <a href="{{route('promo.detail', ['id' => $promo['id']])}}" style="text-decoration: none;">
+                    <div class="card text-center"><img class="card-img-top" src="{{$promo['image']}}" alt="">
+                            <div class="card-body">
+                                <h5 style="color: black; font-weight: bold">{{$promo['nama_promo']}} <br /></h5>
+                                <p class="promo-date" style="margin-top: 1rem"><i class="bi bi-calendar-check start-icon"></i>
+                                    <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
+                                <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
+                                    <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
                             </div>
                         </div>
                     </a>
@@ -150,9 +146,10 @@
                 @endif
             </div>
         </div>
+
     </section>
-    {{-- End Wisata Unik --}}
-    {{-- Event Start --}}
+    {{-- Promo section End--}}
+    {{-- Event Section Start --}}
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
             <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
@@ -183,40 +180,43 @@
                     @endif
                 </div>
             </div>
-                </div>
+        </div>
     </section>
-    {{-- End Event --}}
-    {{--Start Wisata Banner --}}
-    <section class="wisata-wrapper mb-5">
+    {{-- Event Section End--}}
+    {{-- Wisata Unik Section Start --}}
+    <section class="wisata-wrapper">
         <div class="container">
-            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
-                @if(isset($bannerDestinationList['Error']))
-                    <div class="d-flex justify-content-center text-decoration-none text-black">
-                        <a href="/" class="btn btn-warning">
-                            Gagal mendapatkan data wisata rekomendasi, silahkan refresh halaman
-                        </a>
+            <h1 class="wisata-title text-center">Wisata Unik</h1>
+                @if(isset($attractiveDestinationList['Error']))
+                <form method="get">
+                    <div class="d-flex justify-content-center text-black text-center">
+                        <button type="submit" class="btn btn-warning">
+                            Gagal mendapatkan data wisata unik, silahkan refresh halaman
+                        </button>
                     </div>
+                </form>
+
                 @else
             <div class="wisata d-none d-lg-flex">
-                    @foreach($bannerDestinationList as $bannerDestination)
-                        <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
-                            <div class="card h-100 rounded-5 shadow">
-                                <div class="card-img-top rounded-top-5">
-                                    <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
-                                </div>
-                                <div class="card-body d-flex flex-column gap-5">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <h5 class="card-title">{{ $bannerDestination['nama_destinasi'] }}</h5>
-                                    </div>
+                @foreach($attractiveDestinationList as $destination)
+                    <a href="{{ route('destination.unik.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
+                        <div class="card rounded-5 shadow">
+                            <div class="card-img-top h-100 rounded-top-5">
+                                <img src="{{ $destination['image'][0] }}" alt="{{ $destination['nama_destinasi'] }}" class="rounded-top-5">
+                            </div>
+                            <div class="card-body d-flex flex-column gap-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title">{{ $destination['nama_destinasi'] }}</h5>
                                 </div>
                             </div>
-                        </a>
-                    @endforeach
+                        </div>
+                    </a>
+                @endforeach
                 @endif
             </div>
         </div>
     </section>
-    {{--End Wisata Banner--}}
+    {{-- Wisata Unik Section End --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

@@ -57,7 +57,7 @@
                             <tr>
                                 <td class="table-secondary"><strong>WEEKDAY</strong></td>
                                 <td>
-                                    IDR {{ (float) ($destinationDetail['destinasi']['tiket']) ? number_format($destinationDetail['destinasi']['tiket']) : '0' }}
+                                    IDR {{ ($destinationDetail['destinasi']['tiket']) ?: '0' }}
 
                                 </td>
                                 <td>

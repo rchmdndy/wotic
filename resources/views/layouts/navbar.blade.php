@@ -41,6 +41,7 @@
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'industri kecil']) }}" class="dropdown-item">WISATA INDUSTRI KECIL</a></li>
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'edukasi']) }}" class="dropdown-item">WISATA EDUKASI</a></li>
                         <li><a href="{{ route('destination.fetch', ['jenis_wisata' => 'buatan']) }}" class="dropdown-item">WISATA BUATAN</a></li>
+                        <li><a href="{{ route('destination.unik.all')}}" class="dropdown-item">WISATA UNIK</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'promo.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('promo.index')}}"><strong>PROMO</strong></a></li> <!-- Tambahkan margin kanan -->

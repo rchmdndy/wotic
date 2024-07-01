@@ -26,6 +26,12 @@ class DestinasiController extends Controller
             'jenis_wisata' => ''
         ]);
     }
+    public function fetch_unik_list()
+    {
+        return view('attractive.list', ['attractiveList' => $this->fetchJson(env('API_SERVER')."getAllAttractiveDestination")]);
+    }
+
+
     public function fetch_jenis_wisata(string $jenis_wisata){
         // Fetch destinations from API
         $destinationList = $this->fetchJson(env('API_SERVER')."getDestinationType", ['jenis_wisata' => $jenis_wisata]);
@@ -95,7 +101,7 @@ class DestinasiController extends Controller
             return $hotels['distance_to_destination'] != null;
         });
 
-        // Cut the list to 10 hotels
+        // Cut the list to 15 hotels
         $hotels = $hotels->take(15);
 
         // Convert back to array
@@ -107,7 +113,12 @@ class DestinasiController extends Controller
             'transportasiArray' => $transportasiArray,
         ]);
     }
+    public function fetch_detail_wisata_unik($id){
+        $destinationDetail = $this->fetchJson(env('API_SERVER')."getDetailAttractiveDestination/$id");
 
+        $destinationDetail['jenis_wisata'] = explode(',', $destinationDetail['destinasi']['jenis_wisata']);
+        return view('attractive.detail', ['destinationDetail' => $destinationDetail]);
+    }
     public function search_destinasi(Request $request)
     {
         $query = $request->input('search');
