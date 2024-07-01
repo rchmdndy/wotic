@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Client\ConnectionException;
@@ -44,6 +45,31 @@ class Controller extends BaseController
         $distance = $earthRadius * $c;
         $rounded_distance = number_format($distance, 2);
         return $rounded_distance; // Distance in kilometers
+    }
+
+    /**
+     * @param mixed $dataDetail
+     * @return mixed
+     */
+    public function dateFormat(mixed $dataDetail): mixed
+    {
+        try {
+            // Assuming the date format in the API response is 'd-m-Y'
+            $tanggalMulai = Carbon::parse($dataDetail['tanggal_mulai']);
+            $tanggalSelesai = Carbon::parse($dataDetail['tanggal_selesai']);
+
+            // Set locale to Indonesian
+            Carbon::setLocale('id');
+
+            // Format the dates
+            $dataDetail['tanggal_mulai'] = $tanggalMulai->translatedFormat('l, j F Y');
+            $dataDetail['tanggal_selesai'] = $tanggalSelesai->translatedFormat('l, j F Y');
+        } catch (\Exception $e) {
+            // Handle invalid date format
+            $dataDetail['tanggal_mulai'] = 'Invalid date';
+            $dataDetail['tanggal_selesai'] = 'Invalid date';
+        }
+        return $dataDetail;
     }
 
 }

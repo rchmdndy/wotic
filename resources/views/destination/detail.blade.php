@@ -174,30 +174,53 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ordering Application</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pilih Penyedia</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row row-cols-4 g-4 justify-content-center align-items-center">
                             <div class="col">
-                                <a href="https://www.traveloka.com/" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logotraveloka.png') }}" alt=""
-                                         class="img-modal rounded-4">
+                                <a href="https://www.traveloka.com/" style="text-decoration: none;" target="_blank">
+                                    <div  class="d-flex justify-content-center">
+                                        <img src="{{ asset('images/logos/logotraveloka.png') }}" alt=""
+                                             class="img-modal rounded-4"></div>
+                                    <div class="row mt-2 justify-content-center">
+                                        <span class="text-center text-black">Traveloka</span>
+                                    </div>
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="https://www.tiket.com/" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logotiketcom.png') }}" alt=""
-                                         class="img-modal rounded-4">
+                                <a href="https://www.tiket.com/" style="text-decoration: none;" target="_blank">
+                                    <div  class="d-flex justify-content-center">
+                                        <img src="{{ asset('images/logos/logotiket.png') }}" alt=""
+                                             class="img-modal rounded-4"></div>
+                                    <div class="row mt-2 justify-content-center">
+                                        <span class="text-center text-black">tiket.com</span>
+                                    </div>
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="https://booking.kai.id/" class="d-flex justify-content-center">
-                                    <img src="{{ asset('images/logos/logoaccesskai.png') }}" alt=""
-                                         class="img-modal rounded-4">
+                                <a href="https://www.agoda.com/" style="text-decoration: none;" target="_blank">
+                                    <div  class="d-flex justify-content-center">
+                                        <img src="{{ asset('images/logos/logoagoda.png') }}" alt=""
+                                             class="img-modal rounded-4"></div>
+                                    <div class="row mt-2 justify-content-center">
+                                        <span class="text-center text-black">Agoda</span>
+                                    </div>
                                 </a>
                             </div>
+                            <div class="col">
+                                <a href="https://www.booking.com/" style="text-decoration: none;" target="_blank">
+                                    <div  class="d-flex justify-content-center">
+                                        <img src="{{ asset('images/logos/logobooking.png') }}" alt=""
+                                             class="img-modal rounded-4"></div>
+                                    <div class="row mt-2 justify-content-center">
+                                        <span class="text-center text-black">Booking.com</span>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>

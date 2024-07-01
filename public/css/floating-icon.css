@@ -1,0 +1,57 @@
+/* Example: Floating icon CSS */
+.floating-icon {
+    position: fixed;
+    z-index: 1000; /* Ensure it's above other content if needed */
+    scale: 30%;
+    overflow: hidden;
+    display: inline-block;
+    background-repeat: no-repeat;
+    bottom: -86px !important;
+    right: -58px !important;
+
+    /* Animation for floating effect */
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust vertical movement */
+    }
+}
+
+.floating-icon:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+}
+
+/* Hover state - trigger effect */
+.floating-icon:hover:after {
+    opacity: 1;
+    left: 130%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+}
+
+/* Active state */
+.floating-icon:active:after {
+    opacity: 0;
+}

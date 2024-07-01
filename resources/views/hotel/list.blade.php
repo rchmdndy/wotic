@@ -6,7 +6,7 @@
 
     <section class="light">
         <div class="container py-2">
-            <div class="h1 text-center text-dark" id="pageHeaderTitle">Hotel</div>
+            <h1 class="display-2 my-5 text-center text-dark">Hotel</h1>
             @if(isset($hotelList['Error']))
             <form method='get'>
             <div class="d-flex justify-content-center text-decoration-none text-black">

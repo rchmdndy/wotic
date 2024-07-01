@@ -11,7 +11,7 @@
 
 @section('custom-content')
     <div class="container mt-5">
-        <h1 class="text-center mb-5">KATEGORI WISATA</h1>
+        <h1 class="display-6 text-center my-5">Kategori Wisata</h1>
         <div class="row align-items-center justify-content-center">
             @php
                 $categories = [

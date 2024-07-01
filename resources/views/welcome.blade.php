@@ -31,12 +31,13 @@
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
             <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
             <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
-            <form class="d-flex w-25" role="search" method="get" action="{{route('destination.search')}}">
-                <div class="form-floating flex-grow-1" id="search-container">
-                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" onfocus="removePlaceholder()">
-                    <label for="search-input" id="search-label">Cari Destinasi</label>
+            <form class="w-25" role="search" method="get" action="{{route('destination.search')}}">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" >
+                    <label for="search-input" id="search-label" class="search-label">Cari Destinasi</label>
+                    <label for="search-input" id="search-label" class="short-search-label justify-content-center"><i class="bi bi-search"></i></label>
                 </div>
-                <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search px-2"></i></button>
+                <button class="btn btn-primary" type="submit" style="padding-top: 16px; padding-bottom: 16px"><i class="bi bi-search px-3 py-3"></i></button>
             </form>
         </div>
     </section>
@@ -52,9 +53,9 @@
                     </a>
                 </div>
             @else
-                <div class="wisata d-none d-lg-flex">
+                <div class="wisata d-lg-flex">
                     @foreach($bannerDestinationList as $bannerDestination)
-                        <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black w-50 h-50">
+                        <a href="{{ route('destination.detail', ['id' => $bannerDestination['id']]) }}" class="text-decoration-none text-black">
                             <div class="card h-100 rounded-5 shadow">
                                 <div class="card-img-top rounded-top-5">
                                     <img src="{{ $bannerDestination['image'][0] }}" alt="{{ $bannerDestination['nama_destinasi'] }}" class="rounded-top-5">
@@ -88,7 +89,8 @@
                         Destinasi wisata
                     </p>
                 </a>
-                <a href="{{route('promo.index')}}" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a href="{{route('promo.index')}}"
+                   class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/promologo.png') }}" alt="" />
                     </div>
@@ -96,7 +98,8 @@
                         Promo wisata
                     </p>
                 </a>
-                <a id="notImplemented" href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a id="notImplemented" href="#"
+                   class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/umkmlogo.png') }}" alt="" />
                     </div>
@@ -104,7 +107,8 @@
                         UMKM wisata
                     </p>
                 </a>
-                <a id="notImplemented" href="#" class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
+                <a id="notImplemented" href="#"
+                   class="d-flex flex-column gap-1 align-items-center text-decoration-none text-black">
                     <div class="information-image">
                         <img src="{{ asset('images/logos/lainnyalogo.png') }}" alt="" />
                     </div>
@@ -119,7 +123,7 @@
     {{-- Promo section Start--}}
     <section class="promo-wrapper">
         <div class="gtco-testimonials">
-            <h2 class="text-center display-2"style="color: black; font-weight: bold;margin-bottom: 0">Promo Terbaru</h2>
+            <h1 class="wisata-title text-center">Promo Terbaru</h1>
             <div class="owl-carousel owl-carousel1 owl-theme">
                 @if(isset($bannerDestinationList['Error']))
                     <form method="get">
@@ -136,9 +140,9 @@
                             <div class="card-body">
                                 <h5 style="color: black; font-weight: bold">{{$promo['nama_promo']}} <br /></h5>
                                 <p class="promo-date" style="margin-top: 1rem"><i class="bi bi-calendar-check start-icon"></i>
-                                    <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
+                                    <small>Tanggal mulai: {{ $promo['tanggal_mulai'] }}</small></p>
                                 <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
-                                    <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
+                                    <small>Tanggal selesai: {{ $promo['tanggal_selesai'] }}</small></p>
                             </div>
                         </div>
                     </a>
@@ -197,7 +201,7 @@
                 </form>
 
                 @else
-            <div class="wisata d-none d-lg-flex">
+            <div class="wisata d-lg-flex">
                 @foreach($attractiveDestinationList as $destination)
                     <a href="{{ route('destination.unik.detail', ['id' => $destination['id']]) }}" class="text-decoration-none text-black w-75 h-75">
                         <div class="card rounded-5 shadow">
@@ -217,6 +221,7 @@
         </div>
     </section>
     {{-- Wisata Unik Section End --}}
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

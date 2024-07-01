@@ -16,9 +16,9 @@
             <div class="footer-column">
                 <h3>Social Media</h3>
                 <ul class="social-icons">
-                    <li><a href="https://www.instagram.com/disparbudwonosobo/"><ion-icon name="logo-instagram"></ion-icon> disparbudwonosobo</a></li>
-                    <li><a href="https://x.com/disparbud_WSB"><ion-icon name="logo-twitter"></ion-icon> disparbud_WSB</a></li>
-                    <li><a href="https://www.facebook.com/disparbudwsbofficial/"><ion-icon name="logo-facebook"></ion-icon> disparbudwsbofficial</a></li>
+                    <li><a href="https://www.instagram.com/disparbudwonosobo/" target="_blank"><ion-icon name="logo-instagram"></ion-icon> disparbudwonosobo</a></li>
+                    <li><a href="https://x.com/disparbud_WSB" target="_blank"><ion-icon name="logo-twitter"></ion-icon> disparbud_WSB</a></li>
+                    <li><a href="https://www.facebook.com/disparbudwsbofficial/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> disparbudwsbofficial</a></li>
                 </ul>
             </div>
         </div>

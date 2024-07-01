@@ -1,12 +1,11 @@
 <?php
 
-use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PromoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DestinasiController;
-use App\Http\Controllers\AtractiveDestinationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,23 +13,12 @@ use App\Http\Controllers\AtractiveDestinationController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-             <title>Document</title>
-</head>
-<body>
-
-</body>
-</html>
+| be assigned to the "web" middleware group. Make something great
 |
 */
 
 // Home
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', function (){
     return view('about');
 })->name('about');
@@ -57,7 +45,9 @@ Route::prefix('/event')->controller(EventController::class)->name('event.')->gro
 // Promo
 Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->group(function (){
     Route::get('/', 'fetch_all')->name('index');
+    Route::get('redirect', 'fetch_closest_promo')->name('floating-icon');
     Route::get('/{id}/detail', 'detail')->name('detail');
+
 });
 
 // Hotel
@@ -72,5 +62,6 @@ Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->gro
 Route::get('/map_redirect/{lat}/{lng}', function($lat, $lng){
     return redirect()->away("https://www.google.com/maps?q=$lat,$lng");
 })->name('map_redirect');
+
 
 

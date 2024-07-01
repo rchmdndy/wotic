@@ -87,7 +87,7 @@
     </style>
 
     <div class="container mt-4 footer-margin">
-        <h1 class="wisata-title text-center">Daftar Promo 2024</h1>
+        <h1 class="display-2 my-5 text-center">Daftar Promo 2024</h1>
         @if(isset($promoList['Error']))
         <form method='get'>
             <div class="d-flex justify-content-center text-decoration-none text-black">
@@ -109,9 +109,9 @@
                                 <div class="separator"></div>
                                 <div class="card-info">
                                     <p class="promo-date"><i class="bi bi-calendar-check start-icon"></i>
-                                        <small>Tanggal mulai: {{ date('d-m-Y', strtotime($promo['tanggal_mulai'])) }}</small></p>
+                                        <small>Tanggal mulai: {{ $promo['tanggal_mulai'] }}</small></p>
                                     <p class="promo-date"><i class="bi bi-calendar-check end-icon"></i>
-                                        <small>Tanggal selesai: {{ date('d-m-Y', strtotime($promo['tanggal_selesai'])) }}</small></p>
+                                        <small>Tanggal selesai: {{ $promo['tanggal_selesai'] }}</small></p>
                                 </div>
                                 <a href="{{route('promo.detail', ['id' => $promo['id']])}}" class="btn btn-custom-primary btn-custom-text">Detail</a>
                             </div>
