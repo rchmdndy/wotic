@@ -14,7 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
     public function fetchJson(string $link, array $queryParam = []){
         try {
-            $apiJson = Http::withOptions(["verify" => false])->get($link, $queryParam);
+            $apiJson = Http::withOptions(["verify" => true])->get($link, $queryParam);
             if ($apiJson->successful()){
                 $data = $apiJson->json();
             }else{

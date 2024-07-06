@@ -80,6 +80,10 @@
 @endif
 
 <style>
+    .nav-link{
+        transition: color 0.2s ease-in-out;
+        text-decoration: none;
+    }
     .nav-link:hover {
         color: #ffcc00 !important; /* Contoh warna hover: kuning */
     }

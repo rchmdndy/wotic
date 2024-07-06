@@ -3,7 +3,7 @@
 @section('content')
 
         <div class="rekomendasi">
-            <h1 class="display-2 my-5">Event 2024</h1>
+            <h1 class="display-2 my-5">Event yang sedang berlangsung 📢</h1>
 
                     <div class="card rounded-4 w-75">
                         <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>

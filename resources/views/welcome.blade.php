@@ -17,20 +17,20 @@
                         aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="2000">
                     <img class="img-flex img-hero" src="{{ asset('images/wisata/wonosoboo.jpg') }}" alt="...">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="2000">
                     <img class="img-flex img-hero" src="{{ asset('images/wisata/balonudarafes.jpg') }}" alt="...">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="2000">
                     <img class="img-flex img-hero" src="{{ asset('images/events/dieng.jpg') }}" alt="...">
                 </div>
             </div>
         </div>
         <div class="text-wrapper w-100 d-flex flex-column align-items-center">
-            <h1 class="text-white text-center">SELAMAT DATANG DI WEBSITE</h1>
-            <p class="text-white text-center">WONOSOBO TOURISM INFORMATION CENTER</p>
+            <h1 class="text-white text-center">AYO BERWISATA DI WONOSOBO</h1>
+            <p class="text-white text-center">YUK JELAJAHI DESTINASI WISATA DI WONOSOBO!</p>
             <form class="w-25" role="search" method="get" action="{{route('destination.search')}}">
                 <div class="form-floating">
                     <input type="text" class="form-control" name="search" id="search-input" placeholder="Cari Destinasi" aria-describedby="button-addon2" >
@@ -39,13 +39,17 @@
                 </div>
                 <button class="btn btn-primary" type="submit" style="padding-top: 16px; padding-bottom: 16px"><i class="bi bi-search px-3 py-3"></i></button>
             </form>
+            <div id="arrow-id" class="arrow-class">
+                <div class="arrow"></div>
+                <div class="arrow"></div>
+            </div>
         </div>
     </section>
     {{-- Hero Section End--}}
     {{--Wisata Banner Section Start--}}
     <section class="wisata-wrapper mb-5">
         <div class="container">
-            <h1 class="wisata-title text-center h1">Wisata Rekomendasi</h1>
+            <h1 class="wisata-title text-center h1">Wisata yang sedang populer ✨</h1>
             @if(isset($bannerDestinationList['Error']))
                 <div class="d-flex justify-content-center text-decoration-none text-black">
                     <a href="/" class="btn btn-warning">
@@ -77,7 +81,7 @@
     <section class="information-wrapper">
         <div class="information w-100 d-flex flex-column align-items-center">
             <h1 class="information-title">
-                Informasi apa yang anda cari ?
+                Lagi mencari informasi terkait apa? 🔎
             </h1>
             <div class="d-flex gap-3 mt-3 justify-content-center w-100">
                 <a href="{{ route('destination.categories') }}"
@@ -123,7 +127,7 @@
     {{-- Promo section Start--}}
     <section class="promo-wrapper">
         <div class="gtco-testimonials">
-            <h1 class="wisata-title text-center">Promo Terbaru</h1>
+            <h1 class="wisata-title text-center">Kumpulan Promo di Wonosobo Nih!</h1>
             <div class="owl-carousel owl-carousel1 owl-theme">
                 @if(isset($bannerDestinationList['Error']))
                     <form method="get">
@@ -156,7 +160,7 @@
     {{-- Event Section Start --}}
     <section class="rekomendasi-wrapper">
         <div class="rekomendasi">
-            <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event</h1>
+            <h1 class="text-center fw-normal rekomendasi-title mb-5">Kalender Event di Wonosobo 📆</h1>
             <div class="card rounded-4 w-75">
                 <h5 class="card-header text-center bg-my-primary text-white">{{ $currentMonth }}</h5>
                 <div class="card-body d-flex flex-column gap-3 px-4">
@@ -190,7 +194,7 @@
     {{-- Wisata Unik Section Start --}}
     <section class="wisata-wrapper">
         <div class="container">
-            <h1 class="wisata-title text-center">Wisata Unik</h1>
+            <h1 class="wisata-title text-center">Wisata Unik selain di Wonosobo 🤩</h1>
                 @if(isset($attractiveDestinationList['Error']))
                 <form method="get">
                     <div class="d-flex justify-content-center text-black text-center">
@@ -274,6 +278,17 @@
                 carousels();
             })(jQuery);
         })();
+    </script>
+    <script>
+        window.addEventListener("scroll", function () {
+            let arrowId = document.getElementById("arrow-id");
+            if (window.scrollY > window.innerHeight / 4){
+                arrowId.style.opacity = '0';
+            }
+            else{
+                arrowId.style.opacity = '1';
+            }
+        })
     </script>
 
 @endsection

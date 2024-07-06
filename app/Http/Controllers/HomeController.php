@@ -12,7 +12,7 @@ class HomeController extends Controller
         $events = $this->fetchJson(env("API_SERVER")."getEventsForCurrentMonth");
         $attractiveDestinations = $this->fetchJson(env('API_SERVER').'getAllAttractiveDestination');
         $bannerDestinatons = $this->fetchJson(env('API_SERVER').'getHighlightDestinations');
-        $promo = $this->fetchJson(env('API_SERVER').'getAllPromo');
+        $promo = array_reverse($this->fetchJson(env('API_SERVER').'getAllPromo'));
         $currentMonth = Carbon::now()->monthName;
         return view('welcome', [
             'eventList' => $events,

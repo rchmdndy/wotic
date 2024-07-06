@@ -53,6 +53,13 @@
     .footer-column {
         margin-left: 20px;
     }
+    a{
+        transition: color 0.2s ease-in-out;
+    }
+    a:hover{
+        color: #ffcc00 !important;
+        text-decoration: none;
+    }
     .footer h3 {
         font-size: 16px;
         margin-bottom: 15px;
