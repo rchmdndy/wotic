@@ -29,10 +29,10 @@ class Controller extends BaseController
     public function calculateDistance($lat1, $lon1, $lat2, $lon2)
     {
         // Convert latitude and longitude from degrees to radians
-        $lat1 = deg2rad($lat1);
-        $lon1 = deg2rad($lon1);
-        $lat2 = deg2rad($lat2);
-        $lon2 = deg2rad($lon2);
+        $lat1 = deg2rad((float)$lat1);
+        $lon1 = deg2rad((float)$lon1);
+        $lat2 = deg2rad((float)$lat2);
+        $lon2 = deg2rad((float)$lon2);
 
         // Earth radius in kilometers
         $earthRadius = 6371;

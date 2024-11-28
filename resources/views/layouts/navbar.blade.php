@@ -44,10 +44,23 @@
                         <li><a href="{{ route('destination.unik.all')}}" class="dropdown-item">WISATA UNIK</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'promo.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('promo.index')}}"><strong>PROMO</strong></a></li> <!-- Tambahkan margin kanan -->
-            <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'hotel.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('hotel.index')}}"><strong>HOTEL</strong></a></li> <!-- Tambahkan margin kanan -->
-        <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'event.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('event.fetch_all')}}"><strong>EVENT</strong></a></li> <!-- Tambahkan margin kanan -->
-        <li><a class="nav-link {{\Illuminate\Support\Facades\Route::currentRouteName()=='about' ? 'text-warning' : 'text-white'}}" href="{{ route('about') }}"><strong>TENTANG</strong></a></li>
+                <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'promo.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('promo.index')}}"><strong>EVENT</strong></a></li> <!-- Tambahkan margin kanan -->
+                <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'hotel.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('hotel.index')}}"><strong>HOTEL & PENGINAPAN</strong></a></li> <!-- Tambahkan margin kanan -->
+                <li><a class="nav-link {{ Str::startsWith(Route::currentRouteName(), 'event.') ? 'text-warning' : 'text-white' }} me-3" href="{{route('event.fetch_all')}}"><strong>RESTORAN, KULINER, TOKO OLEH OLEH</strong></a></li> <!-- Tambahkan margin kanan -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ Str::startsWith(Route::currentRouteName(), 'about.') ? 'text-warning' : 'text-white' }} me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                        <strong>LAYANAN WISATAWAN</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">BIRO PERJALANAN WISATA</a></li>
+                        <li><a href="#" class="dropdown-item">JASA PEMANDU WISATA</a></li>
+                        <li><a href="#" class="dropdown-item">KESEHATAN RS DAN KLINIK</a></li>
+                        <li><a href="#" class="dropdown-item">TRANSPORTASI</a></li>
+                        <li><a href="#" class="dropdown-item">BENGKEL MOBIL DAN MOTOR</a></li>
+                        <li><a href="{{route('about')}}" class="dropdown-item">TENTANG KAMI</a></li>
+
+                    </ul>
+                </li>
             </ul>
         </div>
         {{-- END TENGAH --}}
