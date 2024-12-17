@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\EventController;
@@ -55,6 +56,12 @@ Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->gro
     Route::get('/', 'index')->name('index');
 });
 
+Route::prefix('/layanan')->controller(LayananController::class)->name('layanan.')->group(function (){
+    Route::get('/categories', 'index')->name('categories');
+    Route::get('/{id}/detail', 'fetch_detail_layanan')->name('detail');
+    Route::get('/{jenis_layanan}', 'fetch_jenis_layanan')->name('list');
+});
+
 //Route::get('/coba_layout', function (){
 //    return view('search.search_results');
 //});
@@ -62,6 +69,3 @@ Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->gro
 Route::get('/map_redirect/{lat}/{lng}', function($lat, $lng){
     return redirect()->away("https://www.google.com/maps?q=$lat,$lng");
 })->name('map_redirect');
-
-
-

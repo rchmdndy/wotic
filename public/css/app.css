@@ -245,6 +245,7 @@ form {
     padding: 8px 16px; /* Sesuaikan padding tombol dengan kebutuhan Anda */
 }
 
+
 .rekomendasi .carousel-control-prev,
 .rekomendasi .carousel-control-next {
     width: 100%;
@@ -259,8 +260,8 @@ form {
     color: white;
 }
 .img-fluid {
-    width: 500px;
-    height: 500px;
+    width: 250px;
+    height: 250px;
   }
 
 .img-modal{
@@ -976,5 +977,3 @@ form {
         background-position-x: 0px;
     }
 }
-
-

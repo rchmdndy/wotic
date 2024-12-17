@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Destinasi;
-use Illuminate\Support\Facades\Http;
 
 class DestinasiController extends Controller
 {
 
     public function fetch_all()
     {
-        $destinationList = $this->fetchJson(env("API_SERVER")."getAllDestination");
+        $destinationList = $this->fetchJson("http://woticadmin.test/api/v2/wonosobo/getAllDestination");
         if (isset($destinationList['Error'])){
             return view('destination.list', [
                 'destinationList' => $destinationList,
@@ -138,22 +136,5 @@ class DestinasiController extends Controller
         return view('destination.categories');
     }
 
-    /**
-     * @param mixed $destinationList
-     * @return array
-     */
-    public function processDistance(mixed $destinationList): array
-    {
-        $koordinat_semarang = ['-6.981445898419028', '110.41362708674362'];
-        $koordinat_jogja = ['-7.886521344500803', '110.42558146813681'];
-
-        // Calculate distances for each destination
-        $destinationList = array_map(function ($destination) use ($koordinat_semarang, $koordinat_jogja) {
-            $destination['jarak_dari_semarang'] = $this->calculateDistance($destination['koordinat_x'], $destination['koordinat_y'], $koordinat_semarang[0], $koordinat_semarang[1]);
-            $destination['jarak_dari_jogja'] = $this->calculateDistance($destination['koordinat_x'], $destination['koordinat_y'], $koordinat_jogja[0], $koordinat_jogja[1]);
-            return $destination;
-        }, $destinationList);
-        return $destinationList;
-    }
 
 }

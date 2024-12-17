@@ -11,7 +11,6 @@ class Destinasi extends Model
     protected $fillable = [
         'nama_destinasi',
         'deskripsi',
-        // 'img',
         'kecamatan',
         'desa',
         'tiket',

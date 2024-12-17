@@ -127,8 +127,15 @@
                     position: position,
                     title: '{{$destinationDetail['destinasi']['nama_destinasi']}}'
                 });
+                marker.addListener("click", () => {
+                    // make an info window with a google map link to the location
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `<h6>${marker.getTitle()}</h6><a href="https://www.google.com/maps/search/?api=1&query=${position.lat},${position.lng}" target="_blank">Dapatkan Rute</a>`
+                    });
+                    infoWindow.open(map, marker);
+                });
             }
         </script>
-        <script src="/js/map.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.8/mapsJavaScriptAPI.js" async defer></script>
 
 @endsection

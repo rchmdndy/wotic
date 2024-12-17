@@ -1,0 +1,38 @@
+h1 {
+    font-size: 200%;
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    height: 150px; /* Fixed height for images */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.btn {
+    margin-top: auto;
+}
+
+.dropdown-menu {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}

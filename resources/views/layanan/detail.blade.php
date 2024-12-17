@@ -133,54 +133,13 @@
                             <td class="table-info">No. Telephone</td>
                             <td><h6 class="mb-0 text-body-secondary">{{ $destinationDetail['destinasi']['telephone'] }}</h6></td>
                         </tr>
+
                     </tbody>
                 </table>
                 <div id="map" class="w-100 border border-info-subtle mt-4" style="height: 300px;"></div>
             </div>
         </div>
 
-        <div class="mt-5 mb-5" style="background: #F8F8F8;">
-            <div class="d-flex m-4 mt-5">
-                <h2 class="display-6"><i class="bi bi-buildings px-4"></i>Hotel Terdekat</h2>
-            </div>
-            <div class="overflow-auto">
-                <div class="row flex-nowrap">
-                    @foreach($hotelList as $hotel)
-                            <div class="col">
-                        <a href="{{route('map_redirect',
-                                        ['lat' => $hotel['koordinat'],
-                                        'lng' => $hotel['koordinat_y']]
-                                        )}}" target="_blank" style="text-decoration: none">
-                                @if($hotel['is_important'] == 'yes')
-                                    <div class="card mb-4 card-reccomendation rounded-3"
-                                         style="width: 18rem; height: 25rem;">
-                                        <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
-                                             alt="Hotel Image" style="width: auto; height: 400px">
-                                        <div class="card-body text-white"
-                                             style="margin-left: 10px; margin-right: 10px;">
-                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                            <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
-                                            <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
-                                            <p class="card-text mb-3">📌 {{$hotel['distance_to_destination']}} KM</p>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="card mb-4" style="width: 18rem; height: 25rem;">
-                                        <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
-                                             alt="Hotel Image" style="width: auto; height: 200px">
-                                        <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                            <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
-                                            <p class="card-text">📌 {{$hotel['distance_to_destination']}} KM</p>
-                                        </div>
-                                    </div>
-                                @endif
-                        </a>
-                            </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

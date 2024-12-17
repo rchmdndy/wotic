@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class Controller extends BaseController
 {
@@ -70,6 +71,22 @@ class Controller extends BaseController
             $dataDetail['tanggal_selesai'] = 'Invalid date';
         }
         return $dataDetail;
+    }
+
+    /**
+     * @param mixed $destinationList
+     * @return array
+     */
+    public function processDistance(mixed $destinationList): array
+    {
+        // Calculate distances for each destination
+        return array_map(function ($destination) {
+            $koordinat_jogja = ['-7.886521344500803', '110.42558146813681'];
+            $koordinat_semarang = ['-6.981445898419028', '110.41362708674362'];
+            $destination['jarak_dari_semarang'] = $this->calculateDistance($destination['koordinat_x'], $destination['koordinat_y'], $koordinat_semarang[0], $koordinat_semarang[1]);
+            $destination['jarak_dari_jogja'] = $this->calculateDistance($destination['koordinat_x'], $destination['koordinat_y'], $koordinat_jogja[0], $koordinat_jogja[1]);
+            return $destination;
+        }, $destinationList);
     }
 
 }
