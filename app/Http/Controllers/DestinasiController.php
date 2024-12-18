@@ -9,7 +9,7 @@ class DestinasiController extends Controller
 
     public function fetch_all()
     {
-        $destinationList = $this->fetchJson("http://woticadmin.test/api/v2/wonosobo/getAllDestination");
+        $destinationList = $this->fetchJson(env("API_SERVER")."getAllDestination");
         if (isset($destinationList['Error'])){
             return view('destination.list', [
                 'destinationList' => $destinationList,
