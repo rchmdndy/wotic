@@ -49,9 +49,7 @@
                         <li><a href="{{ route('destination.unik.all') }}" class="dropdown-item">WISATA UNIK</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a
-                        class="nav-link me-3 {{ Str::startsWith(Route::currentRouteName(), 'promo.') ? 'text-warning' : 'text-white' }} me-3"
-                        href="{{ route('promo.index') }}"><strong>EVENT</strong></a></li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ Str::startsWith(Route::currentRouteName(), 'hotel.') ? 'text-warning' : 'text-white' }} me-3"
                         href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -167,6 +165,15 @@
 <style>
     /* Default untuk ukuran layar 700px ke atas */
     @media (min-width: 701px) {
+        .nav-link {
+            transition: color 0.5s ease-in-out;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: #ffcc00 !important;
+            /* Contoh warna hover: kuning */
+        }
 
         .dropdown-menu {
             overflow: visible;

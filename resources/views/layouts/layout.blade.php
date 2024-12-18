@@ -20,7 +20,6 @@
 
 <body>
     @include('layouts.navbar')
-
     <div class="h-100vh">
         @yield('content')
     </div>

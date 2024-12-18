@@ -174,23 +174,23 @@
                                         style="width: 18rem; height: 25rem;">
                                         <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid  w-100"
                                             style="height: 200px; " alt="Hotel Image" ">
-                                                                        <div class="card-body text-white" style="margin-left: 10px; margin-right: 10px;">
-                                                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                                                            <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
-                                                                            <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
-                                                                            <p class="card-text mb-3">📌 {{ $hotel['distance_to_destination'] }} KM</p>
+                                                                            <div class="card-body text-white" style="margin-left: 10px; margin-right: 10px;">
+                                                                                <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
+                                                                                <p class="card-subtitle mb-2 text-white">{{ $hotel['kelas'] }}</p>
+                                                                                <span class="badge text-bg-warning mb-3">Rekomendasi 📍</span>
+                                                                                <p class="card-text mb-3">📌 {{ $hotel['distance_to_destination'] }} KM</p>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 @else
     <div class="card mb-4" style="width: 18rem; height: 25rem;">
-                                                                        <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
-                                                                            alt="Hotel Image" style="width: auto; height: 200px">
-                                                                        <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                                                                            <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
-                                                                            <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
-                                                                            <p class="card-text">📌 {{ $hotel['distance_to_destination'] }} KM</p>
+                                                                            <img src="{{ $hotel['image'] }}" class="card-img-top img-fluid"
+                                                                                alt="Hotel Image" style="width: auto; height: 200px">
+                                                                            <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
+                                                                                <h5 class="card-title">{{ $hotel['nama_hotel'] }}</h5>
+                                                                                <p class="card-subtitle mb-2 text-body-secondary">{{ $hotel['kelas'] }}</p>
+                                                                                <p class="card-text">📌 {{ $hotel['distance_to_destination'] }} KM</p>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
      @endif
                             </a>
                         </div>
