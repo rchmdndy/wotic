@@ -59,65 +59,94 @@
                         <strong>PENGINAPAN</strong>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'hotel']) }}" class="dropdown-item">HOTEL</a></li>
-                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'villa']) }}" class="dropdown-item">VILLA</a></li>
-                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'homestay']) }}" class="dropdown-item">HOMESTAY</a></li>
-                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'pondok wisata']) }}" class="dropdown-item">PONDOK WISATA</a></li>
-                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'glamping']) }}" class="dropdown-item">GLAMPING</a></li>
+                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'hotel']) }}"
+                                class="dropdown-item">HOTEL</a></li>
+                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'villa']) }}"
+                                class="dropdown-item">VILLA</a></li>
+                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'homestay']) }}"
+                                class="dropdown-item">HOMESTAY</a></li>
+                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'pondok wisata']) }}"
+                                class="dropdown-item">PONDOK WISATA</a></li>
+                        <li><a href="{{ route('hotel.list', ['kelas_hotel' => 'glamping']) }}"
+                                class="dropdown-item">GLAMPING</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle data-mdb-button-init data-mdb-ripple-init data-mdb-dropdown-init {{ Str::startsWith(Route::currentRouteName(), 'kuliner.') ? 'text-warning' : 'text-white' }} me-3"
+                    <a class="nav-link dropdown-toggle  {{ Str::startsWith(Route::currentRouteName(), 'kuliner.') ? 'text-warning' : 'text-white' }} me-3"
                         href="#" role="button" data-bs-toggle="dropdown" data-mdb-toggle="dropdown"
                         aria-expanded="false" data-bs-auto-close="outside" id="subdropdownMenu">
                         <strong>KULINER</strong>
                     </a>
                     <ul class="dropdown-menu data1" aria-labelledby="subdropdownMenu">
-                        <li><a href="{{route("kuliner.list", ['jenis_kuliner' => 'restoran'])}}" class="dropdown-item">RESTORAN</a></li>
-                        <li><a href="{{route("kuliner.list", ['jenis_kuliner' => 'kuliner'])}}" class="dropdown-item">KULINER</a></li>
-                        <li><a href="{{route("kuliner.list", ['jenis_kuliner' => 'toko oleh oleh'])}}" class="dropdown-item">TOKO OLEH-OLEH</a></li>
+                        <li><a href="{{ route('kuliner.list', ['jenis_kuliner' => 'restoran']) }}"
+                                class="dropdown-item">RESTORAN</a></li>
+                        <li><a href="{{ route('kuliner.list', ['jenis_kuliner' => 'kuliner']) }}"
+                                class="dropdown-item">KULINER</a></li>
+                        <li><a href="{{ route('kuliner.list', ['jenis_kuliner' => 'toko oleh oleh']) }}"
+                                class="dropdown-item">TOKO OLEH-OLEH</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle data-mdb-button-init data-mdb-ripple-init data-mdb-dropdown-init {{ Str::startsWith(Route::currentRouteName(), 'kuliner.') ? 'text-warning' : 'text-white' }} me-3"
-                       href="#" role="button" data-bs-toggle="dropdown" data-mdb-toggle="dropdown"
-                       aria-expanded="false" data-bs-auto-close="outside" id="subdropdownMenu">
+                    <a class="nav-link dropdown-toggle data-mdb-button-init data-mdb-ripple-init data-mdb-dropdown-init {{ Str::startsWith(Route::currentRouteName(), 'layanan.') ? 'text-warning' : 'text-white' }} me-3"
+                        href="#" role="button" data-bs-toggle="dropdown" data-mdb-toggle="dropdown"
+                        aria-expanded="false" data-bs-auto-close="outside" id="subdropdownMenu">
                         <strong>LAYANAN</strong>
                     </a>
                     <ul class="dropdown-menu data1" aria-labelledby="subdropdownMenu">
                         <li><a href="{{ route('layanan.categories') }}" class="dropdown-item">KATEGORI LAYANAN</a>
                         </li>
                         <li>
-                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="inside"
-                               data-bs-toggle="dropdown" href="#">KESEHATAN</a>
-                            <ul class="dropdown-menu dropdown-submenu data2 ">
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'rumah sakit'])}}">RUMAH SAKIT</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'puskesmas'])}}">PUSKESMAS</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'klinik'])}}">KLINIK</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'ambulance'])}}">AMBULANCE</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'apotik'])}}">APOTIK</a></li>
+                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="outside"
+                                data-bs-toggle="dropdown" href="#">KESEHATAN</a>
+                            <ul class="dropdown-menu dropdown-submenu sub-kesehatan">
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'rumah sakit']) }}">RUMAH
+                                        SAKIT</a></li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'puskesmas']) }}">PUSKESMAS</a>
+                                </li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'klinik']) }}">KLINIK</a>
+                                </li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'ambulance']) }}">AMBULANCE</a>
+                                </li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'apotik']) }}">APOTIK</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="inside"
-                               data-bs-toggle="dropdown" href="#">TRANSPORTASI</a>
-                            <ul class="dropdown-menu dropdown-submenu data2 ">
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'bus'])}}">BUS</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'shuttle'])}}">SHUTTLE</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'jeep wisata'])}}">JEEP WISATA</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'ojek wisata'])}}">OJEK WISATA</a></li>
+                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="outside"
+                                data-bs-toggle="dropdown" href="#">TRANSPORTASI</a>
+                            <ul class="dropdown-menu dropdown-submenu sub-transportasi">
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'bus']) }}">BUS</a></li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'shuttle']) }}">SHUTTLE</a>
+                                </li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'jeep wisata']) }}">JEEP
+                                        WISATA</a></li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'ojek wisata']) }}">OJEK
+                                        WISATA</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('layanan.list', ['jenis_layanan' => 'biro perjalanan wisata']) }}"
-                               class="dropdown-item">BIRO PERJALANAN WISATA</a></li>
+                                class="dropdown-item">BIRO PERJALANAN WISATA</a></li>
                         <li><a href="{{ route('layanan.list', ['jenis_layanan' => 'pemandu wisata']) }}"
-                               class="dropdown-item">PEMANDU WISATA</a></li>
+                                class="dropdown-item">PEMANDU WISATA</a></li>
                         <li>
-                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="inside"
-                               data-bs-toggle="dropdown" href="#">BENGKEL</a>
-                            <ul class="dropdown-menu dropdown-submenu data2 ">
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'bengkel motor'])}}">BENGKEL MOTOR</a></li>
-                                <li><a class="dropdown-item " href="{{route('layanan.list', ['jenis_layanan' => 'bengkel mobil'])}}">BENGKEL MOBIL</a></li>
+                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="outside"
+                                data-bs-toggle="dropdown" href="#">BENGKEL</a>
+                            <ul class="dropdown-menu dropdown-submenu sub-bengkel">
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'bengkel motor']) }}">BENGKEL
+                                        MOTOR</a></li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('layanan.list', ['jenis_layanan' => 'bengkel mobil']) }}">BENGKEL
+                                        MOBIL</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -136,38 +165,53 @@
     </div>
 </nav>
 <style>
-    .dropdown-menu {
-        overflow: visible;
+    /* Default untuk ukuran layar 700px ke atas */
+    @media (min-width: 701px) {
+
+        .dropdown-menu {
+            overflow: visible;
+        }
+
+        .dropdown-menu li {
+            position: relative;
+        }
+
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+        }
+
+        .dropdown-menu .dropdown-submenu-left {
+            right: 100%;
+            left: auto;
+        }
+
+        .dropdown-menu>li:hover>.dropdown-submenu {
+            display: block;
+        }
     }
 
-    .dropdown-submenu {
-        position: relative;
-    }
+    /* Untuk layar 700px ke bawah */
+    @media (max-width: 700px) {
+        .dropdown-menu {
+            overflow: visible;
+        }
 
-    .dropdown-submenu .dropdown-menu {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        margin-left: 10px;
-        display: none;
-    }
+        .dropdown-submenu {
+            position: relative;
+            margin-left: 20px;
+        }
 
-    .dropdown-submenu:hover>.dropdown-menu {
-        display: block;
-    }
+        .dropdown-submenu .dropdown-menu {
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            margin-left: 10px;
+            display: none;
+        }
 
-    .navbar .dropdown-menu {
-        overflow: visible !important;
-    }
 
-    .dropdown-menu {
-        min-height: 0;
-        overflow-y: scroll;
-        z-index: 1050;
-        scrollbar-width: none;
-    }
-
-    .dropdown-menu::-webkit-scrollbar {
-        display: none;
     }
 </style>
