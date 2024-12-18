@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromoController;
@@ -54,12 +55,17 @@ Route::prefix('/promo')->controller(PromoController::class)->name('promo.')->gro
 // Hotel
 Route::prefix('/hotel')->controller(HotelController::class)->name('hotel.')->group(function (){
     Route::get('/', 'index')->name('index');
+    Route::get('{kelas_hotel}', 'fetch_kelas_hotel')->name('list');
 });
 
 Route::prefix('/layanan')->controller(LayananController::class)->name('layanan.')->group(function (){
     Route::get('/categories', 'index')->name('categories');
     Route::get('/{id}/detail', 'fetch_detail_layanan')->name('detail');
     Route::get('/{jenis_layanan}', 'fetch_jenis_layanan')->name('list');
+});
+Route::prefix('/kuliner')->controller(KulinerController::class)->name('kuliner.')->group(function (){
+    Route::get('/{id}/detail', 'fetch_detail_kuliner')->name('detail');
+    Route::get('/{jenis_kuliner}', 'fetch_jenis_kuliner')->name('list');
 });
 
 //Route::get('/coba_layout', function (){

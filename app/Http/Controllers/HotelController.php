@@ -19,4 +19,11 @@ class HotelController extends Controller
 
         return view('hotel.list', ['hotelList' => $hotelList]);
     }
+
+    public function fetch_kelas_hotel($jenis_hotel){
+           $hotelList = $this->fetchJson(env('API_SERVER')."getHotelsType", ['jenis_hotel' => $jenis_hotel]);
+//           dd($hotel);
+
+        return view('hotel.list', compact('hotelList', 'jenis_hotel'));
+    }
 }
