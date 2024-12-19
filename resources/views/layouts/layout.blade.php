@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wotic</title>
+    <!-- Add this in the <head> section of your layout.blade.php file -->
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=PQEc9gdP"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/floating-icon.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/logos/balon.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,6 +30,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <!-- Add this in the <body> section of your layout.blade.php file -->
+<script>
+    var config = {
+        "welcomeMessage": true,
+        "speakSelectedText": true,
+        "speakLinks": true,
+        "speakInactivity": false,
+        "speakEndPage": false,
+        "exitIntent": false,
+        "accesibilityNavigation": false,
+        "accesibilityNavigation2": false,
+        "welcomeMessageTime": false,
+        "text_welcomeMessage": "Selamat Datang di Website resmi pusat informasi wisata Wobosobo",
+        "text_speakInactivity": null,
+        "text_speakEndPage": null,
+        "text_exitIntent": null,
+        "trackEvents": false,
+        "abTesting": false,
+        "analytics_id": null,
+        "another_field": null
+    };
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure user interaction before playing the welcome message
+    window.addEventListener('scroll', function() {
+        if (config.welcomeMessage) {
+            responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
+        }
+    }, { once: true });
+
+    document.addEventListener('mouseup', function() {
+        var selectedText = window.getSelection().toString().trim();
+        if (selectedText) {
+            responsiveVoice.speak(selectedText, "Indonesian Male");
+        }
+    });
+});
+</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 

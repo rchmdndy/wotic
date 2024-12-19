@@ -16,16 +16,10 @@
             @php
                 $categories = [
                     ['jenis_wisata' => 'alam', 'image' => 'wisata-alam.jpg', 'title' => 'WISATA ALAM'],
-                    ['jenis_wisata' => 'petualangan', 'image' => 'wisata-petualangan.jpeg', 'title' => 'WISATA PETUALANGAN'],
-                    ['jenis_wisata' => 'perbelanjaan', 'image' => 'wisata-perbelanjaan.jpg', 'title' => 'WISATA PERBELANJAAN'],
-                    ['jenis_wisata' => 'kuliner', 'image' => 'wisata-kuliner.jpg', 'title' => 'WISATA KULINER'],
-                    ['jenis_wisata' => 'industri', 'image' => 'wisata-industri.jpg', 'title' => 'WISATA INDUSTRI'],
+                    ['jenis_wisata' => 'minat khusus', 'image' => 'wisata-petualangan.jpeg', 'title' => 'WISATA MINAT KHUSUS'],
                     ['jenis_wisata' => 'budaya', 'image' => 'wisata-budaya.jpg', 'title' => 'WISATA BUDAYA'],
-                    ['jenis_wisata' => 'pertanian', 'image' => 'wisata-pertanian.jpg', 'title' => 'WISATA PERTANIAN'],
-                    ['jenis_wisata' => 'pedesaan', 'image' => 'wisata-pedesaan.jpeg', 'title' => 'WISATA PEDESAAN'],
+                    ['jenis_wisata' => 'desa wisata', 'image' => 'wisata-pedesaan.jpeg', 'title' => 'DESA WISATA'],
                     ['jenis_wisata' => 'religi', 'image' => 'wisata-religi.jpg', 'title' => 'WISATA RELIGI'],
-                    ['jenis_wisata' => 'industri_kecil', 'image' => 'wisata-industri-kecil.jpg', 'title' => 'WISATA INDUSTRI KECIL'],
-                    ['jenis_wisata' => 'edukasi', 'image' => 'wisata-edukasi.jpg', 'title' => 'WISATA EDUKASI'],
                     ['jenis_wisata' => 'buatan', 'image' => 'wisata-buatan.jpg', 'title' => 'WISATA BUATAN']
                 ];
             @endphp

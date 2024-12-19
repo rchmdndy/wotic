@@ -162,6 +162,23 @@
         </div>
     </div>
 </nav>
+@if (request()->routeIs('index'))
+    <script>
+        window.addEventListener("scroll", function() {
+            var navbar = document.getElementById("navbar");
+            if (window.scrollY > window.innerHeight / 4) {
+                navbar.classList.remove("bg-black");
+                navbar.classList.remove("bg-opacity-50");
+                navbar.classList.add("bg-my-primary");
+            } else {
+                navbar.classList.remove("bg-my-primary");
+                navbar.classList.add("bg-black");
+                navbar.classList.add("bg-opacity-50");
+            }
+        }
+        );
+    </script>
+@endif
 <style>
     /* Default untuk ukuran layar 700px ke atas */
     @media (min-width: 701px) {
