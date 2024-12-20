@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wotic</title>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=XTZJB4vZ"></script>
     <!-- Add this in the <head> section of your layout.blade.php file -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/floating-icon.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/logos/balon.png') }}" type="image/x-icon">
@@ -47,7 +48,6 @@
     });
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=XTZJB4vZ"></script>
 </body>
 
 </html>
