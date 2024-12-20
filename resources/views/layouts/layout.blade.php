@@ -31,41 +31,6 @@
     </script>
     <!-- Add this in the <body> section of your layout.blade.php file -->
 <script>
-    var config = {
-        "welcomeMessage": true,
-        "speakSelectedText": true,
-        "speakLinks": true,
-        "speakInactivity": false,
-        "speakEndPage": false,
-        "exitIntent": false,
-        "accesibilityNavigation": false,
-        "accesibilityNavigation2": false,
-        "welcomeMessageTime": false,
-        "text_welcomeMessage": "Selamat Datang di Website resmi pusat informasi wisata Wobosobo",
-        "text_speakInactivity": null,
-        "text_speakEndPage": null,
-        "text_exitIntent": null,
-        "trackEvents": false,
-        "abTesting": false,
-        "analytics_id": null,
-        "another_field": null
-    };
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Ensure user interaction before playing the welcome message
-    window.addEventListener('scroll', function() {
-        if (config.welcomeMessage) {
-            responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
-        }
-    }, { once: true });
-
-    document.addEventListener('mouseup', function() {
-        var selectedText = window.getSelection().toString().trim();
-        if (selectedText) {
-            responsiveVoice.speak(selectedText, "Indonesian Male");
-        }
-    });
-});
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=XTZJB4vZ"></script>
