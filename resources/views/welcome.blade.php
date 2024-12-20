@@ -231,6 +231,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
+       if (!sessionStorage.getItem('welcomeMessagePlayed')) {
+        setTimeout(function() {
+            responsiveVoice.speak("Selamat datang di website resmi informasi wisata Wonosobo");
+            sessionStorage.setItem('welcomeMessagePlayed', 'true');
+            }, 1500);
+       }
+       setTimeout(responsiveVoice.speak("Selamat datang di website resmi informasi wisata Wonosobo"),1500);
+    </script>
+
+    <script>
         // Select all anchor tags with the id 'myAnchor'
         const anchors = document.querySelectorAll('#notImplemented');
 
