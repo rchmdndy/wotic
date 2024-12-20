@@ -32,11 +32,11 @@
     <!-- Add this in the <body> section of your layout.blade.php file -->
 <script>
     // Ensure user interaction before playing the welcome message
-    window.addEventListener('scroll', function() {
-        if (config.welcomeMessage) {
-            responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
-        }
-    }, { once: true });
+    // window.addEventListener('scroll', function() {
+    //     if (config.welcomeMessage) {
+    //         responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
+    //     }
+    // }, { once: true });
 
     document.addEventListener('mouseup', function() {
         var selectedText = window.getSelection().toString().trim();
