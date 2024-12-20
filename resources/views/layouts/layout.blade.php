@@ -31,6 +31,19 @@
     </script>
     <!-- Add this in the <body> section of your layout.blade.php file -->
 <script>
+    // Ensure user interaction before playing the welcome message
+    window.addEventListener('scroll', function() {
+        if (config.welcomeMessage) {
+            responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
+        }
+    }, { once: true });
+
+    document.addEventListener('mouseup', function() {
+        var selectedText = window.getSelection().toString().trim();
+        if (selectedText) {
+            responsiveVoice.speak(selectedText, "Indonesian Male");
+        }
+    });
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=XTZJB4vZ"></script>
