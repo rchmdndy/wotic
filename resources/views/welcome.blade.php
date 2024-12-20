@@ -231,7 +231,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
-       setTimeout(responsiveVoice.speak("Selamat datang di website resmi informasi wisata Wonosobo"),1500);
     </script>
 
     <script>
