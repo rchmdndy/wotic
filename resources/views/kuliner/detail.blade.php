@@ -114,7 +114,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="table-info">Jenis Wisata</td>
+                            <td class="table-info">Jenis Destinasi</td>
                             <td>
                                 @foreach($destinationDetail['jenis_wisata'] as $jenis)
                                     <span class="badge rounded-pill text-bg-success px-2">{{$jenis}}</span>

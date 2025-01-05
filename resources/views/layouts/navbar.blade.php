@@ -131,6 +131,17 @@
                                         WISATA</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="dropdown-item dropdown-toggle " data-bs-auto-close="outside"
+                                data-bs-toggle="dropdown" href="#">POS PENGAMANAN</a>
+                            <ul class="dropdown-menu dropdown-submenu sub-pengamanan">
+                                <li><a class="dropdown-item "
+                                        href="{{ route('pengamanan.list', ['jenis_pengamanan' => 'polsek']) }}">POLSEK</a></li>
+                                <li><a class="dropdown-item "
+                                        href="{{ route('pengamanan.list', ['jenis_pengamanan' => 'koramil']) }}">KORAMIL</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="{{ route('layanan.list', ['jenis_layanan' => 'biro perjalanan wisata']) }}"
                                 class="dropdown-item">BIRO PERJALANAN WISATA</a></li>
                         <li><a href="{{ route('layanan.list', ['jenis_layanan' => 'pemandu wisata']) }}"

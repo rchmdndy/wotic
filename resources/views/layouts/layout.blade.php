@@ -37,7 +37,6 @@
     //     if (config.welcomeMessage) {
     //         responsiveVoice.speak(config.text_welcomeMessage, "Indonesian Male");
     //     }
-    setTimeout(responsiveVoice.speak("Selamat datang di website resmi informasi wisata Wonosobo"),1500);
     // }, { once: true });
 
     document.addEventListener('mouseup', function() {

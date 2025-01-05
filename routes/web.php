@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\PengamananController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\EventController;
@@ -66,6 +67,11 @@ Route::prefix('/layanan')->controller(LayananController::class)->name('layanan.'
 Route::prefix('/kuliner')->controller(KulinerController::class)->name('kuliner.')->group(function (){
     Route::get('/{id}/detail', 'fetch_detail_kuliner')->name('detail');
     Route::get('/{jenis_kuliner}', 'fetch_jenis_kuliner')->name('list');
+});
+
+Route::prefix('/pengamanan')->controller(PengamananController::class)->name('pengamanan.')->group(function (){
+    Route::get('/{id}/detail', 'fetch_detail_pengamanan')->name('detail');
+    Route::get('/{jenis_pengamanan}', 'fetch_pengamanan_list')->name('list');
 });
 
 //Route::get('/coba_layout', function (){

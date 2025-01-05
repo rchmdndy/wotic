@@ -43,43 +43,43 @@
                 </div>
                 <p class="mb-3 lh-lg" style="text-align: justify">{{ $destinationDetail['destinasi']['deskripsi'] }}</p>
                 {{-- Keterangan End --}}
-                {{-- Harga Tiket Start --}}
-                <div class="d-flex m-4 mt-5">
-                    <h2 class="display-6"><i class="bi bi-currency-exchange px-4"></i>Harga Tiket</h2>
-                </div>
-                <div class="text-center">
-                    <table class="table table-bordered border-secondary table-hover" style="width: 80%">
-                        <thead>
-                            <tr class="table-secondary">
-                                <th style="width: 10%">HARGA</th>
-                                <th style="width: 20%">TIKET LOKAL</th>
-                                <th style="width: 20%">TIKET INTERNASIONAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="table-secondary"><strong>WEEKDAY</strong></td>
-                                <td>
-                                    IDR {{ ($destinationDetail['destinasi']['tiket']) ? : '0' }}
-                                </td>
-                                <td>
-                                    IDR {{ $destinationDetail['destinasi']['tiket_internasional'] ? : '0' }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-secondary"><strong>WEEKEND</strong></td>
-                                <td>
-                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_local'] ? : '0' }}
-                                </td>
-                                <td>
-                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_internasional'] ? : '0' }}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Pesan Sekarang</button>
-                {{-- Harga Tiket End --}}
+{{--                --}}{{-- Harga Tiket Start --}}
+{{--                <div class="d-flex m-4 mt-5">--}}
+{{--                    <h2 class="display-6"><i class="bi bi-currency-exchange px-4"></i>Harga Tiket</h2>--}}
+{{--                </div>--}}
+{{--                <div class="text-center">--}}
+{{--                    <table class="table table-bordered border-secondary table-hover" style="width: 80%">--}}
+{{--                        <thead>--}}
+{{--                            <tr class="table-secondary">--}}
+{{--                                <th style="width: 10%">HARGA</th>--}}
+{{--                                <th style="width: 20%">TIKET LOKAL</th>--}}
+{{--                                <th style="width: 20%">TIKET INTERNASIONAL</th>--}}
+{{--                            </tr>--}}
+{{--                        </thead>--}}
+{{--                        <tbody>--}}
+{{--                            <tr>--}}
+{{--                                <td class="table-secondary"><strong>WEEKDAY</strong></td>--}}
+{{--                                <td>--}}
+{{--                                    IDR {{ ($destinationDetail['destinasi']['tiket']) ? : '0' }}--}}
+{{--                                </td>--}}
+{{--                                <td>--}}
+{{--                                    IDR {{ $destinationDetail['destinasi']['tiket_internasional'] ? : '0' }}--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <td class="table-secondary"><strong>WEEKEND</strong></td>--}}
+{{--                                <td>--}}
+{{--                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_local'] ? : '0' }}--}}
+{{--                                </td>--}}
+{{--                                <td>--}}
+{{--                                    IDR {{ $destinationDetail['destinasi']['tiket_weekend_internasional'] ? : '0' }}--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+{{--                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Pesan Sekarang</button>--}}
+{{--                --}}{{-- Harga Tiket End --}}
             </div>
             <div class="col p-4 rounded">
                 <div class="d-flex m-4 mt-1 py-1">
@@ -114,7 +114,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="table-info">Jenis Layanan</td>
+                            <td class="table-info">Jenis Pos Pengamanan</td>
                             <td>
                                 @foreach($destinationDetail['jenis_wisata'] as $jenis)
                                     <span class="badge rounded-pill text-bg-success px-2">{{$jenis}}</span>
