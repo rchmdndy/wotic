@@ -93,6 +93,7 @@
                     <ul class="dropdown-menu data1" aria-labelledby="subdropdownMenu">
                         <li><a href="{{ route('layanan.categories') }}" class="dropdown-item">KATEGORI LAYANAN</a>
                         </li>
+
                         <li>
                             <a class="dropdown-item dropdown-toggle " data-bs-auto-close="outside"
                                 data-bs-toggle="dropdown" href="#">KESEHATAN</a>
@@ -157,6 +158,8 @@
                                         href="{{ route('layanan.list', ['jenis_layanan' => 'bengkel mobil']) }}">BENGKEL
                                         MOBIL</a></li>
                             </ul>
+                        </li>
+                        <li><a href="{{ route('about') }}" class="dropdown-item">TENTANG KAMI</a>
                         </li>
                     </ul>
                 </li>

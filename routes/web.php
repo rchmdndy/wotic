@@ -3,6 +3,7 @@
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PengamananController;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\EventController;
@@ -23,7 +24,8 @@ use App\Http\Controllers\DestinasiController;
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', function (){
-    return view('about');
+    $visitCount = Redis::get('visitor_count');
+    return view('about', compact('visitCount'));
 })->name('about');
 
 // Destination

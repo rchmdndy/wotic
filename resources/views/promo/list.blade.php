@@ -87,7 +87,7 @@
     </style>
 
     <div class="container mt-4 footer-margin">
-        <h1 class="display-2 my-5 text-center">✨ Kumpulan Promo 2024 ✨</h1>
+        <h1 class="display-2 my-5 text-center">✨ Kumpulan Promo {{$currentYear}} ✨</h1>
         @if(isset($promoList['Error']))
         <form method='get'>
             <div class="d-flex justify-content-center text-decoration-none text-black">

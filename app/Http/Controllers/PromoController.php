@@ -16,6 +16,7 @@ class PromoController extends Controller
         $promoCollection = collect($promoList);
 
         $currentDate = Carbon::now();
+        $currentYear = Carbon::now()->year;
 
 
         $sortedPromoCollection = $promoCollection->sortBy(function ($promo) use ($currentDate) {
@@ -45,7 +46,7 @@ class PromoController extends Controller
             $promoDetail = $this->dateFormat($promoDetail);
         }
 
-        return view('promo.list', ['promoList' => $promoList]);
+        return view('promo.list', ['promoList' => $promoList, 'currentYear' => $currentYear]);
     }
 
     public function detail($id)
